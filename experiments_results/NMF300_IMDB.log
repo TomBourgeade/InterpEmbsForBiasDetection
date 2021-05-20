@@ -1,0 +1,73 @@
+=== CONFIG ===
+{'embeddings': 'NMF300', 'corpus': 'IMDB', 'batch_size': 64, 'beta1': 0.99, 'beta2': 0.999, 'gamma': 0.9, 'lr': 0.09641613969219061, 'patience': 5, 'scheduler': 'plateau', 'weight_decay': 0.0, 'xavier': True, 'epochs': 200}
+=== ====== ===
+Evaluation:
+- test set evaluation:
+{'test_acc': 0.6785333156585693, 'test_loss': 0.6072748899459839}
+- report (test):
+              precision    recall  f1-score   support
+
+         neg     0.7112    0.6002    0.6510     11239
+         pos     0.6548    0.7567    0.7020     11261
+
+    accuracy                         0.6785     22500
+   macro avg     0.6830    0.6785    0.6765     22500
+weighted avg     0.6829    0.6785    0.6765     22500
+
+- random classifier (baseline):
+              precision    recall  f1-score   support
+
+         neg     0.5019    0.5052    0.5036     11239
+         pos     0.5029    0.4997    0.5013     11261
+
+    accuracy                         0.5024     22500
+   macro avg     0.5024    0.5024    0.5024     22500
+weighted avg     0.5024    0.5024    0.5024     22500
+
+Diagnostics for labels:
+- neg [precision = 0.7111532785157073] :
+  ++ positive predictors ++
+-- 70 {2934.39} : unpleasant, incompetent, unpredictable, outdated, erratic, insecure, unattractive, unrealistic, undesirable, unsatisfactory
+-- 5 {2754.35} : reactants, vortices, quantitatively, perforations, flanges, umlaut, flagella, electromagnet, rectum, workpiece
+-- 191 {2198.61} : machining, welding, milling, metalworking, plumbing, woodworking, tooling, refrigeration, polishing, lathes
+-- 51 {1688.49} : waste, water, gases, gas, liquid, fuel, oxygen, seawater, wastes, sewage
+-- 24 {1624.68} : dz, sl, rg, cl, ch, bb, bl, bh, sn, tr
+-- 19 {1624.28} : dervishes, atlanteans, cronies, moravians, bourbons, zaibatsu, æsir, faroes, anabaptists, bulgars
+-- 54 {1597.70} : yelling, staring, yelled, shoved, shouted, drags, stares, handcuffed, crawled, smashes
+-- 37 {1597.07} : justifies, transcends, immaterial, insofar, perceives, embodiment, pertains, unchanging, transcending, presupposes
+-- 230 {1422.55} : khao, thong, phu, mueang, khlong, luang, nong, yai, nang, phra
+-- 241 {1396.93} : interdiction, ied, ambushes, retaliatory, sabotage, diversionary, bombing, sorties, covert, infiltration
+  -- negative predictors --
+-- 279 {-1374.28} : sired, filly, stakes, sire, stallion, foaled, stud, thoroughbred, bred, horse
+-- 149 {-1458.72} : riffs, melodic, rhythms, synth, electronica, chords, synths, upbeat, melodies, catchy
+-- 106 {-1615.87} : eliade, petrarch, tolstoy, auden, dostoevsky, proust, machiavelli, dostoyevsky, plutarch, rabindranath
+-- 86 {-1661.01} : countess, née, louisa, dorothea, niece, gertrude, aunt, henrietta, agnes, maud
+-- 223 {-1737.97} : watercolor, watercolour, watercolors, rembrandt, painting, matisse, picasso, watercolours, paintings, etchings
+-- 28 {-1756.39} : cognition, linguistic, interpersonal, normative, affective, conceptual, cognitive, sociological, perspectives, metaphysical
+-- 98 {-1770.34} : basie, saxophonist, ellington, dizzy, verve, bandleader, herbie, sonny, buddy, benny
+-- 131 {-2114.04} : shakira, lauper, mcentire, yearwood, parton, estefan, streisand, utada, rimes, midler
+-- 123 {-2617.87} : originality, skill, vitality, versatility, strength, intellect, agility, prowess, stamina, honesty
+-- 100 {-2753.74} : imaginative, vivid, lyrical, poetic, realistic, imagery, subtle, surreal, expressive, colorful
+- pos [precision = 0.6547564161672046] :
+  ++ positive predictors ++
+-- 100 {2753.82} : imaginative, vivid, lyrical, poetic, realistic, imagery, subtle, surreal, expressive, colorful
+-- 123 {2617.82} : originality, skill, vitality, versatility, strength, intellect, agility, prowess, stamina, honesty
+-- 131 {2114.09} : shakira, lauper, mcentire, yearwood, parton, estefan, streisand, utada, rimes, midler
+-- 98 {1770.18} : basie, saxophonist, ellington, dizzy, verve, bandleader, herbie, sonny, buddy, benny
+-- 28 {1756.57} : cognition, linguistic, interpersonal, normative, affective, conceptual, cognitive, sociological, perspectives, metaphysical
+-- 223 {1738.06} : watercolor, watercolour, watercolors, rembrandt, painting, matisse, picasso, watercolours, paintings, etchings
+-- 86 {1661.03} : countess, née, louisa, dorothea, niece, gertrude, aunt, henrietta, agnes, maud
+-- 106 {1615.89} : eliade, petrarch, tolstoy, auden, dostoevsky, proust, machiavelli, dostoyevsky, plutarch, rabindranath
+-- 149 {1458.66} : riffs, melodic, rhythms, synth, electronica, chords, synths, upbeat, melodies, catchy
+-- 292 {1374.36} : paperback, hardback, hardcover, paperbacks, bantam, isbn, publ, harpercollins, reprint, imprint
+  -- negative predictors --
+-- 241 {-1396.72} : interdiction, ied, ambushes, retaliatory, sabotage, diversionary, bombing, sorties, covert, infiltration
+-- 230 {-1422.44} : khao, thong, phu, mueang, khlong, luang, nong, yai, nang, phra
+-- 37 {-1597.17} : justifies, transcends, immaterial, insofar, perceives, embodiment, pertains, unchanging, transcending, presupposes
+-- 54 {-1597.84} : yelling, staring, yelled, shoved, shouted, drags, stares, handcuffed, crawled, smashes
+-- 19 {-1624.31} : dervishes, atlanteans, cronies, moravians, bourbons, zaibatsu, æsir, faroes, anabaptists, bulgars
+-- 24 {-1624.67} : dz, sl, rg, cl, ch, bb, bl, bh, sn, tr
+-- 51 {-1688.78} : waste, water, gases, gas, liquid, fuel, oxygen, seawater, wastes, sewage
+-- 191 {-2198.68} : machining, welding, milling, metalworking, plumbing, woodworking, tooling, refrigeration, polishing, lathes
+-- 5 {-2754.46} : reactants, vortices, quantitatively, perforations, flanges, umlaut, flagella, electromagnet, rectum, workpiece
+-- 70 {-2934.38} : unpleasant, incompetent, unpredictable, outdated, erratic, insecure, unattractive, unrealistic, undesirable, unsatisfactory

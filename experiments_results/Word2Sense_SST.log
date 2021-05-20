@@ -1,0 +1,98 @@
+=== CONFIG ===
+{'embeddings': 'Word2Sense', 'corpus': 'SST', 'batch_size': 64, 'beta1': 0.99, 'beta2': 0.999, 'gamma': 0.75, 'lr': 0.05987955701500745, 'patience': 5, 'scheduler': 'plateau', 'weight_decay': 0.0, 'xavier': True, 'epochs': 200}
+=== ====== ===
+Evaluation:
+- test set evaluation:
+{'test_acc': 0.6148818731307983, 'test_loss': 0.9009213447570801}
+- report (test):
+              precision    recall  f1-score   support
+
+     neutral     0.2685    0.1180    0.1639       339
+    positive     0.6506    0.7458    0.6950       834
+    negative     0.6346    0.6875    0.6600       816
+
+    accuracy                         0.6149      1989
+   macro avg     0.5179    0.5171    0.5063      1989
+weighted avg     0.5789    0.6149    0.5901      1989
+
+- random classifier (baseline):
+              precision    recall  f1-score   support
+
+     neutral     0.1458    0.1475    0.1466       339
+    positive     0.4123    0.4089    0.4106       834
+    negative     0.3871    0.3885    0.3878       816
+
+    accuracy                         0.3560      1989
+   macro avg     0.3151    0.3149    0.3150      1989
+weighted avg     0.3565    0.3560    0.3562      1989
+
+Diagnostics for labels:
+- neutral [precision = 0.2684563758389262] :
+  ++ positive predictors ++
+-- 1165 {71.53} : announcements, robb, vanessa, 198, benton, fatalities, explained, goodwin, bp, 189
+-- 1214 {66.01} : yacht, yachts, sailing, sailors, skipper, sail, sailor, fleets, boats, hobart
+-- 381 {61.47} : devon, exeter, dartmouth, abbot, plymouth, cornwall, newton, dart, torre, barton
+-- 379 {58.15} : carolina, greenville, pensacola, jacksonville, lauderdale, tampa, charleston, texas, nc, houston
+-- 1753 {55.34} : ba, dip, honours, ma, phd, graduated, bachelor, diploma, nursing, studies
+-- 321 {52.79} : opus, johann, dei, bach, sebastian, jakob, baroque, johannes, francesco, violinist
+-- 1534 {51.99} : slovakia, slovak, czech, hungary, prague, czechoslovakia, slovenia, budapest, bohemia, slovenian
+-- 1443 {51.19} : amos, ballard, rene, michelle, airmen, nickelodeon, singer-songwriter, melissa, informs, schneider
+-- 1147 {48.99} : kai, shin, tyson, ki, karate, jin, judo, abe, defeats, ken
+-- 1623 {47.47} : homeless, hostel, shelter, intentionally, shelters, rough, housing, youth, citizenship, exclusion
+  -- negative predictors --
+-- 1155 {-72.40} : ecology, archaeology, archaeological, excavations, geography, excavation, archaeologist, undertaken, undertaking, undertook
+-- 1578 {-73.15} : bc, syracuse, macedonian, bce, cyrus, alexander, greeks, persia, 480, reigned
+-- 406 {-77.80} : laptop, handheld, dell, palm, pocket, pcs, pc, desktop, tablet, portable
+-- 1452 {-79.86} : strike, strikes, hunger, miners, strikers, militant, objection, solidarity, workers, sacked
+-- 1386 {-81.29} : massage, complementary, herbal, treatments, healing, medicine, therapy, relaxation, therapeutic, therapist
+-- 223 {-83.15} : protesters, demonstrators, protests, protest, protesting, demonstrations, protested, marched, slogans, boycott
+-- 1090 {-87.00} : tai, chi, gong, minh, qi, kung, cheng, wu, mei, ho
+-- 855 {-87.38} : brooks, ph, credits, brent, tanaka, 184, mario, bremen, shea, 133
+-- 1055 {-87.64} : ceilings, attic, ceiling, floor, basement, upstairs, corridors, elevators, balcony, fireplace
+-- 835 {-112.20} : lankan, ltte, lanka, sri, colombo, tamil, nadu, tsunami, maldives, tigers
+- positive [precision = 0.6506276150627615] :
+  ++ positive predictors ++
+-- 1239 {70.83} : procurement, ppp, purchasing, contracting, contracts, sector, consultancy, logistics, utilities, sectors
+-- 669 {67.75} : liberties, morality, moral, rights, freedom, ideals, norms, ethic, fundamental, uphold
+-- 1914 {67.52} : cheshire, chester, weaver, hale, alexandra, hartford, trafford, appliance, massey, eaton
+-- 1351 {66.46} : cornwall, cornish, cove, camel, agnes, estuary, eden, beaches, constantine, cottages
+-- 307 {66.40} : wickets, batsman, bowled, overs, bowlers, wicket, first-class, batsmen, cricket, bowling
+-- 534 {64.79} : 330, glasgow, 141, buchanan, 201, paisley, 211, clyde, burrell, 204
+-- 384 {62.97} : encryption, secure, algorithm, authorization, trusted, credentials, security, algorithms, signatures, keys
+-- 2187 {62.83} : interface, functionality, user, organizer, api, allows, configuration, desktop, bundled, capabilities
+-- 141 {62.61} : wool, weaving, woven, silk, fabrics, lace, garments, cotton, cloth, sewing
+-- 15 {62.58} : lips, cheek, tongue, ears, forehead, lip, ear, throat, nose, breasts
+  -- negative predictors --
+-- 1657 {-67.37} : hanson, fuller, leroy, forrest, carlson, draper, lab, wolfgang, pasadena, kris
+-- 1162 {-67.62} : ads, advertisers, advertisements, advertising, banner, advertise, classified, banners, asa, ad
+-- 1178 {-68.13} : greet, airport, luton, parking, airports, transfers, parks, extras, parkway, hotels
+-- 1101 {-69.44} : somerset, devon, weston, cary, burnham, dorset, bath, magna, wells, avon
+-- 992 {-69.52} : niagara, creek, erie, chesapeake, watershed, hudson, potomac, fork, river, lake
+-- 1729 {-71.27} : noisy, neighbour, neighbours, interfering, troublesome, annoying, causing, loud, noises, complaining
+-- 1483 {-72.03} : gloria, butch, duchess, esther, ye, aunt, cheat, midst, sherry, fiery
+-- 392 {-72.39} : eu, european, accession, treaties, union, presidency, oecd, europe, brussels, treaty
+-- 1119 {-86.07} : bored, havoc, miserable, paranoid, confused, utterly, insane, dull, seemingly, frustrated
+-- 888 {-95.06} : salisbury, avon, bath, somerset, gloucestershire, downs, plain, georges, barrow, bristol
+- negative [precision = 0.6346153846153846] :
+  ++ positive predictors ++
+-- 1119 {99.52} : bored, havoc, miserable, paranoid, confused, utterly, insane, dull, seemingly, frustrated
+-- 392 {77.94} : eu, european, accession, treaties, union, presidency, oecd, europe, brussels, treaty
+-- 733 {66.42} : rugby, premiership, fixture, unbeaten, clash, xv, fixtures, squad, captained, fullback
+-- 428 {65.42} : dhabi, saudi, emirates, oman, bahrain, qatar, kuwait, dubai, yemen, arabian
+-- 1178 {65.05} : greet, airport, luton, parking, airports, transfers, parks, extras, parkway, hotels
+-- 798 {63.11} : lawsuit, lawsuits, alleging, sued, filed, plaintiff, violated, injunction, claiming, damages
+-- 188 {60.11} : recycling, landfill, waste, recycled, disposal, refuse, dispose, hazardous, litter, sacks
+-- 1908 {58.83} : vans, trucks, automobiles, vehicles, truck, pickup, cars, motorcycles, armoured, buses
+-- 1825 {57.39} : kappa, phi, fraternity, sigma, alpha, pi, delta, mu, omega, gamma
+-- 559 {56.84} : niche, vendors, retailers, competitors, marketplace, product, consumers, market, manufacturers, differentiate
+  -- negative predictors --
+-- 1313 {-71.19} : sunlight, violet, rays, absorb, absorbing, shade, visible, glow, radiation, ultra
+-- 1214 {-71.95} : yacht, yachts, sailing, sailors, skipper, sail, sailor, fleets, boats, hobart
+-- 1179 {-72.63} : dart, volvo, daimler, buses, thor, mercedes, chassis, norse, bus, coaches
+-- 1062 {-74.78} : 161, 275, leicester, 255, 204, 116, hussain, booth, 265, 44
+-- 948 {-75.01} : norfolk, norwich, lynn, suffolk, burnham, ipswich, kings, marshes, thorpe, 3-2
+-- 669 {-75.19} : liberties, morality, moral, rights, freedom, ideals, norms, ethic, fundamental, uphold
+-- 1629 {-77.37} : soyuz, astronaut, astronauts, spacecraft, nasa, shuttle, apollo, manned, unmanned, orbit
+-- 536 {-78.42} : tanzania, nairobi, uganda, kenya, kenyan, dar, amin, zambia, malawi, rift
+-- 498 {-78.94} : mp, chancellor, darling, gordon, lab, minister, secretary, lord, hewitt, shadow
+-- 1239 {-85.05} : procurement, ppp, purchasing, contracting, contracts, sector, consultancy, logistics, utilities, sectors

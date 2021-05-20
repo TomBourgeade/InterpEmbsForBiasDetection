@@ -1,0 +1,73 @@
+=== CONFIG ===
+{'embeddings': 'Word2Sense', 'corpus': 'IMDB', 'batch_size': 64, 'beta1': 0.99, 'beta2': 0.999, 'gamma': 0.9, 'lr': 0.03833577909513188, 'patience': 5, 'scheduler': 'plateau', 'weight_decay': 0.0, 'xavier': True, 'epochs': 200}
+=== ====== ===
+Evaluation:
+- test set evaluation:
+{'test_acc': 0.8224444389343262, 'test_loss': 0.3978358507156372}
+- report (test):
+              precision    recall  f1-score   support
+
+         neg     0.8222    0.8223    0.8223     11239
+         pos     0.8226    0.8226    0.8226     11261
+
+    accuracy                         0.8224     22500
+   macro avg     0.8224    0.8224    0.8224     22500
+weighted avg     0.8224    0.8224    0.8224     22500
+
+- random classifier (baseline):
+              precision    recall  f1-score   support
+
+         neg     0.4940    0.4933    0.4937     11239
+         pos     0.4950    0.4958    0.4954     11261
+
+    accuracy                         0.4945     22500
+   macro avg     0.4945    0.4945    0.4945     22500
+weighted avg     0.4945    0.4945    0.4945     22500
+
+Diagnostics for labels:
+- neg [precision = 0.8222419928825623] :
+  ++ positive predictors ++
+-- 1147 {511.28} : kai, shin, tyson, ki, karate, jin, judo, abe, defeats, ken
+-- 1119 {360.46} : bored, havoc, miserable, paranoid, confused, utterly, insane, dull, seemingly, frustrated
+-- 188 {358.35} : recycling, landfill, waste, recycled, disposal, refuse, dispose, hazardous, litter, sacks
+-- 2209 {290.86} : environmentally, saving, efficiency, energy, savings, save, incentives, renewable, recycling, efficient
+-- 1965 {284.73} : humiliation, terrible, endured, inflict, fate, inflicted, endure, cruel, horrible, awful
+-- 695 {269.42} : levy, spurs, prescott, hezbollah, fails, melting, puck, presently, lebanon, andrea
+-- 1934 {266.40} : floods, katrina, tsunami, disaster, hurricanes, earthquake, tornadoes, flooding, flood, hurricane
+-- 1323 {233.28} : enterprises, copyright, ltd, sized, reserved, medium, shea, powered, ea, jill
+-- 1681 {212.68} : groves, barren, fertile, forested, mountainous, lush, orchards, arid, vineyards, valleys
+-- 1878 {210.95} : gps, positioning, navigation, compass, navigator, receivers, receiver, handheld, satellite, sat
+  -- negative predictors --
+-- 839 {-197.45} : constraints, flexibility, dictated, considerations, schedules, scheduling, maximize, limitations, layout, feasible
+-- 2068 {-199.14} : economics, economists, quantitative, economist, statistics, economic, oecd, empirical, finance, comparative
+-- 778 {-201.09} : colors, 480, resolution, 256, resolutions, dots, colour, colours, image, screen
+-- 1604 {-204.09} : friction, coating, sealing, withstand, cracking, resistance, durable, penetration, moisture, surfaces
+-- 774 {-208.79} : pawn, anand, audi, 1-0, openings, f1, sicilian, fischer, variation, lopez
+-- 1779 {-211.31} : wrap, pads, pad, jacket, glove, fits, booster, pants, liner, lightweight
+-- 2142 {-214.45} : melodic, melodies, crafted, lyrical, perfectly, beautifully, haunting, reminiscent, cinematic, blend
+-- 40 {-217.48} : alzheimer, chronic, asthma, inflammatory, parkinson, inflammation, systemic, cardiovascular, stroke, diseases
+-- 1652 {-254.66} : salary, 35,000, 22,000, 18,000, 45,000, 25,000, 30,000, permanent, bonus, 40,000
+-- 2104 {-284.39} : cuisine, vegetarian, dishes, recipes, cooks, menus, culinary, restaurant, meals, restaurants
+- pos [precision = 0.8226465364120782] :
+  ++ positive predictors ++
+-- 2104 {284.48} : cuisine, vegetarian, dishes, recipes, cooks, menus, culinary, restaurant, meals, restaurants
+-- 1652 {254.69} : salary, 35,000, 22,000, 18,000, 45,000, 25,000, 30,000, permanent, bonus, 40,000
+-- 40 {217.50} : alzheimer, chronic, asthma, inflammatory, parkinson, inflammation, systemic, cardiovascular, stroke, diseases
+-- 2142 {214.49} : melodic, melodies, crafted, lyrical, perfectly, beautifully, haunting, reminiscent, cinematic, blend
+-- 1779 {211.31} : wrap, pads, pad, jacket, glove, fits, booster, pants, liner, lightweight
+-- 774 {208.79} : pawn, anand, audi, 1-0, openings, f1, sicilian, fischer, variation, lopez
+-- 1604 {204.03} : friction, coating, sealing, withstand, cracking, resistance, durable, penetration, moisture, surfaces
+-- 778 {201.06} : colors, 480, resolution, 256, resolutions, dots, colour, colours, image, screen
+-- 2068 {199.19} : economics, economists, quantitative, economist, statistics, economic, oecd, empirical, finance, comparative
+-- 839 {197.55} : constraints, flexibility, dictated, considerations, schedules, scheduling, maximize, limitations, layout, feasible
+  -- negative predictors --
+-- 1878 {-210.93} : gps, positioning, navigation, compass, navigator, receivers, receiver, handheld, satellite, sat
+-- 1681 {-212.80} : groves, barren, fertile, forested, mountainous, lush, orchards, arid, vineyards, valleys
+-- 1323 {-233.27} : enterprises, copyright, ltd, sized, reserved, medium, shea, powered, ea, jill
+-- 1934 {-266.46} : floods, katrina, tsunami, disaster, hurricanes, earthquake, tornadoes, flooding, flood, hurricane
+-- 695 {-269.42} : levy, spurs, prescott, hezbollah, fails, melting, puck, presently, lebanon, andrea
+-- 1965 {-284.76} : humiliation, terrible, endured, inflict, fate, inflicted, endure, cruel, horrible, awful
+-- 2209 {-290.88} : environmentally, saving, efficiency, energy, savings, save, incentives, renewable, recycling, efficient
+-- 188 {-358.33} : recycling, landfill, waste, recycled, disposal, refuse, dispose, hazardous, litter, sacks
+-- 1119 {-360.45} : bored, havoc, miserable, paranoid, confused, utterly, insane, dull, seemingly, frustrated
+-- 1147 {-511.20} : kai, shin, tyson, ki, karate, jin, judo, abe, defeats, ken

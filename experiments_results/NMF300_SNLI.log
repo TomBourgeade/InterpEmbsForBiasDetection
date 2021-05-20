@@ -1,0 +1,98 @@
+=== CONFIG ===
+{'embeddings': 'NMF300', 'corpus': 'SNLI', 'batch_size': 64, 'beta1': 0.99, 'beta2': 0.999, 'gamma': 0.6, 'lr': 0.09266655135142687, 'patience': 5, 'scheduler': 'plateau', 'weight_decay': 0.0, 'xavier': True, 'epochs': 200}
+=== ====== ===
+Evaluation:
+- test set evaluation:
+{'test_acc': 0.5860138535499573, 'test_loss': 0.9068913459777832}
+- report (test):
+               precision    recall  f1-score   support
+
+      neutral     0.6018    0.5225    0.5594      3219
+   entailment     0.5782    0.6894    0.6289      3368
+contradiction     0.5818    0.5416    0.5610      3237
+
+     accuracy                         0.5860      9824
+    macro avg     0.5873    0.5845    0.5831      9824
+ weighted avg     0.5871    0.5860    0.5837      9824
+
+- random classifier (baseline):
+               precision    recall  f1-score   support
+
+      neutral     0.3215    0.3190    0.3203      3219
+   entailment     0.3435    0.3453    0.3444      3368
+contradiction     0.3323    0.3330    0.3327      3237
+
+     accuracy                         0.3327      9824
+    macro avg     0.3324    0.3325    0.3324      9824
+ weighted avg     0.3326    0.3327    0.3326      9824
+
+Diagnostics for labels:
+- neutral [precision = 0.6017889087656529] :
+  ++ positive predictors ++
+-- 129 {8478.10} [second_vec : hypothesis]: oua, lkl, eurochallenge, bbl, nibali, hushovd, nbb, cancellara, eurocup, ebl
+-- 82 {8120.65} [second_vec : hypothesis]: venetians, prussians, athenians, swedes, boers, hurriedly, byzantines, austrians, mutineers, royalists
+-- 257 {7431.40} [second_vec : hypothesis]: award, awardee, honoree, prize, recognitions, awardees, awards, aia, ekushey, riba
+-- 70 {7242.38} [second_vec : hypothesis]: unpleasant, incompetent, unpredictable, outdated, erratic, insecure, unattractive, unrealistic, undesirable, unsatisfactory
+-- 151 {6320.01} [second_vec : hypothesis]: dil, pyar, tere, meri, mera, pyaar, zindagi, hai, tum, aaj
+-- 164 {5871.05} [second_vec : hypothesis]: pp, xxiv, xxv, xvii, xxii, vols, vol, xxvi, xxvii, chap
+-- 257 {5744.45} [abs_diff]: award, awardee, honoree, prize, recognitions, awardees, awards, aia, ekushey, riba
+-- 117 {5687.38} [second_vec : hypothesis]: inactivity, hibernation, deadlock, stalemate, slump, fortnight, deliberations, layoff, tumultuous, recuperation
+-- 16 {4731.21} [second_vec : hypothesis]: ahmad, mohammad, muhammad, ali, syed, shaikh, ahmed, hasan, abdul, haji
+-- 107 {4639.08} [second_vec : hypothesis]: dacres, stopford, josias, arbuthnot, mvo, popham, retd, pigot, schomberg, cadwalader
+  -- negative predictors --
+-- 37 {-3248.34} [abs_diff]: justifies, transcends, immaterial, insofar, perceives, embodiment, pertains, unchanging, transcending, presupposes
+-- 129 {-3328.93} [first_vec : premise]: oua, lkl, eurochallenge, bbl, nibali, hushovd, nbb, cancellara, eurocup, ebl
+-- 267 {-3480.99} [second_vec : hypothesis]: monogatari, mirai, aoi, yume, kaze, sakura, ova, anime, boku, natsu
+-- 178 {-3582.65} [abs_diff]: superboy, aquaman, marvel, superman, supergirl, batman, avengers, comics, superhero, catwoman
+-- 180 {-3621.92} [second_vec : hypothesis]: shropshire, wiltshire, oxfordshire, gloucestershire, lincolnshire, herefordshire, cambridgeshire, staffordshire, dorset, cumbria
+-- 19 {-3777.51} [first_vec : premise]: dervishes, atlanteans, cronies, moravians, bourbons, zaibatsu, æsir, faroes, anabaptists, bulgars
+-- 196 {-4204.20} [second_vec : hypothesis]: yuliya, yelena, yekaterina, tatyana, iryna, nataliya, olena, anastasiya, natalya, oksana
+-- 267 {-4504.89} [abs_diff]: monogatari, mirai, aoi, yume, kaze, sakura, ova, anime, boku, natsu
+-- 62 {-4652.98} [abs_diff]: anja, monika, unplaced, alina, daniela, evicted, karina, nonominations, veronika, aleksandra
+-- 37 {-5312.63} [second_vec : hypothesis]: justifies, transcends, immaterial, insofar, perceives, embodiment, pertains, unchanging, transcending, presupposes
+- entailment [precision = 0.578187250996016] :
+  ++ positive predictors ++
+-- 170 {6699.95} [second_vec : hypothesis]: mtdna, phylogenetic, haplogroup, speciation, morphological, neanderthal, phylogeny, genetic, fossils, lineages
+-- 37 {6003.89} [second_vec : hypothesis]: justifies, transcends, immaterial, insofar, perceives, embodiment, pertains, unchanging, transcending, presupposes
+-- 19 {5830.69} [first_vec : premise]: dervishes, atlanteans, cronies, moravians, bourbons, zaibatsu, æsir, faroes, anabaptists, bulgars
+-- 175 {5727.95} [second_vec : hypothesis]: nigerians, singaporeans, brazilians, filipinos, congregants, indonesians, kenyans, haitians, britons, commoners
+-- 193 {5019.47} [first_vec : premise]: mikulski, vitter, udall, congresswoman, landrieu, dingell, carnahan, boehner, inouye, markey
+-- 62 {4228.40} [first_vec : premise]: anja, monika, unplaced, alina, daniela, evicted, karina, nonominations, veronika, aleksandra
+-- 181 {4228.13} [second_vec : hypothesis]: stanzas, chapters, paragraphs, folios, bedrooms, volumes, centimetres, prefectures, compartments, parishes
+-- 170 {4072.97} [abs_diff]: mtdna, phylogenetic, haplogroup, speciation, morphological, neanderthal, phylogeny, genetic, fossils, lineages
+-- 8 {3990.10} [first_vec : premise]: katt, cates, sizemore, gena, conlon, thorburn, understudy, newscaster, halverson, phill
+-- 104 {3918.95} [first_vec : premise]: rumpelstiltskin, snowman, bluebeard, ghostly, rapunzel, faerie, ghoul, sinbad, hansel, fairytale
+  -- negative predictors --
+-- 267 {-6287.80} [abs_diff]: monogatari, mirai, aoi, yume, kaze, sakura, ova, anime, boku, natsu
+-- 12 {-6484.50} [abs_diff]: burnin, dreamin, rmx, blowin, movin, tonite, groovin, heartbreaker, feelin, dancin
+-- 117 {-7191.98} [second_vec : hypothesis]: inactivity, hibernation, deadlock, stalemate, slump, fortnight, deliberations, layoff, tumultuous, recuperation
+-- 179 {-7255.22} [second_vec : hypothesis]: amor, que, más, una, mujer, todo, vida, tú, corazón, qué
+-- 193 {-7283.07} [second_vec : hypothesis]: mikulski, vitter, udall, congresswoman, landrieu, dingell, carnahan, boehner, inouye, markey
+-- 193 {-8334.53} [abs_diff]: mikulski, vitter, udall, congresswoman, landrieu, dingell, carnahan, boehner, inouye, markey
+-- 164 {-8908.23} [abs_diff]: pp, xxiv, xxv, xvii, xxii, vols, vol, xxvi, xxvii, chap
+-- 164 {-9467.19} [second_vec : hypothesis]: pp, xxiv, xxv, xvii, xxii, vols, vol, xxvi, xxvii, chap
+-- 12 {-9864.71} [second_vec : hypothesis]: burnin, dreamin, rmx, blowin, movin, tonite, groovin, heartbreaker, feelin, dancin
+-- 62 {-10517.70} [abs_diff]: anja, monika, unplaced, alina, daniela, evicted, karina, nonominations, veronika, aleksandra
+- contradiction [precision = 0.5818121473614338] :
+  ++ positive predictors ++
+-- 62 {14191.91} [abs_diff]: anja, monika, unplaced, alina, daniela, evicted, karina, nonominations, veronika, aleksandra
+-- 267 {9840.63} [abs_diff]: monogatari, mirai, aoi, yume, kaze, sakura, ova, anime, boku, natsu
+-- 193 {8984.83} [abs_diff]: mikulski, vitter, udall, congresswoman, landrieu, dingell, carnahan, boehner, inouye, markey
+-- 179 {7612.65} [second_vec : hypothesis]: amor, que, más, una, mujer, todo, vida, tú, corazón, qué
+-- 164 {7561.44} [abs_diff]: pp, xxiv, xxv, xvii, xxii, vols, vol, xxvi, xxvii, chap
+-- 267 {7503.08} [second_vec : hypothesis]: monogatari, mirai, aoi, yume, kaze, sakura, ova, anime, boku, natsu
+-- 276 {7263.14} [second_vec : hypothesis]: gheorghe, vasile, ioan, mircea, alexandru, nicolae, mihai, cluj, radu, iancu
+-- 12 {7197.62} [second_vec : hypothesis]: burnin, dreamin, rmx, blowin, movin, tonite, groovin, heartbreaker, feelin, dancin
+-- 178 {6446.22} [abs_diff]: superboy, aquaman, marvel, superman, supergirl, batman, avengers, comics, superhero, catwoman
+-- 24 {6263.13} [second_vec : hypothesis]: dz, sl, rg, cl, ch, bb, bl, bh, sn, tr
+  -- negative predictors --
+-- 151 {-4551.84} [second_vec : hypothesis]: dil, pyar, tere, meri, mera, pyaar, zindagi, hai, tum, aaj
+-- 298 {-4697.17} [second_vec : hypothesis]: kfar, beit, bnei, kiryat, hapoel, beitar, ashkelon, kafr, kibbutz, ramat
+-- 82 {-5058.14} [second_vec : hypothesis]: venetians, prussians, athenians, swedes, boers, hurriedly, byzantines, austrians, mutineers, royalists
+-- 170 {-5126.71} [abs_diff]: mtdna, phylogenetic, haplogroup, speciation, morphological, neanderthal, phylogeny, genetic, fossils, lineages
+-- 193 {-5831.82} [first_vec : premise]: mikulski, vitter, udall, congresswoman, landrieu, dingell, carnahan, boehner, inouye, markey
+-- 129 {-7366.02} [second_vec : hypothesis]: oua, lkl, eurochallenge, bbl, nibali, hushovd, nbb, cancellara, eurocup, ebl
+-- 170 {-7555.00} [second_vec : hypothesis]: mtdna, phylogenetic, haplogroup, speciation, morphological, neanderthal, phylogeny, genetic, fossils, lineages
+-- 257 {-7642.23} [second_vec : hypothesis]: award, awardee, honoree, prize, recognitions, awardees, awards, aia, ekushey, riba
+-- 131 {-8112.68} [second_vec : hypothesis]: shakira, lauper, mcentire, yearwood, parton, estefan, streisand, utada, rimes, midler
+-- 212 {-8225.24} [second_vec : hypothesis]: embassies, navies, legation, expatriates, expansionism, attaché, benelux, invades, emigrants, emigrating

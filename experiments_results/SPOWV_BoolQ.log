@@ -1,0 +1,73 @@
+=== CONFIG ===
+{'embeddings': 'SPOWV', 'corpus': 'BoolQ', 'batch_size': 64, 'beta1': 0.99, 'beta2': 0.999, 'gamma': 0.6, 'lr': 0.01049903574532599, 'patience': 5, 'scheduler': 'plateau', 'weight_decay': 0.0, 'xavier': True, 'epochs': 200}
+=== ====== ===
+Evaluation:
+- test set evaluation:
+{'test_acc': 0.6693849563598633, 'test_loss': 0.6231405735015869}
+- report (test):
+              precision    recall  f1-score   support
+
+       False     0.6187    0.3009    0.4049      1100
+        True     0.6806    0.8893    0.7711      1843
+
+    accuracy                         0.6694      2943
+   macro avg     0.6497    0.5951    0.5880      2943
+weighted avg     0.6575    0.6694    0.6342      2943
+
+- random classifier (baseline):
+              precision    recall  f1-score   support
+
+       False     0.3633    0.3600    0.3616      1100
+        True     0.6201    0.6234    0.6218      1843
+
+    accuracy                         0.5250      2943
+   macro avg     0.4917    0.4917    0.4917      2943
+weighted avg     0.5241    0.5250    0.5245      2943
+
+Diagnostics for labels:
+- False [precision = 0.6186915887850467] :
+  ++ positive predictors ++
+-- 57 {8.87} [elem_wise_prod]: hormones, fatty, menus, beef, regulating, proteins, genetically, regulate, protein, milk
+-- 280 {7.38} [second_vec : passage]: coins, contents, ultra, bin, quantities, emancipation, differences, mls, manuscript, amtrak
+-- 108 {7.03} [elem_wise_prod]: hms, destroyer, torpedo, sunken, bulgarian, acids, boats, wreck, borneo, hindus
+-- 622 {7.01} [second_vec : passage]: compass, cruelty, condemnation, neglect, cosmic, determination, enduring, necessity, courage, words
+-- 543 {6.81} [elem_wise_prod]: garment, skirt, neck, banana, bark, lean, muscles, knife, pants, fuller
+-- 138 {6.65} [first_vec : question]: pp, pulitzer, collections, doubleday, cigar, abdullah, mitsubishi, candle, collection, plants
+-- 938 {6.59} [elem_wise_prod]: sar, der, sandra, generator, sunken, bribe, van, marco, belgium, orient
+-- 376 {6.38} [second_vec : passage]: practically, disappears, disgrace, nobody, schooling, disappear, tomorrow, whoever, quit, heaven
+-- 700 {6.32} [second_vec : passage]: hindu, drunk, adjusted, brakes, 4.0, petrol, gallon, labour, taxis, alcoholic
+-- 138 {6.25} [elem_wise_prod]: pp, pulitzer, collections, doubleday, cigar, abdullah, mitsubishi, candle, collection, plants
+  -- negative predictors --
+-- 456 {-7.10} [elem_wise_prod]: heroes, superhero, flesh, mortal, repertoire, acoustic, incredible, dragons, wreck, ashes
+-- 214 {-7.26} [elem_wise_prod]: adverse, rapid, zimbabwe, experiences, learnt, symptoms, aerial, bubbles, bubble, tangible
+-- 295 {-7.32} [elem_wise_prod]: hydroelectric, maharashtra, pak, nuclear, mw, nam, reactors, kw, ling, rao
+-- 696 {-7.34} [first_vec : question]: tasks, policing, fk, logistical, reconstruction, overseeing, systems, ensuring, involve, shield
+-- 488 {-7.40} [elem_wise_prod]: 4-1, 3-1, 3-0, 2-1, tian, 3-2, 2-0, 1-0, 4-3, expeditionary
+-- 156 {-7.70} [elem_wise_prod]: dion, enriched, uranium, radioactive, arenas, landis, coupe, rods, snails, ions
+-- 686 {-7.95} [elem_wise_prod]: attacks, suicide, israel, bombings, attack, gujarat, deadly, reconnaissance, radar, targets
+-- 173 {-8.26} [elem_wise_prod]: tong, lumpur, myanmar, singaporean, kuala, chung, penang, lim, ho, brunei
+-- 426 {-8.78} [elem_wise_prod]: staffed, charity, clinics, diabetes, locally, governmental, clinic, networking, cabinets, grassroots
+-- 758 {-9.94} [elem_wise_prod]: cyclone, katrina, hurricane, disaster, ike, flooded, shear, dolly, marshes, storms
+- True [precision = 0.6806478405315615] :
+  ++ positive predictors ++
+-- 758 {9.95} [elem_wise_prod]: cyclone, katrina, hurricane, disaster, ike, flooded, shear, dolly, marshes, storms
+-- 426 {8.82} [elem_wise_prod]: staffed, charity, clinics, diabetes, locally, governmental, clinic, networking, cabinets, grassroots
+-- 173 {8.25} [elem_wise_prod]: tong, lumpur, myanmar, singaporean, kuala, chung, penang, lim, ho, brunei
+-- 686 {7.95} [elem_wise_prod]: attacks, suicide, israel, bombings, attack, gujarat, deadly, reconnaissance, radar, targets
+-- 156 {7.71} [elem_wise_prod]: dion, enriched, uranium, radioactive, arenas, landis, coupe, rods, snails, ions
+-- 488 {7.42} [elem_wise_prod]: 4-1, 3-1, 3-0, 2-1, tian, 3-2, 2-0, 1-0, 4-3, expeditionary
+-- 696 {7.34} [first_vec : question]: tasks, policing, fk, logistical, reconstruction, overseeing, systems, ensuring, involve, shield
+-- 295 {7.27} [elem_wise_prod]: hydroelectric, maharashtra, pak, nuclear, mw, nam, reactors, kw, ling, rao
+-- 214 {7.18} [elem_wise_prod]: adverse, rapid, zimbabwe, experiences, learnt, symptoms, aerial, bubbles, bubble, tangible
+-- 456 {7.09} [elem_wise_prod]: heroes, superhero, flesh, mortal, repertoire, acoustic, incredible, dragons, wreck, ashes
+  -- negative predictors --
+-- 138 {-6.24} [elem_wise_prod]: pp, pulitzer, collections, doubleday, cigar, abdullah, mitsubishi, candle, collection, plants
+-- 700 {-6.29} [second_vec : passage]: hindu, drunk, adjusted, brakes, 4.0, petrol, gallon, labour, taxis, alcoholic
+-- 376 {-6.41} [second_vec : passage]: practically, disappears, disgrace, nobody, schooling, disappear, tomorrow, whoever, quit, heaven
+-- 938 {-6.54} [elem_wise_prod]: sar, der, sandra, generator, sunken, bribe, van, marco, belgium, orient
+-- 138 {-6.66} [first_vec : question]: pp, pulitzer, collections, doubleday, cigar, abdullah, mitsubishi, candle, collection, plants
+-- 543 {-6.75} [elem_wise_prod]: garment, skirt, neck, banana, bark, lean, muscles, knife, pants, fuller
+-- 622 {-7.01} [second_vec : passage]: compass, cruelty, condemnation, neglect, cosmic, determination, enduring, necessity, courage, words
+-- 108 {-7.07} [elem_wise_prod]: hms, destroyer, torpedo, sunken, bulgarian, acids, boats, wreck, borneo, hindus
+-- 280 {-7.36} [second_vec : passage]: coins, contents, ultra, bin, quantities, emancipation, differences, mls, manuscript, amtrak
+-- 57 {-8.86} [elem_wise_prod]: hormones, fatty, menus, beef, regulating, proteins, genetically, regulate, protein, milk

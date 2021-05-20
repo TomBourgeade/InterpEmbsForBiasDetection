@@ -1,0 +1,73 @@
+=== CONFIG ===
+{'embeddings': 'SPINE', 'corpus': 'IMDB', 'batch_size': 64, 'beta1': 0.99, 'beta2': 0.999, 'gamma': 0.6, 'lr': 0.012874504214747588, 'patience': 5, 'scheduler': 'plateau', 'weight_decay': 0.0, 'xavier': True, 'epochs': 200}
+=== ====== ===
+Evaluation:
+- test set evaluation:
+{'test_acc': 0.8138222098350525, 'test_loss': 0.41592133045196533}
+- report (test):
+              precision    recall  f1-score   support
+
+         neg     0.8121    0.8161    0.8141     11239
+         pos     0.8155    0.8116    0.8135     11261
+
+    accuracy                         0.8138     22500
+   macro avg     0.8138    0.8138    0.8138     22500
+weighted avg     0.8138    0.8138    0.8138     22500
+
+- random classifier (baseline):
+              precision    recall  f1-score   support
+
+         neg     0.5054    0.5079    0.5066     11239
+         pos     0.5064    0.5039    0.5051     11261
+
+    accuracy                         0.5059     22500
+   macro avg     0.5059    0.5059    0.5059     22500
+weighted avg     0.5059    0.5059    0.5059     22500
+
+Diagnostics for labels:
+- neg [precision = 0.8121126261731894] :
+  ++ positive predictors ++
+-- 585 {59.34} : recession, turmoil, crisis, brink, collapse, scandals, bankruptcy, chaos, debt, financial
+-- 735 {52.17} : emissions, pollution, dioxide, toxic, gases, dust, ash, carbon, waste, garbage
+-- 690 {42.18} : hampered, delayed, delays, hindered, marred, inadequate, disrupted, lack, faulty, frustrated
+-- 479 {38.60} : kappa, phi, fraternity, honorary, sigma, humanities, library, alpha, yale, president
+-- 564 {35.47} : opportunities, entrepreneurs, exploit, exploiting, exploited, wealthy, skilled, lure, lured, wealth
+-- 880 {35.47} : launched, campaigns, unsuccessful, launches, campaign, raids, blitz, spearheaded, coordinated, futile
+-- 245 {35.42} : leaflets, proclamation, ericsson, lil, manifesto, decrees, announcements, emancipation, envelope, nokia
+-- 156 {34.84} : flowed, flows, efficiently, pour, liquid, consume, lava, flowing, evenly, accumulate
+-- 285 {34.14} : utter, utterly, ignorance, sheer, greed, disregard, reckless, exhaustion, insanity, absolutely
+-- 521 {33.09} : inflicted, inflict, sorrow, hardships, hardship, painful, embarrassment, apologize, regrets, remorse
+  -- negative predictors --
+-- 155 {-26.96} : loans, mortgage, lending, debts, debt, credit, repay, creditors, banks, freddie
+-- 58 {-27.06} : picnic, hiking, accommodations, meals, camping, dining, enjoy, lodging, recreational, trips
+-- 981 {-27.97} : smiles, applause, smile, greeted, smiling, laughter, tears, laughed, laughing, enthusiastically
+-- 20 {-28.70} : dreams, fulfilled, achieving, fulfill, achieve, dream, goals, fulfilling, attain, ambition
+-- 228 {-29.45} : federico, danube, trenton, sicilian, squares, sv, camden, silk, gloucester, pizza
+-- 51 {-30.51} : blockade, repression, imposed, sanctions, oppression, dissent, restrictions, demonstrations, protests, authoritarian
+-- 860 {-31.12} : landfall, hurricane, tropical, typhoon, winds, mph, km/h, cyclone, gustav, ike
+-- 552 {-31.61} : honored, commemorate, achievements, achievement, honoring, award, honoured, awards, honor, commemorated
+-- 728 {-33.26} : hide, conceal, concealed, hid, hidden, hiding, uncover, disguise, hides, identities
+-- 703 {-33.77} : voyage, expedition, explorers, expeditions, explorer, journey, antarctic, exploration, adventures, everest
+- pos [precision = 0.8155452436194895] :
+  ++ positive predictors ++
+-- 703 {33.74} : voyage, expedition, explorers, expeditions, explorer, journey, antarctic, exploration, adventures, everest
+-- 728 {33.31} : hide, conceal, concealed, hid, hidden, hiding, uncover, disguise, hides, identities
+-- 552 {31.62} : honored, commemorate, achievements, achievement, honoring, award, honoured, awards, honor, commemorated
+-- 860 {31.11} : landfall, hurricane, tropical, typhoon, winds, mph, km/h, cyclone, gustav, ike
+-- 51 {30.46} : blockade, repression, imposed, sanctions, oppression, dissent, restrictions, demonstrations, protests, authoritarian
+-- 228 {29.44} : federico, danube, trenton, sicilian, squares, sv, camden, silk, gloucester, pizza
+-- 20 {28.72} : dreams, fulfilled, achieving, fulfill, achieve, dream, goals, fulfilling, attain, ambition
+-- 981 {27.93} : smiles, applause, smile, greeted, smiling, laughter, tears, laughed, laughing, enthusiastically
+-- 58 {27.02} : picnic, hiking, accommodations, meals, camping, dining, enjoy, lodging, recreational, trips
+-- 155 {26.91} : loans, mortgage, lending, debts, debt, credit, repay, creditors, banks, freddie
+  -- negative predictors --
+-- 521 {-33.03} : inflicted, inflict, sorrow, hardships, hardship, painful, embarrassment, apologize, regrets, remorse
+-- 285 {-34.17} : utter, utterly, ignorance, sheer, greed, disregard, reckless, exhaustion, insanity, absolutely
+-- 156 {-34.91} : flowed, flows, efficiently, pour, liquid, consume, lava, flowing, evenly, accumulate
+-- 245 {-35.34} : leaflets, proclamation, ericsson, lil, manifesto, decrees, announcements, emancipation, envelope, nokia
+-- 564 {-35.42} : opportunities, entrepreneurs, exploit, exploiting, exploited, wealthy, skilled, lure, lured, wealth
+-- 880 {-35.44} : launched, campaigns, unsuccessful, launches, campaign, raids, blitz, spearheaded, coordinated, futile
+-- 479 {-38.53} : kappa, phi, fraternity, honorary, sigma, humanities, library, alpha, yale, president
+-- 690 {-42.07} : hampered, delayed, delays, hindered, marred, inadequate, disrupted, lack, faulty, frustrated
+-- 735 {-52.11} : emissions, pollution, dioxide, toxic, gases, dust, ash, carbon, waste, garbage
+-- 585 {-59.44} : recession, turmoil, crisis, brink, collapse, scandals, bankruptcy, chaos, debt, financial

@@ -1,0 +1,98 @@
+=== CONFIG ===
+{'embeddings': 'Word2Sense', 'corpus': 'SNLI', 'batch_size': 256, 'beta1': 0.99, 'beta2': 0.999, 'gamma': 0.6, 'lr': 0.04661425989848571, 'patience': 5, 'scheduler': 'plateau', 'weight_decay': 0.0, 'xavier': True, 'epochs': 200}
+=== ====== ===
+Evaluation:
+- test set evaluation:
+{'test_acc': 0.6558428406715393, 'test_loss': 0.8078685998916626}
+- report (test):
+               precision    recall  f1-score   support
+
+      neutral     0.6668    0.5843    0.6228      3219
+   entailment     0.6317    0.7619    0.6907      3368
+contradiction     0.6787    0.6166    0.6462      3237
+
+     accuracy                         0.6558      9824
+    macro avg     0.6591    0.6543    0.6532      9824
+ weighted avg     0.6587    0.6558    0.6538      9824
+
+- random classifier (baseline):
+               precision    recall  f1-score   support
+
+      neutral     0.3273    0.3374    0.3323      3219
+   entailment     0.3436    0.3441    0.3439      3368
+contradiction     0.3361    0.3253    0.3306      3237
+
+     accuracy                         0.3357      9824
+    macro avg     0.3357    0.3356    0.3356      9824
+ weighted avg     0.3358    0.3357    0.3357      9824
+
+Diagnostics for labels:
+- neutral [precision = 0.6667848280751506] :
+  ++ positive predictors ++
+-- 2036 {204.45} [elem_wise_prod]: walt, disney, cartoon, cartoons, disneyland, mickey, nickelodeon, warner, animation, hanna
+-- 1941 {199.66} [elem_wise_prod]: knife, knives, blade, spear, sword, swords, stabbing, blades, axe, stab
+-- 2047 {182.57} [second_vec : hypothesis]: disciples, cried, ton, brethren, mocked, 37, 34, elders, 36, geo
+-- 1313 {175.29} [elem_wise_prod]: sunlight, violet, rays, absorb, absorbing, shade, visible, glow, radiation, ultra
+-- 412 {160.14} [elem_wise_prod]: greeted, smiling, sitting, waited, walked, wondering, watching, crowd, applause, laughing
+-- 1924 {159.14} [abs_diff]: hemingway, greer, stein, conrad, ernest, biographer, joyce, novelist, eliot, vance
+-- 1622 {151.01} [elem_wise_prod]: sami, bushes, fence, walked, glen, stella, watched, resting, doug, hiding
+-- 1811 {140.92} [second_vec : hypothesis]: burnt, bo, hangar, raw, tariff, regan, commits, palm, violet, relaxation
+-- 1555 {139.72} [elem_wise_prod]: elephants, leopard, lions, buffalo, lion, elephant, tigers, tiger, panther, herds
+-- 2131 {137.84} [elem_wise_prod]: curry, associates, responding, stephen, cooks, armstrong, jean, demonstrations, experiences, thank
+  -- negative predictors --
+-- 1300 {-548.60} [elem_wise_prod]: ecclesiastical, decrees, privileges, secular, monarchy, dioceses, nobility, decree, feudal, clerical
+-- 459 {-553.61} [elem_wise_prod]: popular, become, most, becoming, prevalent, increasingly, enormously, became, hugely, influential
+-- 501 {-560.85} [elem_wise_prod]: kilometres, kilometers, bordering, southwest, northeast, border, northwest, eastern, peninsula, southern
+-- 1010 {-570.37} [elem_wise_prod]: 1980s, 1970s, 2000s, 1940s, 1990s, 1950s, 1960s, mid-1980s, late, 1930s
+-- 2037 {-584.81} [elem_wise_prod]: ditch, mound, edge, hillside, hill, wooded, quarry, spur, stands, overlooking
+-- 547 {-603.51} [elem_wise_prod]: 1880s, 1870s, 1890s, 1860s, 1800s, 1850s, settlers, railroads, 1920s, settled
+-- 1506 {-615.57} [elem_wise_prod]: wikipedia, encyclopedia, article, based, french, 1911, edits, articles, stanford, contributors
+-- 675 {-642.55} [elem_wise_prod]: varies, depends, vary, depend, extent, dependent, considerably, enormously, greatly, differ
+-- 1117 {-642.93} [elem_wise_prod]: consultation, recommends, guidance, draft, licensing, consulted, agency, revised, advisory, proposes
+-- 1384 {-653.38} [elem_wise_prod]: depart, embark, culminating, departure, begins, arrive, before, journey, earnest, embarked
+- entailment [precision = 0.6317085179714427] :
+  ++ positive predictors ++
+-- 766 {866.85} [elem_wise_prod]: united, states, kingdom, nations, canada, ratified, rico, emirates, japan, america
+-- 1010 {846.80} [elem_wise_prod]: 1980s, 1970s, 2000s, 1940s, 1990s, 1950s, 1960s, mid-1980s, late, 1930s
+-- 547 {781.18} [elem_wise_prod]: 1880s, 1870s, 1890s, 1860s, 1800s, 1850s, settlers, railroads, 1920s, settled
+-- 2086 {778.31} [elem_wise_prod]: scandals, scandal, turmoil, crisis, provoked, wake, controversies, downfall, collapse, ensuing
+-- 675 {771.66} [elem_wise_prod]: varies, depends, vary, depend, extent, dependent, considerably, enormously, greatly, differ
+-- 2037 {752.08} [elem_wise_prod]: ditch, mound, edge, hillside, hill, wooded, quarry, spur, stands, overlooking
+-- 1627 {750.15} [elem_wise_prod]: extends, latitude, heading, hemisphere, celestial, longitude, roughly, greenwich, horizon, aligned
+-- 1300 {746.75} [elem_wise_prod]: ecclesiastical, decrees, privileges, secular, monarchy, dioceses, nobility, decree, feudal, clerical
+-- 90 {746.47} [elem_wise_prod]: longest, arguably, oldest, ever, biggest, largest, finest, strongest, one, most
+-- 459 {728.57} [elem_wise_prod]: popular, become, most, becoming, prevalent, increasingly, enormously, became, hugely, influential
+  -- negative predictors --
+-- 1397 {-176.16} [abs_diff]: tyrone, ulster, belfast, ireland, northern, troubles, wards, co, malone, ni
+-- 1513 {-177.83} [second_vec : hypothesis]: admissions, tutor, admission, chester, undergraduate, postgraduate, horace, recruitment, schwartz, widening
+-- 699 {-180.86} [second_vec : hypothesis]: blackpool, preston, lancashire, relevance, extract, wise, directorate, lancaster, 1964, pleasure
+-- 1354 {-181.43} [abs_diff]: antibodies, immune, affinity, complement, vaccines, bind, viral, receptor, proteins, vaccine
+-- 1094 {-186.32} [elem_wise_prod]: battles, downloads, newsletter, launches, auschwitz, publishing, appoints, libel, speaking, far
+-- 2011 {-201.72} [second_vec : hypothesis]: scarborough, coles, updated, deborah, nicholas, bulletin, appoints, replied, last, posted
+-- 174 {-208.63} [abs_diff]: actress, simone, cheryl, actresses, eva, nina, jill, gina, erin, ingrid
+-- 2047 {-248.11} [second_vec : hypothesis]: disciples, cried, ton, brethren, mocked, 37, 34, elders, 36, geo
+-- 283 {-272.13} [abs_diff]: pharmaceutical, lilly, eli, roche, marketed, vaccines, drug, collaborations, discovery, milestone
+-- 431 {-328.12} [second_vec : hypothesis]: 3.3, 0.2, 3.2, 3.4, 3.0, 3.7, 2.7, 1.9, 3.6, 2.3
+- contradiction [precision = 0.6786807208432506] :
+  ++ positive predictors ++
+-- 1844 {288.57} [elem_wise_prod]: cyclists, paths, cycling, cycle, trail, pedestrians, lanes, walking, path, walks
+-- 763 {272.48} [elem_wise_prod]: paternal, grandmother, grandparents, heir, grandchildren, eldest, aunt, uncle, elder, stepfather
+-- 447 {257.71} [elem_wise_prod]: chewing, gum, cigarette, lighter, cigar, cigarettes, packets, sticks, bubble, butt
+-- 283 {230.78} [abs_diff]: pharmaceutical, lilly, eli, roche, marketed, vaccines, drug, collaborations, discovery, milestone
+-- 431 {228.20} [second_vec : hypothesis]: 3.3, 0.2, 3.2, 3.4, 3.0, 3.7, 2.7, 1.9, 3.6, 2.3
+-- 180 {228.11} [elem_wise_prod]: playwright, novelist, writer, songwriter, educator, poet, composer, critic, prolific, journalist
+-- 1397 {227.56} [abs_diff]: tyrone, ulster, belfast, ireland, northern, troubles, wards, co, malone, ni
+-- 651 {225.92} [elem_wise_prod]: brake, brakes, gears, clutch, braking, gear, torque, wheel, steering, lever
+-- 562 {223.48} [elem_wise_prod]: norton, geo, scarborough, aged, farmer, weaver, hannah, wife, eldest, daughter
+-- 174 {215.07} [abs_diff]: actress, simone, cheryl, actresses, eva, nina, jill, gina, erin, ingrid
+  -- negative predictors --
+-- 926 {-378.38} [elem_wise_prod]: door, doors, locked, locking, opens, shut, closes, lock, sliding, gates
+-- 1352 {-386.05} [elem_wise_prod]: scouts, scout, scouting, cub, beaver, troop, cubs, guiding, badge, badges
+-- 1481 {-396.62} [elem_wise_prod]: commune, southwestern, northeastern, northwestern, france, lorraine, southeastern, nord, department, normandy
+-- 1622 {-399.95} [elem_wise_prod]: sami, bushes, fence, walked, glen, stella, watched, resting, doug, hiding
+-- 2050 {-422.97} [elem_wise_prod]: boxes, belongings, packaged, packed, sealed, wrapped, cardboard, bag, parcel, box
+-- 461 {-434.83} [elem_wise_prod]: overlooked, considerable, importance, been, highlighted, evidenced, demonstrated, significant, already, clearly
+-- 412 {-437.60} [elem_wise_prod]: greeted, smiling, sitting, waited, walked, wondering, watching, crowd, applause, laughing
+-- 1555 {-449.52} [elem_wise_prod]: elephants, leopard, lions, buffalo, lion, elephant, tigers, tiger, panther, herds
+-- 1309 {-478.04} [elem_wise_prod]: dirty, smell, mess, soaked, clothes, ugly, mud, muddy, torn, ripped
+-- 842 {-628.16} [elem_wise_prod]: backwards, forwards, pushing, pushes, pushed, push, backward, forward, lean, sideways

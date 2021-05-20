@@ -1,0 +1,73 @@
+=== CONFIG ===
+{'embeddings': 'NNSE', 'corpus': 'IMDB', 'batch_size': 64, 'beta1': 0.99, 'beta2': 0.999, 'gamma': 0.9, 'lr': 0.09512531287461251, 'patience': 5, 'scheduler': 'plateau', 'weight_decay': 0.0, 'xavier': True, 'epochs': 200}
+=== ====== ===
+Evaluation:
+- test set evaluation:
+{'test_acc': 0.7878222465515137, 'test_loss': 0.4612959921360016}
+- report (test):
+              precision    recall  f1-score   support
+
+         neg     0.7923    0.7795    0.7859     11239
+         pos     0.7834    0.7961    0.7897     11261
+
+    accuracy                         0.7878     22500
+   macro avg     0.7879    0.7878    0.7878     22500
+weighted avg     0.7879    0.7878    0.7878     22500
+
+- random classifier (baseline):
+              precision    recall  f1-score   support
+
+         neg     0.5022    0.5053    0.5037     11239
+         pos     0.5032    0.5001    0.5017     11261
+
+    accuracy                         0.5027     22500
+   macro avg     0.5027    0.5027    0.5027     22500
+weighted avg     0.5027    0.5027    0.5027     22500
+
+Diagnostics for labels:
+- neg [precision = 0.7923487383557927] :
+  ++ positive predictors ++
+-- 217 {128.08} : debris, trash, garbage, lint, rubbish, sludge, dust, dirt, manure, ashes
+-- 94 {91.35} : dumb, stupid, selfish, insane, foolish, heartless, ignorant, idiotic, childish, arrogant
+-- 113 {89.39} : tripling, doubling, allocating, allocate, exceed, subtracting, doubled, subtract, tripled, exceeded
+-- 134 {81.35} : separately, individually, internally, jointly, independently, sequentially, concurrently, incorrectly, duly, intraperitoneally
+-- 37 {79.26} : poorest, war-torn, wealthiest, agrarian, affluent, impoverished, far-flung, post-industrial, northernmost, industrialized
+-- 23 {78.32} : metastases, tumors, carcinomas, tumours, biopsies, hyperplasia, lesions, carcinoma, carcinogenesis, adenomas
+-- 71 {73.94} : red-brick, stately, century-old, three-story, white-washed, towering, domed, well-preserved, free-standing, gigantic
+-- 261 {69.64} : nominal, cumulative, ever-increasing, exorbitant, hefty, allowable, third-quarter, annualized, second-quarter, appreciable
+-- 251 {68.59} : low-interest, unsecured, interest-free, bxd, refinancing, payday, credit-card, deferred, amortization, equity
+-- 291 {67.12} : curved, retractable, cylindrical, vertical, horizontal, circular, rectangular, outer, diagonal, right-hand
+  -- negative predictors --
+-- 229 {-70.38} : markedly, dramatically, drastically, substantially, appreciably, immeasurably, radically, tenfold, vastly, exponentially
+-- 41 {-72.08} : witty, insightful, provocative, entertaining, imaginative, humorous, engaging, inventive, clever, irreverent
+-- 126 {-73.54} : worshipped, glorified, praised, obeyed, admired, worshiped, glorify, revered, bless, honored
+-- 130 {-78.60} : elegantly, attractively, beautifully, brilliantly, exquisitely, delicately, artfully, tastefully, elaborately, superbly
+-- 293 {-86.51} : emphysema, epilepsy, osteoporosis, glaucoma, lupus, cataracts, anemia, colitis, mellitus, diabetes
+-- 284 {-91.59} : epidemiological, histological, electrophysiological, cytological, histopathological, cytogenetic, ultrastructural, serological, histologic, anthropometric
+-- 172 {-97.34} : oxidase, decarboxylase, phosphatases, reductase, antagonists, cyclase, inhibition, synthase, biosynthesis, receptors
+-- 97 {-97.64} : dignified, imperious, impeccable, graceful, thoughtless, uncompromising, masterly, stately, inimitable, methodical
+-- 211 {-106.72} : formal, voluntary, cold, simultaneous, tacit, false-positive, overcast, windy, rainy, subjective
+-- 192 {-108.86} : utmost, sheer, immense, tremendous, newfound, unparalleled, considerable, incredible, extraordinary, immeasurable
+- pos [precision = 0.7834483963995456] :
+  ++ positive predictors ++
+-- 192 {108.96} : utmost, sheer, immense, tremendous, newfound, unparalleled, considerable, incredible, extraordinary, immeasurable
+-- 211 {106.65} : formal, voluntary, cold, simultaneous, tacit, false-positive, overcast, windy, rainy, subjective
+-- 97 {97.60} : dignified, imperious, impeccable, graceful, thoughtless, uncompromising, masterly, stately, inimitable, methodical
+-- 172 {97.47} : oxidase, decarboxylase, phosphatases, reductase, antagonists, cyclase, inhibition, synthase, biosynthesis, receptors
+-- 284 {91.44} : epidemiological, histological, electrophysiological, cytological, histopathological, cytogenetic, ultrastructural, serological, histologic, anthropometric
+-- 293 {86.61} : emphysema, epilepsy, osteoporosis, glaucoma, lupus, cataracts, anemia, colitis, mellitus, diabetes
+-- 130 {78.62} : elegantly, attractively, beautifully, brilliantly, exquisitely, delicately, artfully, tastefully, elaborately, superbly
+-- 126 {73.67} : worshipped, glorified, praised, obeyed, admired, worshiped, glorify, revered, bless, honored
+-- 41 {71.90} : witty, insightful, provocative, entertaining, imaginative, humorous, engaging, inventive, clever, irreverent
+-- 229 {70.51} : markedly, dramatically, drastically, substantially, appreciably, immeasurably, radically, tenfold, vastly, exponentially
+  -- negative predictors --
+-- 291 {-67.34} : curved, retractable, cylindrical, vertical, horizontal, circular, rectangular, outer, diagonal, right-hand
+-- 251 {-68.34} : low-interest, unsecured, interest-free, bxd, refinancing, payday, credit-card, deferred, amortization, equity
+-- 261 {-69.52} : nominal, cumulative, ever-increasing, exorbitant, hefty, allowable, third-quarter, annualized, second-quarter, appreciable
+-- 71 {-73.80} : red-brick, stately, century-old, three-story, white-washed, towering, domed, well-preserved, free-standing, gigantic
+-- 23 {-78.15} : metastases, tumors, carcinomas, tumours, biopsies, hyperplasia, lesions, carcinoma, carcinogenesis, adenomas
+-- 37 {-79.16} : poorest, war-torn, wealthiest, agrarian, affluent, impoverished, far-flung, post-industrial, northernmost, industrialized
+-- 134 {-81.46} : separately, individually, internally, jointly, independently, sequentially, concurrently, incorrectly, duly, intraperitoneally
+-- 113 {-89.14} : tripling, doubling, allocating, allocate, exceed, subtracting, doubled, subtract, tripled, exceeded
+-- 94 {-91.42} : dumb, stupid, selfish, insane, foolish, heartless, ignorant, idiotic, childish, arrogant
+-- 217 {-127.95} : debris, trash, garbage, lint, rubbish, sludge, dust, dirt, manure, ashes

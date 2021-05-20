@@ -1,0 +1,98 @@
+=== CONFIG ===
+{'embeddings': 'SPINE', 'corpus': 'Emergent', 'batch_size': 64, 'beta1': 0.99, 'beta2': 0.999, 'gamma': 0.6, 'lr': 0.046953519229710354, 'patience': 5, 'scheduler': 'plateau', 'weight_decay': 0.0, 'xavier': True, 'epochs': 200}
+=== ====== ===
+Evaluation:
+- test set evaluation:
+{'test_acc': 0.7220077514648438, 'test_loss': 0.6316554546356201}
+- report (test):
+              precision    recall  f1-score   support
+
+   observing     0.6408    0.6804    0.6600        97
+         for     0.7907    0.7846    0.7876       130
+     against     0.7037    0.5938    0.6441        32
+
+    accuracy                         0.7220       259
+   macro avg     0.7117    0.6863    0.6972       259
+weighted avg     0.7238    0.7220    0.7221       259
+
+- random classifier (baseline):
+              precision    recall  f1-score   support
+
+   observing     0.3113    0.3402    0.3251        97
+         for     0.4576    0.4154    0.4355       130
+     against     0.1714    0.1875    0.1791        32
+
+    accuracy                         0.3591       259
+   macro avg     0.3135    0.3144    0.3132       259
+weighted avg     0.3675    0.3591    0.3625       259
+
+Diagnostics for labels:
+- observing [precision = 0.6407766990291263] :
+  ++ positive predictors ++
+-- 898 {7.77} [elem_wise_prod]: alloy, aluminium, steel, stainless, copper, coated, rubber, insulation, plastic, zinc
+-- 688 {7.13} [elem_wise_prod]: emmy, film, award, nominations, oscar, cannes, awards, screenplay, nominated, sundance
+-- 753 {7.07} [elem_wise_prod]: taxes, tariffs, tariff, tax, tolls, fees, taxation, rates, fee, income
+-- 518 {6.65} [elem_wise_prod]: machinery, plastics, electronics, industries, sectors, appliances, miscellaneous, agriculture, sciences, engineering
+-- 497 {6.51} [elem_wise_prod]: nave, porch, ceiling, marble, fireplace, ceilings, facade, windows, arches, balcony
+-- 778 {6.50} [elem_wise_prod]: diseases, malaria, poverty, epidemic, viral, insurgency, aids, hiv, infectious, bacterial
+-- 176 {6.49} [abs_diff]: diplomacy, constructive, flexible, voluntary, stance, environmentally, peacefully, adopt, arbitration, posture
+-- 675 {6.43} [abs_diff]: reviewers, reviews, allmusic, rating, favorably, reviewer, praised, tomatoes, praising, critics
+-- 565 {6.31} [second_vec : sentence2]: payment, royalties, unpaid, compensation, damages, payments, lawsuits, dues, pays, pay
+-- 957 {6.21} [elem_wise_prod]: 4.1, 5.0, 5.5, earthquake, magnitude, 5.1, 4.0, richter, 6.5, 4.2
+  -- negative predictors --
+-- 237 {-8.43} [elem_wise_prod]: solely, relies, relying, largely, exclusively, relied, heavily, rely, depended, chiefly
+-- 523 {-8.61} [elem_wise_prod]: tottenham, everton, blackburn, manchester, keane, cole, sunderland, liverpool, pound, aston
+-- 785 {-8.70} [elem_wise_prod]: monetary, inflation, lending, borrowing, rates, deficit, bank, stimulus, economists, finance
+-- 791 {-8.88} [elem_wise_prod]: ahl, dee, --, ah, oh, bee, sur, gee, ty, rees
+-- 370 {-8.93} [elem_wise_prod]: eu, spain, european, france, brussels, euro, italy, french, romano, britain
+-- 973 {-9.35} [elem_wise_prod]: merrill, bank, securities, banking, analyst, sachs, lynch, economist, trader, banks
+-- 963 {-9.50} [elem_wise_prod]: mm, bc, x, inches, graphic, illustration, ni, 146, fin, ap
+-- 337 {-9.62} [elem_wise_prod]: right-handed, pitching, innings, pitchers, batting, hitter, dodgers, pitches, baseman, outfield
+-- 425 {-9.88} [elem_wise_prod]: assess, evaluate, evaluating, examine, analyze, examining, assessing, reviewing, carefully, negatively
+-- 609 {-10.88} [elem_wise_prod]: counts, felony, conspiracy, aggravated, charges, pleaded, charged, guilty, convicted, treason
+- for [precision = 0.7906976744186046] :
+  ++ positive predictors ++
+-- 370 {9.39} [elem_wise_prod]: eu, spain, european, france, brussels, euro, italy, french, romano, britain
+-- 337 {9.25} [elem_wise_prod]: right-handed, pitching, innings, pitchers, batting, hitter, dodgers, pitches, baseman, outfield
+-- 425 {8.97} [elem_wise_prod]: assess, evaluate, evaluating, examine, analyze, examining, assessing, reviewing, carefully, negatively
+-- 801 {8.77} [elem_wise_prod]: relegation, narrowly, escaping, escaped, escape, starvation, escapes, bankruptcy, re-election, hiding
+-- 692 {8.12} [first_vec : sentence1]: kappa, sigma, phi, delta, fraternity, alpha, omega, chi, beta, pi
+-- 565 {7.77} [first_vec : sentence1]: payment, royalties, unpaid, compensation, damages, payments, lawsuits, dues, pays, pay
+-- 683 {7.75} [elem_wise_prod]: arrangements, pending, details, disclose, contractual, exact, cancelled, finalized, postponed, delayed
+-- 992 {7.52} [elem_wise_prod]: detonated, bombing, bombs, bombings, bomb, blasts, suicide, bomber, explosives, exploded
+-- 285 {7.47} [elem_wise_prod]: utter, utterly, ignorance, sheer, greed, disregard, reckless, exhaustion, insanity, absolutely
+-- 540 {7.29} [second_vec : sentence2]: giuseppe, pietro, di, italy, italian, francesco, della, giovanni, bologna, palermo
+  -- negative predictors --
+-- 513 {-7.55} [first_vec : sentence1]: mathematical, equations, theory, quantum, equation, theoretical, physics, computational, empirical, calculus
+-- 675 {-7.57} [second_vec : sentence2]: reviewers, reviews, allmusic, rating, favorably, reviewer, praised, tomatoes, praising, critics
+-- 688 {-7.59} [elem_wise_prod]: emmy, film, award, nominations, oscar, cannes, awards, screenplay, nominated, sundance
+-- 206 {-7.67} [elem_wise_prod]: predict, speculated, economists, doubted, analysts, might, predicting, hinted, inclined, believe
+-- 824 {-7.79} [abs_diff]: quoted, news, newspaper, daily, reported, agency, poll, unnamed, telegraph, anatolia
+-- 898 {-7.86} [elem_wise_prod]: alloy, aluminium, steel, stainless, copper, coated, rubber, insulation, plastic, zinc
+-- 206 {-7.90} [second_vec : sentence2]: predict, speculated, economists, doubted, analysts, might, predicting, hinted, inclined, believe
+-- 586 {-8.01} [second_vec : sentence2]: admired, disliked, lobbied, had, consistently, strongly, personally, repeatedly, extensively, cared
+-- 957 {-8.31} [elem_wise_prod]: 4.1, 5.0, 5.5, earthquake, magnitude, 5.1, 4.0, richter, 6.5, 4.2
+-- 586 {-9.74} [elem_wise_prod]: admired, disliked, lobbied, had, consistently, strongly, personally, repeatedly, extensively, cared
+- against [precision = 0.7037037037037037] :
+  ++ positive predictors ++
+-- 553 {9.97} [second_vec : sentence2]: designated, officially, listed, legally, recognised, subspecies, classified, genus, designation, categorized
+-- 947 {9.35} [second_vec : sentence2]: morally, culturally, socially, economically, financially, politically, mentally, unfit, emotionally, environmentally
+-- 956 {7.38} [second_vec : sentence2]: scotland, scottish, glasgow, edinburgh, aberdeen, highland, angus, loch, scots, mackenzie
+-- 54 {7.34} [elem_wise_prod]: maintain, credibility, regaining, regained, legitimacy, slender, establish, gaining, stature, retain
+-- 96 {7.32} [second_vec : sentence2]: airspace, restrict, restricting, lawful, piracy, copyright, violate, restrictions, violated, illegally
+-- 292 {7.29} [elem_wise_prod]: mentioning, distract, comment, avoided, controversies, spotlight, mention, whatsoever, wrongdoing, any
+-- 742 {7.29} [abs_diff]: pants, jacket, robes, skirt, leather, trousers, wool, gloves, robe, wear
+-- 452 {6.89} [abs_diff]: denies, sovereignty, rejects, renounced, statehood, denied, denying, assertion, supports, deny
+-- 292 {6.86} [second_vec : sentence2]: mentioning, distract, comment, avoided, controversies, spotlight, mention, whatsoever, wrongdoing, any
+-- 1 {6.79} [elem_wise_prod]: absolutely, wonderful, unfortunate, awful, fantastic, unfair, pretty, fundamentally, horrible, situation
+  -- negative predictors --
+-- 992 {-10.06} [elem_wise_prod]: detonated, bombing, bombs, bombings, bomb, blasts, suicide, bomber, explosives, exploded
+-- 678 {-10.35} [first_vec : sentence1]: jersey, staten, brooklyn, ny, connecticut, york, bronx, camden, suffolk, hartford
+-- 678 {-10.77} [elem_wise_prod]: jersey, staten, brooklyn, ny, connecticut, york, bronx, camden, suffolk, hartford
+-- 706 {-10.86} [elem_wise_prod]: reinforcements, moisture, influx, crowds, poured, nutrients, signatures, volunteers, 30,000, streaming
+-- 880 {-10.90} [elem_wise_prod]: launched, campaigns, unsuccessful, launches, campaign, raids, blitz, spearheaded, coordinated, futile
+-- 887 {-10.96} [elem_wise_prod]: emi, vinyl, rca, label, reissued, re-released, records, studios, motown, labels
+-- 319 {-11.01} [first_vec : sentence1]: horsepower, engines, turbine, engine, rpm, torque, kw, propeller, turbines, combustion
+-- 332 {-11.46} [second_vec : sentence2]: taller, lighter, quicker, thinner, heavier, faster, considerably, cheaper, brighter, darker
+-- 589 {-11.95} [first_vec : sentence1]: stores, retailer, retailers, store, macy, supermarkets, supermarket, grocery, retail, catalog
+-- 558 {-12.61} [elem_wise_prod]: paint, coating, ink, gel, plaster, cleaning, wash, washing, skin, spray

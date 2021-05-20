@@ -1,0 +1,73 @@
+=== CONFIG ===
+{'embeddings': 'NNSE', 'corpus': 'BoolQ', 'batch_size': 128, 'beta1': 0.99, 'beta2': 0.999, 'gamma': 0.9, 'lr': 0.012942233232008887, 'patience': 5, 'scheduler': 'plateau', 'weight_decay': 0.0, 'xavier': True, 'epochs': 200}
+=== ====== ===
+Evaluation:
+- test set evaluation:
+{'test_acc': 0.6364254355430603, 'test_loss': 0.6458706855773926}
+- report (test):
+              precision    recall  f1-score   support
+
+       False     0.5275    0.2618    0.3499      1100
+        True     0.6612    0.8600    0.7476      1843
+
+    accuracy                         0.6364      2943
+   macro avg     0.5944    0.5609    0.5488      2943
+weighted avg     0.6112    0.6364    0.5990      2943
+
+- random classifier (baseline):
+              precision    recall  f1-score   support
+
+       False     0.3688    0.3627    0.3657      1100
+        True     0.6233    0.6294    0.6263      1843
+
+    accuracy                         0.5297      2943
+   macro avg     0.4960    0.4961    0.4960      2943
+weighted avg     0.5282    0.5297    0.5289      2943
+
+Diagnostics for labels:
+- False [precision = 0.5274725274725275] :
+  ++ positive predictors ++
+-- 97 {18.96} [first_vec : question]: dignified, imperious, impeccable, graceful, thoughtless, uncompromising, masterly, stately, inimitable, methodical
+-- 205 {17.27} [elem_wise_prod]: entice, informing, instruct, alienate, impress, empower, motivate, alienating, mislead, remind
+-- 169 {15.11} [elem_wise_prod]: earthy, unmistakable, soothing, mellow, plaintive, sensuous, high-pitched, sultry, mournful, dreamy
+-- 97 {13.24} [elem_wise_prod]: dignified, imperious, impeccable, graceful, thoughtless, uncompromising, masterly, stately, inimitable, methodical
+-- 103 {12.53} [elem_wise_prod]: lessened, diminished, widened, shortened, deteriorated, shrunk, broadened, curtailed, narrowed, slowed
+-- 154 {12.40} [elem_wise_prod]: robbery, burglary, arson, homicide, perjury, treason, extortion, rape, manslaughter, molestation
+-- 25 {12.05} [elem_wise_prod]: duplicated, reproduced, copied, exported, reused, resold, downloaded, reprinted, transferred, converted
+-- 273 {11.47} [elem_wise_prod]: educator, historian, lecturer, researcher, scientist, essayist, journalist, curator, critic, playwright
+-- 59 {11.44} [second_vec : passage]: humility, honesty, compassion, kindness, generosity, patience, sincerity, piety, devotion, decency
+-- 96 {11.26} [elem_wise_prod]: bluegrass, reggae, flamenco, ragtime, funk, hip-hop, punk, mariachi, old-time, techno
+  -- negative predictors --
+-- 295 {-14.63} [elem_wise_prod]: unethical, deceptive, immoral, inappropriate, unfair, obscene, hurtful, misleading, irresponsible, abusive
+-- 198 {-15.06} [first_vec : question]: clowning, cavorting, parading, whirling, rampaging, strewn, frolicking, bobbing, buzzing, fluttering
+-- 173 {-16.86} [elem_wise_prod]: dwindle, deteriorate, crumble, sputter, sag, swell, unfold, fade, wither, decompose
+-- 139 {-17.33} [elem_wise_prod]: lesbians, fisting, cum, tit, tits, orgy, pussy, pantyhose, cock, slut
+-- 226 {-17.39} [elem_wise_prod]: understandable, achievable, usable, credible, consistent, comprehensible, predictable, verifiable, defensible, workable
+-- 143 {-17.86} [elem_wise_prod]: wu, chen, cheng, liu, zhang, ming, wang, lin, yi, wei
+-- 46 {-18.62} [elem_wise_prod]: left-wing, leftist, right-wing, reformist, pro-abortion, populist, fundamentalist, nationalist, anti-tax, libertarian
+-- 38 {-19.37} [elem_wise_prod]: sharper, funnier, thicker, thinner, leaner, clearer, tougher, uglier, prettier, richer
+-- 16 {-20.47} [elem_wise_prod]: diplomat, industrialist, nationals, automaker, counterpart, aristocrat, expatriates, counterparts, proverb, colonialism
+-- 211 {-22.35} [elem_wise_prod]: formal, voluntary, cold, simultaneous, tacit, false-positive, overcast, windy, rainy, subjective
+- True [precision = 0.6612432206925324] :
+  ++ positive predictors ++
+-- 211 {22.33} [elem_wise_prod]: formal, voluntary, cold, simultaneous, tacit, false-positive, overcast, windy, rainy, subjective
+-- 16 {20.45} [elem_wise_prod]: diplomat, industrialist, nationals, automaker, counterpart, aristocrat, expatriates, counterparts, proverb, colonialism
+-- 38 {19.43} [elem_wise_prod]: sharper, funnier, thicker, thinner, leaner, clearer, tougher, uglier, prettier, richer
+-- 46 {18.65} [elem_wise_prod]: left-wing, leftist, right-wing, reformist, pro-abortion, populist, fundamentalist, nationalist, anti-tax, libertarian
+-- 143 {17.86} [elem_wise_prod]: wu, chen, cheng, liu, zhang, ming, wang, lin, yi, wei
+-- 226 {17.35} [elem_wise_prod]: understandable, achievable, usable, credible, consistent, comprehensible, predictable, verifiable, defensible, workable
+-- 139 {17.23} [elem_wise_prod]: lesbians, fisting, cum, tit, tits, orgy, pussy, pantyhose, cock, slut
+-- 173 {16.81} [elem_wise_prod]: dwindle, deteriorate, crumble, sputter, sag, swell, unfold, fade, wither, decompose
+-- 198 {15.03} [first_vec : question]: clowning, cavorting, parading, whirling, rampaging, strewn, frolicking, bobbing, buzzing, fluttering
+-- 295 {14.70} [elem_wise_prod]: unethical, deceptive, immoral, inappropriate, unfair, obscene, hurtful, misleading, irresponsible, abusive
+  -- negative predictors --
+-- 239 {-11.31} [second_vec : passage]: dismantled, eradicated, erased, obliterated, disregarded, eliminated, demolished, bypassed, discarded, superseded
+-- 59 {-11.52} [second_vec : passage]: humility, honesty, compassion, kindness, generosity, patience, sincerity, piety, devotion, decency
+-- 273 {-11.60} [elem_wise_prod]: educator, historian, lecturer, researcher, scientist, essayist, journalist, curator, critic, playwright
+-- 25 {-12.02} [elem_wise_prod]: duplicated, reproduced, copied, exported, reused, resold, downloaded, reprinted, transferred, converted
+-- 154 {-12.44} [elem_wise_prod]: robbery, burglary, arson, homicide, perjury, treason, extortion, rape, manslaughter, molestation
+-- 103 {-12.53} [elem_wise_prod]: lessened, diminished, widened, shortened, deteriorated, shrunk, broadened, curtailed, narrowed, slowed
+-- 97 {-13.18} [elem_wise_prod]: dignified, imperious, impeccable, graceful, thoughtless, uncompromising, masterly, stately, inimitable, methodical
+-- 169 {-15.02} [elem_wise_prod]: earthy, unmistakable, soothing, mellow, plaintive, sensuous, high-pitched, sultry, mournful, dreamy
+-- 205 {-17.26} [elem_wise_prod]: entice, informing, instruct, alienate, impress, empower, motivate, alienating, mislead, remind
+-- 97 {-18.89} [first_vec : question]: dignified, imperious, impeccable, graceful, thoughtless, uncompromising, masterly, stately, inimitable, methodical

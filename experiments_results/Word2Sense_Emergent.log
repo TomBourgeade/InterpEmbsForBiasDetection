@@ -1,0 +1,98 @@
+=== CONFIG ===
+{'embeddings': 'Word2Sense', 'corpus': 'Emergent', 'batch_size': 64, 'beta1': 0.99, 'beta2': 0.999, 'gamma': 0.9, 'lr': 0.04480204016342842, 'patience': 5, 'scheduler': 'plateau', 'weight_decay': 0.0, 'xavier': True, 'epochs': 200}
+=== ====== ===
+Evaluation:
+- test set evaluation:
+{'test_acc': 0.6988416910171509, 'test_loss': 0.6743103861808777}
+- report (test):
+              precision    recall  f1-score   support
+
+   observing     0.6531    0.6598    0.6564        97
+         for     0.7500    0.7846    0.7669       130
+     against     0.6000    0.4688    0.5263        32
+
+    accuracy                         0.6988       259
+   macro avg     0.6677    0.6377    0.6499       259
+weighted avg     0.6952    0.6988    0.6958       259
+
+- random classifier (baseline):
+              precision    recall  f1-score   support
+
+   observing     0.3535    0.3608    0.3571        97
+         for     0.4773    0.4846    0.4809       130
+     against     0.1071    0.0938    0.1000        32
+
+    accuracy                         0.3900       259
+   macro avg     0.3127    0.3131    0.3127       259
+weighted avg     0.3852    0.3900    0.3875       259
+
+Diagnostics for labels:
+- observing [precision = 0.6530612244897959] :
+  ++ positive predictors ++
+-- 1423 {45.98} [abs_diff]: plymouth, zimbabwe, drake, brethren, joshua, patriotic, citadel, vera, dodge, morgan
+-- 1862 {43.67} [second_vec : sentence2]: nursery, counting, nonsense, playground, happily, bounce, jill, chants, sing, cinderella
+-- 641 {43.22} [second_vec : sentence2]: flux, detector, catalog, chandra, fits, x-ray, observation, telescope, coordinates, observations
+-- 1406 {43.21} [abs_diff]: inputs, ecosystem, processes, input, nutrients, output, component, sources, raw, yield
+-- 1375 {42.62} [abs_diff]: interesting, interview, blog, comment, mentioning, conversation, talked, noticed, read, think
+-- 1406 {42.38} [second_vec : sentence2]: inputs, ecosystem, processes, input, nutrients, output, component, sources, raw, yield
+-- 2215 {42.14} [second_vec : sentence2]: buddha, realities, enlightenment, conditioned, indifferent, attain, arise, ignorance, realize, realizes
+-- 751 {41.09} [second_vec : sentence2]: insured, insurance, liability, cover, claims, premium, brokers, belongings, accidental, claim
+-- 798 {40.15} [second_vec : sentence2]: lawsuit, lawsuits, alleging, sued, filed, plaintiff, violated, injunction, claiming, damages
+-- 1959 {39.34} [abs_diff]: scrutiny, overview, taxi, mps, committees, subjected, overturned, recommendations, rank, task
+  -- negative predictors --
+-- 1449 {-40.45} [second_vec : sentence2]: bets, odds, bet, selections, mlb, picks, sporting, spread, favourites, stacked
+-- 1930 {-41.05} [abs_diff]: obey, conscience, remorse, morally, ought, morality, immoral, motives, foolish, moral
+-- 1917 {-41.93} [abs_diff]: implied, limitation, representations, accuracy, endorse, whatsoever, contained, warrant, fitness, relied
+-- 982 {-42.47} [elem_wise_prod]: heaven, heavenly, satan, eternal, souls, devil, demons, glory, angel, paradise
+-- 1972 {-42.57} [abs_diff]: polo, marco, rossi, rains, haven, advertised, rudolph, nicky, hayden, ally
+-- 216 {-43.36} [second_vec : sentence2]: proposition, contradiction, assertion, paradox, argument, implicit, implication, assumption, asserts, logical
+-- 1973 {-43.58} [abs_diff]: locke, philosophy, hume, philosophical, philosophers, philosopher, realism, critique, aristotle, morality
+-- 1973 {-43.78} [second_vec : sentence2]: locke, philosophy, hume, philosophical, philosophers, philosopher, realism, critique, aristotle, morality
+-- 1972 {-45.37} [second_vec : sentence2]: polo, marco, rossi, rains, haven, advertised, rudolph, nicky, hayden, ally
+-- 1560 {-45.64} [second_vec : sentence2]: wes, ye, ah, thai, lang, cum, hid, till, bonnie, maid
+- for [precision = 0.75] :
+  ++ positive predictors ++
+-- 1972 {51.00} [abs_diff]: polo, marco, rossi, rains, haven, advertised, rudolph, nicky, hayden, ally
+-- 1972 {46.40} [second_vec : sentence2]: polo, marco, rossi, rains, haven, advertised, rudolph, nicky, hayden, ally
+-- 1250 {43.41} [abs_diff]: corn, berkshire, unpaid, bypass, tickets, exchange, concentrating, hosted, moore, sage
+-- 811 {42.10} [second_vec : sentence2]: 170, climax, finale, revolutionary, haunting, passionate, lyrical, applause, upbeat, ballad
+-- 964 {40.49} [second_vec : sentence2]: honolulu, hawaii, harbor, pearl, hale, mckinley, midway, annexation, alaska, finch
+-- 2121 {39.22} [abs_diff]: sediment, deposition, deposits, erosion, chronology, geological, dating, tertiary, environments, greenland
+-- 1094 {38.91} [second_vec : sentence2]: battles, downloads, newsletter, launches, auschwitz, publishing, appoints, libel, speaking, far
+-- 2244 {38.89} [second_vec : sentence2]: admissions, undergraduate, tariff, full-time, applicants, postgraduate, applying, colleges, clearing, universities
+-- 1089 {38.74} [second_vec : sentence2]: skyline, dominates, dome, atop, tallest, spectacular, landmarks, dominating, niagara, landmark
+-- 296 {38.45} [elem_wise_prod]: kodak, fuji, camera, cameras, photography, photographers, lens, photographic, optical, canon
+  -- negative predictors --
+-- 859 {-43.93} [abs_diff]: purse, spill, speedway, official, 150,000, club, gavin, spilled, pretext, sam
+-- 724 {-44.17} [second_vec : sentence2]: argue, proponents, disagreed, arguing, criticize, contend, commentators, advocates, vigorously, critics
+-- 1445 {-45.73} [second_vec : sentence2]: abusive, pornographic, insulting, offensive, violate, unlawful, transmit, harmful, inappropriate, inflammatory
+-- 2219 {-45.80} [abs_diff]: browser, frames, java, explorer, enabled, navigator, viewer, ajax, mosaic, correctly
+-- 1582 {-48.10} [abs_diff]: flower, floral, roses, bloom, foliage, flowering, baskets, bud, rose, bulbs
+-- 1314 {-48.12} [abs_diff]: joke, humor, funny, witty, laughed, satire, humorous, laugh, laughs, satirical
+-- 2137 {-48.67} [second_vec : sentence2]: brad, pitt, jennifer, reese, vaughn, lopez, gossip, celebrity, lindsay, jude
+-- 140 {-51.00} [second_vec : sentence2]: surprising, curious, hardly, decidedly, seemed, somewhat, noticed, seems, perhaps, unaware
+-- 1314 {-51.30} [second_vec : sentence2]: joke, humor, funny, witty, laughed, satire, humorous, laugh, laughs, satirical
+-- 2137 {-52.35} [abs_diff]: brad, pitt, jennifer, reese, vaughn, lopez, gossip, celebrity, lindsay, jude
+- against [precision = 0.6] :
+  ++ positive predictors ++
+-- 1895 {48.14} [second_vec : sentence2]: accurate, timely, reliable, consistent, manner, clear, adequate, credible, authoritative, sufficiently
+-- 216 {41.98} [second_vec : sentence2]: proposition, contradiction, assertion, paradox, argument, implicit, implication, assumption, asserts, logical
+-- 1973 {41.49} [second_vec : sentence2]: locke, philosophy, hume, philosophical, philosophers, philosopher, realism, critique, aristotle, morality
+-- 897 {40.60} [second_vec : sentence2]: fantasies, cynical, obsession, satire, ironic, irony, tendencies, naive, obsessed, ridiculed
+-- 1973 {40.29} [abs_diff]: locke, philosophy, hume, philosophical, philosophers, philosopher, realism, critique, aristotle, morality
+-- 25 {40.10} [second_vec : sentence2]: neither, nor, strongly, endorse, recommend, not, agree, agreeing, necessarily, cannot
+-- 254 {39.93} [second_vec : sentence2]: witnesses, denied, deny, apologized, assertion, confession, testify, saying, admitting, denying
+-- 1930 {39.10} [second_vec : sentence2]: obey, conscience, remorse, morally, ought, morality, immoral, motives, foolish, moral
+-- 1445 {38.66} [abs_diff]: abusive, pornographic, insulting, offensive, violate, unlawful, transmit, harmful, inappropriate, inflammatory
+-- 1303 {38.14} [abs_diff]: alfred, belfast, sloan, wolff, 28, 380, ireland, blackmail, northern, 21
+  -- negative predictors --
+-- 774 {-48.14} [first_vec : sentence1]: pawn, anand, audi, 1-0, openings, f1, sicilian, fischer, variation, lopez
+-- 2209 {-48.18} [second_vec : sentence2]: environmentally, saving, efficiency, energy, savings, save, incentives, renewable, recycling, efficient
+-- 679 {-48.31} [second_vec : sentence2]: link, juan, easter, ortiz, challenge, survey, 1981, patel, et, al
+-- 1844 {-48.48} [second_vec : sentence2]: cyclists, paths, cycling, cycle, trail, pedestrians, lanes, walking, path, walks
+-- 1070 {-48.49} [second_vec : sentence2]: krishna, rama, shiva, devi, devotees, disciple, hindu, sanskrit, guru, deity
+-- 1670 {-48.73} [second_vec : sentence2]: pricing, rates, cost, tariff, tariffs, costs, costing, vary, prices, charges
+-- 811 {-49.33} [second_vec : sentence2]: 170, climax, finale, revolutionary, haunting, passionate, lyrical, applause, upbeat, ballad
+-- 1302 {-50.10} [second_vec : sentence2]: scattering, x-ray, symmetry, crystal, bragg, crystals, structure, reciprocal, molecular, structures
+-- 984 {-53.13} [second_vec : sentence2]: li, tian, wu, gao, tang, zhu, wei, guo, empress, sui
+-- 670 {-58.63} [second_vec : sentence2]: compounds, reactions, reaction, catalyst, radicals, synthesis, compound, react, substituted, derivatives

@@ -1,0 +1,73 @@
+=== CONFIG ===
+{'embeddings': 'NNSE', 'corpus': 'URFUNNY', 'batch_size': 256, 'beta1': 0.99, 'beta2': 0.999, 'gamma': 0.6, 'lr': 0.0641190488418009, 'patience': 5, 'scheduler': 'plateau', 'weight_decay': 0.0, 'xavier': True, 'epochs': 200}
+=== ====== ===
+Evaluation:
+- test set evaluation:
+{'test_acc': 0.5992438793182373, 'test_loss': 0.6626657247543335}
+- report (test):
+              precision    recall  f1-score   support
+
+       funny     0.6061    0.5364    0.5691       522
+   not_funny     0.5940    0.6604    0.6254       536
+
+    accuracy                         0.5992      1058
+   macro avg     0.6000    0.5984    0.5973      1058
+weighted avg     0.5999    0.5992    0.5976      1058
+
+- random classifier (baseline):
+              precision    recall  f1-score   support
+
+       funny     0.5107    0.5038    0.5072       522
+   not_funny     0.5230    0.5299    0.5264       536
+
+    accuracy                         0.5170      1058
+   macro avg     0.5168    0.5168    0.5168      1058
+weighted avg     0.5169    0.5170    0.5169      1058
+
+Diagnostics for labels:
+- funny [precision = 0.6060606060606061] :
+  ++ positive predictors ++
+-- 35 {32.79} [second_vec : punchline]: classy, trendy, adorable, fashionable, snazzy, chic, preppy, glamorous, sassy, flashy
+-- 289 {31.60} [elem_wise_prod]: larry, jim, ken, jerry, russ, rick, dennis, tom, bob, ted
+-- 290 {30.58} [second_vec : punchline]: wail, whisper, scream, clack, moan, roar, shrieks, groan, murmur, screams
+-- 285 {30.22} [elem_wise_prod]: chuckled, grinned, smiled, laughed, shrugged, frowned, sighed, shook, stared, nodded
+-- 208 {30.05} [elem_wise_prod]: otter, raccoon, coyote, squirrel, pheasant, lion, antelope, wolf, rabbit, quail
+-- 146 {29.90} [second_vec : punchline]: khakis, overalls, underwear, tights, trousers, slacks, pajamas, undergarments, vest, vests
+-- 146 {29.82} [elem_wise_prod]: khakis, overalls, underwear, tights, trousers, slacks, pajamas, undergarments, vest, vests
+-- 162 {28.74} [elem_wise_prod]: allude, backfire, devalue, detract, reciprocate, balk, proffer, ensue, revel, culminate
+-- 95 {28.62} [elem_wise_prod]: wrest, resurrect, capitalize, recapture, dislodge, reunite, extinguish, resuscitate, defuse, subvert
+-- 210 {28.18} [elem_wise_prod]: respectful, attentive, considerate, compassionate, affectionate, gracious, courteous, polite, generous, caring
+  -- negative predictors --
+-- 72 {-28.66} [elem_wise_prod]: injunction, prosecution, subpoena, indictment, writ, subpoenas, rulings, indictments, probation, verdict
+-- 156 {-30.32} [elem_wise_prod]: long-held, long-standing, deep-seated, overriding, overarching, abiding, longstanding, preconceived, unwavering, undying
+-- 34 {-30.34} [elem_wise_prod]: fatty, carbohydrate, dietary, polyunsaturated, amino, unsaturated, vitamin, creatine, long-chain, nutritional
+-- 89 {-31.22} [elem_wise_prod]: htm, txt, exe, esp, gov, js, becuase, edu, jpg, thereof
+-- 142 {-32.18} [elem_wise_prod]: self-determination, equality, unity, prosperity, self-sufficiency, self-government, liberty, autonomy, reconciliation, dignity
+-- 14 {-32.35} [elem_wise_prod]: interagency, broad-based, anti-poverty, government-sponsored, community-based, philanthropic, fund-raising, on-going, grass-roots, citywide
+-- 53 {-34.70} [elem_wise_prod]: squadron, commanders, commander, helicopters, marines, battalion, corps, detachment, reconnaissance, bomber
+-- 68 {-37.81} [elem_wise_prod]: compounds, oxides, hydrocarbons, chemical, gases, solvent, compound, chemistry, intermediates, hydrogen
+-- 287 {-38.34} [elem_wise_prod]: capillaries, axons, nerves, aorta, cortex, ganglia, cartilage, arteries, nerve, hippocampus
+-- 38 {-42.32} [elem_wise_prod]: sharper, funnier, thicker, thinner, leaner, clearer, tougher, uglier, prettier, richer
+- not_funny [precision = 0.5939597315436241] :
+  ++ positive predictors ++
+-- 38 {42.28} [elem_wise_prod]: sharper, funnier, thicker, thinner, leaner, clearer, tougher, uglier, prettier, richer
+-- 287 {38.37} [elem_wise_prod]: capillaries, axons, nerves, aorta, cortex, ganglia, cartilage, arteries, nerve, hippocampus
+-- 68 {37.79} [elem_wise_prod]: compounds, oxides, hydrocarbons, chemical, gases, solvent, compound, chemistry, intermediates, hydrogen
+-- 53 {34.62} [elem_wise_prod]: squadron, commanders, commander, helicopters, marines, battalion, corps, detachment, reconnaissance, bomber
+-- 14 {32.31} [elem_wise_prod]: interagency, broad-based, anti-poverty, government-sponsored, community-based, philanthropic, fund-raising, on-going, grass-roots, citywide
+-- 142 {32.16} [elem_wise_prod]: self-determination, equality, unity, prosperity, self-sufficiency, self-government, liberty, autonomy, reconciliation, dignity
+-- 89 {31.07} [elem_wise_prod]: htm, txt, exe, esp, gov, js, becuase, edu, jpg, thereof
+-- 156 {30.38} [elem_wise_prod]: long-held, long-standing, deep-seated, overriding, overarching, abiding, longstanding, preconceived, unwavering, undying
+-- 34 {30.30} [elem_wise_prod]: fatty, carbohydrate, dietary, polyunsaturated, amino, unsaturated, vitamin, creatine, long-chain, nutritional
+-- 72 {28.67} [elem_wise_prod]: injunction, prosecution, subpoena, indictment, writ, subpoenas, rulings, indictments, probation, verdict
+  -- negative predictors --
+-- 210 {-28.11} [elem_wise_prod]: respectful, attentive, considerate, compassionate, affectionate, gracious, courteous, polite, generous, caring
+-- 162 {-28.74} [elem_wise_prod]: allude, backfire, devalue, detract, reciprocate, balk, proffer, ensue, revel, culminate
+-- 95 {-28.75} [elem_wise_prod]: wrest, resurrect, capitalize, recapture, dislodge, reunite, extinguish, resuscitate, defuse, subvert
+-- 146 {-29.79} [elem_wise_prod]: khakis, overalls, underwear, tights, trousers, slacks, pajamas, undergarments, vest, vests
+-- 146 {-29.87} [second_vec : punchline]: khakis, overalls, underwear, tights, trousers, slacks, pajamas, undergarments, vest, vests
+-- 208 {-30.03} [elem_wise_prod]: otter, raccoon, coyote, squirrel, pheasant, lion, antelope, wolf, rabbit, quail
+-- 285 {-30.19} [elem_wise_prod]: chuckled, grinned, smiled, laughed, shrugged, frowned, sighed, shook, stared, nodded
+-- 290 {-30.56} [second_vec : punchline]: wail, whisper, scream, clack, moan, roar, shrieks, groan, murmur, screams
+-- 289 {-31.56} [elem_wise_prod]: larry, jim, ken, jerry, russ, rick, dennis, tom, bob, ted
+-- 35 {-32.77} [second_vec : punchline]: classy, trendy, adorable, fashionable, snazzy, chic, preppy, glamorous, sassy, flashy

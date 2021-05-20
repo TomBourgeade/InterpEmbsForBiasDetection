@@ -1,0 +1,98 @@
+=== CONFIG ===
+{'embeddings': 'NNSE', 'corpus': 'Emergent', 'batch_size': 64, 'beta1': 0.99, 'beta2': 0.999, 'gamma': 0.9, 'lr': 0.0997048209240891, 'patience': 5, 'scheduler': 'plateau', 'weight_decay': 0.0, 'xavier': True, 'epochs': 200}
+=== ====== ===
+Evaluation:
+- test set evaluation:
+{'test_acc': 0.6679536700248718, 'test_loss': 0.8887847065925598}
+- report (test):
+              precision    recall  f1-score   support
+
+   observing     0.6408    0.6804    0.6600        97
+         for     0.7402    0.7231    0.7315       130
+     against     0.4483    0.4062    0.4262        32
+
+    accuracy                         0.6680       259
+   macro avg     0.6097    0.6032    0.6059       259
+weighted avg     0.6669    0.6680    0.6670       259
+
+- random classifier (baseline):
+              precision    recall  f1-score   support
+
+   observing     0.3737    0.3814    0.3776        97
+         for     0.4923    0.4923    0.4923       130
+     against     0.1000    0.0938    0.0968        32
+
+    accuracy                         0.4015       259
+   macro avg     0.3220    0.3225    0.3222       259
+weighted avg     0.3994    0.4015    0.4005       259
+
+Diagnostics for labels:
+- observing [precision = 0.6407766990291263] :
+  ++ positive predictors ++
+-- 72 {52.74} [elem_wise_prod]: injunction, prosecution, subpoena, indictment, writ, subpoenas, rulings, indictments, probation, verdict
+-- 170 {51.19} [elem_wise_prod]: highlighted, addressing, downplaying, recognizing, highlighting, downplays, tackling, mitigate, exacerbate, acknowledging
+-- 258 {47.29} [first_vec : sentence1]: absenteeism, expectancy, bioavailability, turnover, permeability, incomes, libido, dimensionality, alkalinity, susceptibility
+-- 92 {46.35} [elem_wise_prod]: kudos, reassurance, shrift, compliments, acknowledgement, accolades, encouragement, acclaim, ovation, alms
+-- 78 {43.48} [first_vec : sentence1]: reddish, silvery, pale, blue-green, ruddy, rosy, darker, luminous, violet, dull
+-- 127 {41.89} [second_vec : sentence2]: brick, masonry, granite, plaster, stucco, cement, concrete, marble, asphalt, limestone
+-- 239 {39.97} [elem_wise_prod]: dismantled, eradicated, erased, obliterated, disregarded, eliminated, demolished, bypassed, discarded, superseded
+-- 123 {39.52} [elem_wise_prod]: hinges, casing, spacers, lids, trays, brackets, railings, hinge, rollers, sheeting
+-- 127 {37.95} [elem_wise_prod]: brick, masonry, granite, plaster, stucco, cement, concrete, marble, asphalt, limestone
+-- 231 {37.50} [first_vec : sentence1]: impacting, disrupting, sustaining, undermining, jeopardizing, endangers, ruining, transforming, shaping, reshape
+  -- negative predictors --
+-- 248 {-47.85} [elem_wise_prod]: best-known, well-known, lesser-known, influential, renowned, acclaimed, prominent, prestigious, pre-eminent, foremost
+-- 180 {-50.25} [elem_wise_prod]: wooded, forested, windswept, pristine, mountainous, grassy, verdant, hilly, picturesque, unspoiled
+-- 15 {-52.54} [elem_wise_prod]: disgust, sadness, disbelief, frustration, helplessness, sorrow, disappointment, despair, dismay, remorse
+-- 278 {-52.83} [elem_wise_prod]: sociologists, anthropologists, economists, historians, theorists, biographers, ethicists, commentators, archaeologists, linguists
+-- 146 {-54.98} [elem_wise_prod]: khakis, overalls, underwear, tights, trousers, slacks, pajamas, undergarments, vest, vests
+-- 241 {-55.86} [elem_wise_prod]: statutory, campaign-finance, anti-trust, anti-discrimination, strictest, conflict-of-interest, antitrust, penal, child-support, stricter
+-- 236 {-56.61} [elem_wise_prod]: advisable, preferable, advantageous, desirable, keen, reluctant, hesitant, unwilling, worthwhile, imperative
+-- 251 {-57.24} [elem_wise_prod]: low-interest, unsecured, interest-free, bxd, refinancing, payday, credit-card, deferred, amortization, equity
+-- 37 {-62.22} [elem_wise_prod]: poorest, war-torn, wealthiest, agrarian, affluent, impoverished, far-flung, post-industrial, northernmost, industrialized
+-- 0 {-66.44} [second_vec : sentence2]: veneto, pisa, palermo, bologna, florence, verona, tuscany, palazzo, venice, genoa
+- for [precision = 0.7401574803149606] :
+  ++ positive predictors ++
+-- 180 {61.92} [elem_wise_prod]: wooded, forested, windswept, pristine, mountainous, grassy, verdant, hilly, picturesque, unspoiled
+-- 251 {56.21} [elem_wise_prod]: low-interest, unsecured, interest-free, bxd, refinancing, payday, credit-card, deferred, amortization, equity
+-- 172 {55.68} [first_vec : sentence1]: oxidase, decarboxylase, phosphatases, reductase, antagonists, cyclase, inhibition, synthase, biosynthesis, receptors
+-- 172 {50.83} [elem_wise_prod]: oxidase, decarboxylase, phosphatases, reductase, antagonists, cyclase, inhibition, synthase, biosynthesis, receptors
+-- 130 {47.49} [second_vec : sentence2]: elegantly, attractively, beautifully, brilliantly, exquisitely, delicately, artfully, tastefully, elaborately, superbly
+-- 241 {45.64} [elem_wise_prod]: statutory, campaign-finance, anti-trust, anti-discrimination, strictest, conflict-of-interest, antitrust, penal, child-support, stricter
+-- 278 {45.56} [elem_wise_prod]: sociologists, anthropologists, economists, historians, theorists, biographers, ethicists, commentators, archaeologists, linguists
+-- 190 {44.47} [elem_wise_prod]: rainy, frigid, humid, balmy, windy, wintry, coldest, chilly, stormy, muggy
+-- 128 {44.11} [elem_wise_prod]: necklaces, earrings, bracelets, necklace, bracelet, charms, brooches, earring, jewelry, pendant
+-- 264 {43.30} [elem_wise_prod]: tiers, subgroups, subfamilies, subtypes, genders, subsections, epochs, isoforms, groupings, ethnicities
+  -- negative predictors --
+-- 247 {-38.68} [second_vec : sentence2]: unwittingly, legitimately, unaccountably, unintentionally, regrettably, coincidentally, perversely, unsurprisingly, reputedly, unknowingly
+-- 4 {-39.85} [elem_wise_prod]: passions, desires, companionship, friendship, intimacy, affections, pleasures, friendships, fantasies, feelings
+-- 18 {-40.33} [first_vec : sentence1]: underpinnings, justifications, imperatives, justification, rationale, standpoint, underpinning, ramifications, considerations, implications
+-- 295 {-40.63} [elem_wise_prod]: unethical, deceptive, immoral, inappropriate, unfair, obscene, hurtful, misleading, irresponsible, abusive
+-- 131 {-41.27} [abs_diff]: genetics, biology, physiology, microbiology, ecology, biochemistry, genomics, phylogeny, anatomy, pharmacology
+-- 25 {-41.53} [elem_wise_prod]: duplicated, reproduced, copied, exported, reused, resold, downloaded, reprinted, transferred, converted
+-- 70 {-43.59} [elem_wise_prod]: hand-painted, decorative, hand-made, polychrome, colorful, exquisite, trompe, handmade, colored, one-of-a-kind
+-- 170 {-45.84} [elem_wise_prod]: highlighted, addressing, downplaying, recognizing, highlighting, downplays, tackling, mitigate, exacerbate, acknowledging
+-- 222 {-57.93} [first_vec : sentence1]: streaks, stripe, speckles, jumpsuit, carnation, goo, tinge, poppies, swirls, eyeshadow
+-- 72 {-58.43} [elem_wise_prod]: injunction, prosecution, subpoena, indictment, writ, subpoenas, rulings, indictments, probation, verdict
+- against [precision = 0.4482758620689655] :
+  ++ positive predictors ++
+-- 222 {51.33} [first_vec : sentence1]: streaks, stripe, speckles, jumpsuit, carnation, goo, tinge, poppies, swirls, eyeshadow
+-- 297 {43.57} [second_vec : sentence2]: ka, ta, pe, od, ili, hai, bu, kar, ve, cl
+-- 76 {42.94} [elem_wise_prod]: tweezers, toothbrush, screwdriver, chisel, scissors, razor, broom, razors, pliers, comb
+-- 11 {38.85} [first_vec : sentence1]: verbs, grammar, nouns, adjectives, vocabulary, pronouns, punctuation, plural, phonetics, adjective
+-- 252 {38.45} [abs_diff]: self-image, knack, penchant, inclinations, stature, athleticism, instincts, eyesight, toughness, acumen
+-- 18 {38.42} [first_vec : sentence1]: underpinnings, justifications, imperatives, justification, rationale, standpoint, underpinning, ramifications, considerations, implications
+-- 144 {38.28} [second_vec : sentence2]: precisely, objectively, quantitatively, clearly, unambiguously, accurately, empirically, qualitatively, hardly, rightly
+-- 214 {38.03} [first_vec : sentence1]: disprove, refute, contradict, substantiate, contradicts, rejecting, corroborate, espouse, debunking, corroborates
+-- 133 {37.04} [second_vec : sentence2]: high-technology, multibillion-dollar, money-losing, mail-order, old-line, billion-dollar, state-owned, blue-chip, biotech, for-profit
+-- 121 {35.98} [abs_diff]: dizziness, nausea, vomiting, shortness, restlessness, headache, tremors, diarrhea, cramps, irritability
+  -- negative predictors --
+-- 77 {-58.51} [second_vec : sentence2]: oversaw, overseeing, expedite, initiating, spearheaded, oversee, initiate, postpone, finalize, initiated
+-- 92 {-59.07} [elem_wise_prod]: kudos, reassurance, shrift, compliments, acknowledgement, accolades, encouragement, acclaim, ovation, alms
+-- 180 {-63.04} [elem_wise_prod]: wooded, forested, windswept, pristine, mountainous, grassy, verdant, hilly, picturesque, unspoiled
+-- 138 {-64.13} [first_vec : sentence1]: stove, refrigerator, fridge, dryer, dishwasher, washer, freezer, sink, toaster, ovens
+-- 99 {-64.42} [second_vec : sentence2]: bicarbonate, sulfate, phosphate, nitrate, hydroxide, chloride, carbonate, ammonium, magnesium, potassium
+-- 190 {-66.70} [elem_wise_prod]: rainy, frigid, humid, balmy, windy, wintry, coldest, chilly, stormy, muggy
+-- 128 {-71.19} [elem_wise_prod]: necklaces, earrings, bracelets, necklace, bracelet, charms, brooches, earring, jewelry, pendant
+-- 172 {-75.80} [first_vec : sentence1]: oxidase, decarboxylase, phosphatases, reductase, antagonists, cyclase, inhibition, synthase, biosynthesis, receptors
+-- 247 {-77.05} [first_vec : sentence1]: unwittingly, legitimately, unaccountably, unintentionally, regrettably, coincidentally, perversely, unsurprisingly, reputedly, unknowingly
+-- 275 {-81.54} [elem_wise_prod]: diligently, faithfully, responsibly, constructively, intelligently, cooperatively, systematically, aggressively, productively, profitably

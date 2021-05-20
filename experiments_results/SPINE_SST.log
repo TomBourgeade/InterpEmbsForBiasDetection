@@ -1,0 +1,98 @@
+=== CONFIG ===
+{'embeddings': 'SPINE', 'corpus': 'SST', 'batch_size': 64, 'beta1': 0.99, 'beta2': 0.999, 'gamma': 0.65, 'lr': 0.020766868778627563, 'patience': 5, 'scheduler': 'plateau', 'weight_decay': 0.0, 'xavier': True, 'epochs': 200}
+=== ====== ===
+Evaluation:
+- test set evaluation:
+{'test_acc': 0.5992961525917053, 'test_loss': 0.8894324898719788}
+- report (test):
+              precision    recall  f1-score   support
+
+     neutral     0.1913    0.0649    0.0969       339
+    positive     0.6297    0.7482    0.6838       834
+    negative     0.6183    0.6691    0.6427       816
+
+    accuracy                         0.5993      1989
+   macro avg     0.4798    0.4941    0.4745      1989
+weighted avg     0.5503    0.5993    0.5669      1989
+
+- random classifier (baseline):
+              precision    recall  f1-score   support
+
+     neutral     0.1463    0.1445    0.1454       339
+    positive     0.3932    0.3885    0.3908       834
+    negative     0.3952    0.4020    0.3985       816
+
+    accuracy                         0.3524      1989
+   macro avg     0.3116    0.3117    0.3116      1989
+weighted avg     0.3519    0.3524    0.3522      1989
+
+Diagnostics for labels:
+- neutral [precision = 0.19130434782608696] :
+  ++ positive predictors ++
+-- 336 {12.18} : munster, all-ireland, province, leinster, ulster, utrecht, khmer, netherlands, galway, pot
+-- 729 {11.99} : turkish, cyprus, cypriot, greece, aegean, ankara, anatolia, armenians, ottoman, athens
+-- 851 {11.81} : akbar, fk, dorset, sk, ali, tehran, iranian, worcestershire, cheese, safari
+-- 73 {11.41} : crops, livestock, fertilizer, crop, farms, seeds, farming, corn, wheat, orchards
+-- 804 {9.70} : defences, defenses, fortifications, shield, protect, immune, protective, forts, protecting, protected
+-- 181 {9.51} : 1-3, 2-3, 1-1, 1-2, pine, logs, lumber, forests, 1-0, logging
+-- 599 {9.23} : particles, electromagnetic, electrons, galaxies, radiation, planets, electron, magnetic, atoms, ions
+-- 280 {9.19} : recycling, sewage, garbage, waste, trash, landfill, sanitation, cans, contaminated, toilets
+-- 589 {8.86} : stores, retailer, retailers, store, macy, supermarkets, supermarket, grocery, retail, catalog
+-- 623 {8.79} : cincinnati, chicago, tribune, spokane, minneapolis, omaha, metropolitan, wichita, milwaukee, denver
+  -- negative predictors --
+-- 866 {-9.48} : possessing, weapons, uranium, illegally, heroin, illegal, smuggled, explosives, cocaine, enriched
+-- 898 {-10.46} : alloy, aluminium, steel, stainless, copper, coated, rubber, insulation, plastic, zinc
+-- 241 {-10.83} : inspect, au, ceasefire, ridden, patrolling, dos, restore, patrolled, repair, alexandre
+-- 680 {-10.83} : riot, demonstrators, disperse, protesters, tear, clashed, slogans, stones, marched, dispersed
+-- 999 {-11.22} : drivers, tractor, roadside, lois, turnpike, bus, taxi, donkey, pedestrians, driver
+-- 892 {-11.42} : miner, miners, townships, bhp, oblast, coal, newcastle, ferdinand, mercury, wilkes
+-- 652 {-11.67} : islands, indonesian, island, timor, bali, borneo, indonesia, portuguese, java, archipelago
+-- 893 {-12.52} : 106, 91, 89, lakers, 96, 107, 105, 102, 104, 94
+-- 925 {-14.69} : bahrain, belgium, guatemala, maldives, algeria, togo, denmark, thailand, slovenia, romania
+-- 686 {-14.85} : 108, 163, 123, 181, 191, wicket, 146, worcestershire, 178, innings
+- positive [precision = 0.6296670030272452] :
+  ++ positive predictors ++
+-- 925 {15.64} : bahrain, belgium, guatemala, maldives, algeria, togo, denmark, thailand, slovenia, romania
+-- 749 {13.47} : mt., mount, bundesliga, sv, notch, marble, verona, pulpit, ajax, wed
+-- 58 {11.62} : picnic, hiking, accommodations, meals, camping, dining, enjoy, lodging, recreational, trips
+-- 806 {10.65} : olympic, olympics, ioc, doping, athletes, torch, athens, medals, winter, games
+-- 122 {10.50} : rand, dollars, pound, yen, euro, shillings, francs, yuan, dollar, pesos
+-- 849 {10.15} : massa, refueling, syrian, shelling, dominance, boeing, ferrari, tankers, lockheed, domination
+-- 51 {10.05} : blockade, repression, imposed, sanctions, oppression, dissent, restrictions, demonstrations, protests, authoritarian
+-- 764 {10.01} : suzuki, nippon, japan, yen, yokohama, mitsubishi, osaka, fuji, kyoto, toyota
+-- 405 {9.97} : rbi, outfielder, baseman, fielder, padres, astros, inning, homer, braves, shortstop
+-- 435 {9.97} : extensively, lectured, frequently, vigorously, periodically, continuously, throughout, openly, routinely, unsuccessfully
+  -- negative predictors --
+-- 562 {-10.87} : braves, nba, mariners, dodgers, canadiens, astros, oilers, canucks, bengals, nfl
+-- 513 {-11.05} : mathematical, equations, theory, quantum, equation, theoretical, physics, computational, empirical, calculus
+-- 564 {-11.51} : opportunities, entrepreneurs, exploit, exploiting, exploited, wealthy, skilled, lure, lured, wealth
+-- 77 {-11.57} : ali, egyptian, lebanese, al, egypt, abdul, pasha, ibrahim, muhammad, mohammad
+-- 753 {-12.13} : taxes, tariffs, tariff, tax, tolls, fees, taxation, rates, fee, income
+-- 834 {-12.91} : drugs, vaccine, drug, vaccines, prescription, insulin, antibiotics, doses, hormone, generic
+-- 690 {-14.24} : hampered, delayed, delays, hindered, marred, inadequate, disrupted, lack, faulty, frustrated
+-- 61 {-14.37} : maldives, bahamas, mole, mauritius, paradise, owls, obstruction, slalom, centimeters, falcon
+-- 729 {-14.78} : turkish, cyprus, cypriot, greece, aegean, ankara, anatolia, armenians, ottoman, athens
+-- 336 {-15.05} : munster, all-ireland, province, leinster, ulster, utrecht, khmer, netherlands, galway, pot
+- negative [precision = 0.6183465458663646] :
+  ++ positive predictors ++
+-- 132 {13.67} : grape, wine, wines, vineyards, winery, hezbollah, fruit, vineyard, orchards, citrus
+-- 97 {11.92} : treasury, yield, yields, bonds, 10-year, benchmark, debt, maturity, mortgage, 182
+-- 281 {11.90} : wwf, wbc, boxing, heavyweight, ufc, wrestling, bout, wwe, wrestlers, wrestler
+-- 483 {11.85} : shale, 04, guantanamo, detainees, vfl, synod, horton, plural, solemn, cloning
+-- 690 {11.44} : hampered, delayed, delays, hindered, marred, inadequate, disrupted, lack, faulty, frustrated
+-- 585 {11.35} : recession, turmoil, crisis, brink, collapse, scandals, bankruptcy, chaos, debt, financial
+-- 209 {10.96} : fashion, clothing, dresses, apparel, trousers, wear, jeans, clothes, pants, shoes
+-- 892 {10.81} : miner, miners, townships, bhp, oblast, coal, newcastle, ferdinand, mercury, wilkes
+-- 513 {10.72} : mathematical, equations, theory, quantum, equation, theoretical, physics, computational, empirical, calculus
+-- 242 {10.42} : leinster, munster, all-ireland, viscount, 3rd, dorsal, 6th, 4th, 7th, 1st
+  -- negative predictors --
+-- 199 {-10.95} : medina, injection, insulin, uranium, fk, needle, unix, trajectory, needles, enrichment
+-- 804 {-11.35} : defences, defenses, fortifications, shield, protect, immune, protective, forts, protecting, protected
+-- 950 {-12.12} : migrants, smuggling, migrant, immigration, immigrants, migration, refugees, immigrant, illegal, refugee
+-- 946 {-12.60} : sar, tanzania, shillings, zambia, der, magistrate, kenya, judge, belgian, hk
+-- 610 {-13.06} : 1794, 1797, 1809, 1799, 1793, 1815, 1813, 1802, 1804, 1819
+-- 843 {-13.19} : bce, prehistoric, medieval, century, dating, dynasty, ce, earliest, archaic, fossils
+-- 764 {-13.30} : suzuki, nippon, japan, yen, yokohama, mitsubishi, osaka, fuji, kyoto, toyota
+-- 806 {-13.33} : olympic, olympics, ioc, doping, athletes, torch, athens, medals, winter, games
+-- 238 {-13.88} : colombia, colombian, jungle, peru, rebels, leftist, guatemala, andes, opium, peruvian
+-- 122 {-16.15} : rand, dollars, pound, yen, euro, shillings, francs, yuan, dollar, pesos

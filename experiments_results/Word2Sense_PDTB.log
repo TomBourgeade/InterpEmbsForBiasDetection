@@ -1,0 +1,413 @@
+=== CONFIG ===
+{'embeddings': 'Word2Sense', 'corpus': 'PDTB', 'batch_size': 256, 'beta1': 0.99, 'beta2': 0.999, 'gamma': 0.7, 'lr': 0.05828819654250677, 'patience': 5, 'scheduler': 'plateau', 'weight_decay': 0.0, 'xavier': True, 'epochs': 200}
+=== ====== ===
+Evaluation:
+- test set evaluation:
+{'test_acc': 0.34285715222358704, 'test_loss': 1.80026113986969}
+- report (test):
+                 precision    recall  f1-score   support
+
+    Alternative     0.0000    0.0000    0.0000         9
+       Contrast     0.2903    0.1364    0.1856       132
+    Restatement     0.2723    0.2837    0.2779       215
+          Cause     0.3798    0.5563    0.4514       284
+    Conjunction     0.3168    0.4660    0.3772       206
+   Asynchronous     0.3636    0.1250    0.1860        64
+           List     0.0000    0.0000    0.0000        12
+  Instantiation     0.5849    0.2583    0.3584       120
+      Synchrony     0.0000    0.0000    0.0000        18
+     Concession     0.0000    0.0000    0.0000        18
+Pragmatic cause     0.0000    0.0000    0.0000         7
+
+       accuracy                         0.3429      1085
+      macro avg     0.2007    0.1660    0.1670      1085
+   weighted avg     0.3350    0.3429    0.3180      1085
+
+- random classifier (baseline):
+                 precision    recall  f1-score   support
+
+    Alternative     0.0000    0.0000    0.0000         9
+       Contrast     0.1240    0.1212    0.1226       132
+    Restatement     0.1675    0.1535    0.1602       215
+          Cause     0.2561    0.2570    0.2566       284
+    Conjunction     0.1718    0.1893    0.1801       206
+   Asynchronous     0.0484    0.0469    0.0476        64
+           List     0.0000    0.0000    0.0000        12
+  Instantiation     0.0806    0.0833    0.0820       120
+      Synchrony     0.0000    0.0000    0.0000        18
+     Concession     0.0455    0.0556    0.0500        18
+Pragmatic cause     0.0000    0.0000    0.0000         7
+
+       accuracy                         0.1613      1085
+      macro avg     0.0813    0.0824    0.0817      1085
+   weighted avg     0.1605    0.1613    0.1607      1085
+
+Diagnostics for labels:
+- Alternative [precision = 0.0] :
+  ++ positive predictors ++
+-- 696 {28.26} [second_vec : sentence2]: stokes, sutherland, corporal, sergeant, mckay, piper, devil, capt, durban, mcmillan
+-- 1940 {26.02} [abs_diff]: buddy, th, threads, clans, holly, erickson, cs, poster, servers, posts
+-- 1684 {25.92} [second_vec : sentence2]: explorer, navigator, safari, browser, internet, 5.5, favorites, 5.0, preferences, 4.0
+-- 1948 {25.37} [second_vec : sentence2]: safari, overland, mara, botswana, desert, camel, rainforest, jungle, sanctuary, elephants
+-- 196 {24.74} [abs_diff]: partition, boot, disk, linux, disks, dos, swap, configuration, restore, nt
+-- 2244 {24.36} [abs_diff]: admissions, undergraduate, tariff, full-time, applicants, postgraduate, applying, colleges, clearing, universities
+-- 2068 {24.18} [abs_diff]: economics, economists, quantitative, economist, statistics, economic, oecd, empirical, finance, comparative
+-- 2244 {24.11} [second_vec : sentence2]: admissions, undergraduate, tariff, full-time, applicants, postgraduate, applying, colleges, clearing, universities
+-- 696 {23.89} [abs_diff]: stokes, sutherland, corporal, sergeant, mckay, piper, devil, capt, durban, mcmillan
+-- 25 {23.83} [first_vec : sentence1]: neither, nor, strongly, endorse, recommend, not, agree, agreeing, necessarily, cannot
+  -- negative predictors --
+-- 405 {-58.11} [abs_diff]: bangkok, thai, thailand, mai, chiang, hua, siam, mae, rai, lao
+-- 77 {-59.31} [second_vec : sentence2]: leone, benin, zambia, togo, mali, cameroon, botswana, angola, liberia, sierra
+-- 1380 {-59.58} [second_vec : sentence2]: currie, draper, woodward, brian, clayton, clive, hansen, malcolm, joanne, stan
+-- 1528 {-60.21} [second_vec : sentence2]: posture, u2, perception, optimal, pattern, mediation, origin, recognition, bell, reversal
+-- 237 {-61.27} [first_vec : sentence1]: qing, dynasty, qin, ming, emperors, han, monarchs, tang, zhou, rulers
+-- 550 {-61.62} [first_vec : sentence1]: cite, acronym, tags, title, tag, allowed, strike, displayed, tt, strong
+-- 191 {-62.91} [second_vec : sentence2]: vocals, guitar, bassist, guitarist, drums, drummer, vocalist, keyboards, bass, guitars
+-- 432 {-64.51} [first_vec : sentence1]: perth, highland, highlands, glen, angus, stirling, loch, scotland, scottish, dee
+-- 1573 {-69.48} [second_vec : sentence2]: owl, eagle, hawks, falcon, hawk, eagles, falcons, bald, ravens, jays
+-- 1584 {-69.79} [first_vec : sentence1]: topic, created, dip, freestyle, author, kobe, europeans, message, desperate, two-year
+- Contrast [precision = 0.2903225806451613] :
+  ++ positive predictors ++
+-- 409 {37.45} [elem_wise_prod]: 80,000, 150,000, 120,000, 60,000, 70,000, 6,000, 50,000, 400,000, 12,000, 9,000
+-- 1009 {34.60} [second_vec : sentence2]: wigan, trafford, leigh, halifax, oldham, manchester, metropolitan, lea, liverpool, everton
+-- 205 {34.49} [first_vec : sentence1]: frequencies, frequency, db, signals, bandwidth, coding, analog, distortion, pulse, mhz
+-- 2120 {32.10} [second_vec : sentence2]: robin, hood, edit, marian, maid, outlaw, sherwood, merry, publish, ballads
+-- 1815 {31.94} [first_vec : sentence1]: evelyn, middleton, 1850s, leaf, abbott, fletcher, stanley, 1870s, pat, pencil
+-- 2231 {31.44} [elem_wise_prod]: cents, shillings, pound, penny, minute, per, charged, packet, costing, ordinary
+-- 1344 {30.28} [second_vec : sentence2]: karen, asa, springer, aisle, joanne, specials, baxter, exeter, jared, wright
+-- 295 {30.25} [second_vec : sentence2]: arrogant, shy, witty, rude, cheerful, polite, eccentric, cynical, persona, naive
+-- 1820 {30.07} [first_vec : sentence1]: gov, retrieved, accessed, web, link, website, mystical, myspace, aspect, uniform
+-- 1338 {29.28} [elem_wise_prod]: java, developer, api, net, iphone, microsoft, beta, eclipse, visual, dora
+  -- negative predictors --
+-- 2228 {-41.00} [second_vec : sentence2]: shiva, temple, devi, temples, devotees, hindu, shrine, deity, goddess, deities
+-- 314 {-42.21} [second_vec : sentence2]: ski, skiing, skier, alpine, resorts, val, lifts, nordic, resort, slopes
+-- 2249 {-42.42} [second_vec : sentence2]: clouds, mist, aurora, skies, horizon, sky, dust, dense, showers, precipitation
+-- 1291 {-42.56} [second_vec : sentence2]: rabbi, torah, rabbis, moshe, synagogue, judaism, yiddish, hebrew, jewish, sabbath
+-- 996 {-42.64} [second_vec : sentence2]: lutheran, presbyterian, methodist, catholicism, congregations, protestant, reformed, denomination, anglican, protestants
+-- 145 {-43.68} [first_vec : sentence1]: cum, ut, est, dei, motto, ex, regina, et, sui, ad
+-- 298 {-44.47} [second_vec : sentence2]: finnish, finland, helsinki, sweden, stockholm, swedish, nordic, scandinavia, scandinavian, norway
+-- 32 {-47.17} [second_vec : sentence2]: footage, filmed, filming, multimedia, streaming, video, clips, interactive, rehearsal, animation
+-- 333 {-48.33} [second_vec : sentence2]: danish, denmark, larsen, nielsen, andersen, jens, norwegian, henrik, hans, ole
+-- 1629 {-50.89} [first_vec : sentence1]: soyuz, astronaut, astronauts, spacecraft, nasa, shuttle, apollo, manned, unmanned, orbit
+- Restatement [precision = 0.27232142857142855] :
+  ++ positive predictors ++
+-- 118 {37.39} [first_vec : sentence1]: evolution, darwin, genetic, traits, organism, biology, genes, ecology, genetics, organisms
+-- 950 {32.82} [first_vec : sentence1]: mascot, replica, panther, golden, nicknamed, resembles, dragon, likened, thunder, resembled
+-- 624 {30.51} [second_vec : sentence2]: cottage, cottages, pets, farmhouse, bedrooms, catering, barn, grade, ty, renovated
+-- 77 {30.34} [first_vec : sentence1]: leone, benin, zambia, togo, mali, cameroon, botswana, angola, liberia, sierra
+-- 1917 {30.09} [second_vec : sentence2]: implied, limitation, representations, accuracy, endorse, whatsoever, contained, warrant, fitness, relied
+-- 1973 {28.85} [first_vec : sentence1]: locke, philosophy, hume, philosophical, philosophers, philosopher, realism, critique, aristotle, morality
+-- 1857 {27.48} [first_vec : sentence1]: pirate, treasure, piracy, kidd, caribbean, buccaneers, seas, curse, pearl, mutiny
+-- 1652 {27.32} [second_vec : sentence2]: salary, 35,000, 22,000, 18,000, 45,000, 25,000, 30,000, permanent, bonus, 40,000
+-- 561 {27.09} [second_vec : sentence2]: bed, laundry, sheets, feather, furnishings, robes, mats, clothes, maid, sprung
+-- 123 {26.40} [second_vec : sentence2]: void, operator, shelved, static, float, returns, val, string, courtney, define
+  -- negative predictors --
+-- 841 {-36.95} [first_vec : sentence1]: hiroshima, bomb, bombs, atomic, detonated, bombing, bombings, blitz, dropped, exploded
+-- 774 {-37.07} [first_vec : sentence1]: pawn, anand, audi, 1-0, openings, f1, sicilian, fischer, variation, lopez
+-- 2145 {-37.47} [abs_diff]: longitude, latitude, resource, location, type, institutes, 38, coordinates, 98, 54
+-- 133 {-37.59} [first_vec : sentence1]: inches, cm, centimeters, inch, wingspan, diameter, 12.5, tall, mm, dimensions
+-- 2014 {-39.73} [abs_diff]: newcastle, sunderland, shields, benton, wear, durham, 222, metro, upon, 191
+-- 808 {-40.47} [second_vec : sentence2]: outlook, microsoft, word, ms, desktop, viewer, entourage, 97, exported, packages
+-- 176 {-41.19} [first_vec : sentence1]: google, rankings, search, engines, ranking, engine, searches, directory, listings, searched
+-- 1918 {-41.22} [first_vec : sentence1]: beck, fairfield, hostel, slipped, dodd, gill, pike, dove, scar, gt
+-- 628 {-41.84} [first_vec : sentence1]: slade, surrey, 207, kent, govt, headlines, middleton, avery, broadway, walnut
+-- 1234 {-43.01} [first_vec : sentence1]: nguyen, hanoi, vietnamese, saigon, vietnam, minh, nam, dong, chu, cao
+- Cause [precision = 0.3798076923076923] :
+  ++ positive predictors ++
+-- 397 {37.43} [second_vec : sentence2]: artery, anterior, inferior, vein, superficial, ligament, nasal, groin, cavity, lateral
+-- 397 {33.23} [abs_diff]: artery, anterior, inferior, vein, superficial, ligament, nasal, groin, cavity, lateral
+-- 278 {29.58} [abs_diff]: directory, files, file, commands, echo, execute, unix, command, prompt, shell
+-- 28 {28.34} [second_vec : sentence2]: baroque, gothic, architectural, architecture, architect, renaissance, architects, revival, deco, modernist
+-- 784 {27.83} [first_vec : sentence1]: pigeon, shooting, clay, cocktail, revive, daytona, descending, 911, prey, archery
+-- 1658 {27.51} [abs_diff]: choreographer, ballet, dancer, choreographed, choreography, dance, dancers, troupe, ballroom, danced
+-- 1965 {27.49} [abs_diff]: humiliation, terrible, endured, inflict, fate, inflicted, endure, cruel, horrible, awful
+-- 183 {27.47} [second_vec : sentence2]: portraits, paintings, sculpture, painting, artist, portrait, gallery, exhibited, artworks, exhibition
+-- 1746 {27.04} [abs_diff]: cb, baronet, sir, marshal, brigadier, jp, mc, baron, viscount, politician
+-- 855 {26.49} [first_vec : sentence1]: brooks, ph, credits, brent, tanaka, 184, mario, bremen, shea, 133
+  -- negative predictors --
+-- 859 {-38.95} [abs_diff]: purse, spill, speedway, official, 150,000, club, gavin, spilled, pretext, sam
+-- 859 {-39.12} [second_vec : sentence2]: purse, spill, speedway, official, 150,000, club, gavin, spilled, pretext, sam
+-- 1336 {-40.97} [first_vec : sentence1]: ceramics, ware, pottery, canvas, paint, tiles, pencil, clay, painting, pots
+-- 923 {-41.91} [second_vec : sentence2]: barred, finch, canopy, serra, heard, scaled, jamaican, emerald, rancho, bolivian
+-- 462 {-43.15} [second_vec : sentence2]: dr, professor, radcliffe, paula, lecturer, collaborators, suzanne, sue, wilkinson, saunders
+-- 2006 {-43.86} [second_vec : sentence2]: philharmonic, orchestra, conductor, orchestras, concerto, violinist, soloist, beethoven, orchestral, claudio
+-- 126 {-44.47} [elem_wise_prod]: hundred, sixty, thousand, twenty, fifteen, thirty, eighteen, fifty, fourteen, eighty
+-- 1020 {-45.18} [first_vec : sentence1]: steven, spielberg, graeme, tim, gerry, stephen, mccall, welch, atkinson, steve
+-- 224 {-46.49} [second_vec : sentence2]: jo, joanna, cooke, rosemary, debbie, jill, barker, fisher, gina, saunders
+-- 1345 {-48.17} [second_vec : sentence2]: md, phd, mb, ma, consultant, lecturer, mba, physician, dr, honorary
+- Conjunction [precision = 0.31683168316831684] :
+  ++ positive predictors ++
+-- 683 {41.81} [second_vec : sentence2]: walters, tobin, ritchie, collins, lowe, cal, phil, 143, marin, rob
+-- 233 {33.16} [first_vec : sentence1]: norwood, garfield, hill, suburb, grange, grove, lane, avenue, crescent, suburbs
+-- 1281 {32.81} [first_vec : sentence1]: middlesex, hayes, manor, brent, norwood, watford, charlton, berkshire, wembley, shepherd
+-- 2122 {31.64} [abs_diff]: audrey, blanche, ida, sullivan, savoy, phyllis, cary, seymour, frederic, patience
+-- 1344 {31.17} [abs_diff]: karen, asa, springer, aisle, joanne, specials, baxter, exeter, jared, wright
+-- 39 {30.50} [second_vec : sentence2]: attitude, toward, hostility, disdain, sentiment, arrogant, stereotypes, harshly, towards, dislike
+-- 1218 {30.15} [second_vec : sentence2]: federer, loeb, anita, champ, rivalry, pairing, rocky, slam, comeback, aces
+-- 1061 {30.03} [second_vec : sentence2]: fancy, halloween, dress, costume, costumes, monsters, monster, idea, click, gangster
+-- 1188 {29.63} [second_vec : sentence2]: bait, catching, feeder, worm, hook, float, weighing, catches, pike, hooks
+-- 1058 {29.51} [first_vec : sentence1]: jaw, jaws, teeth, lip, tooth, cheek, ribs, flattened, upper, ridges
+  -- negative predictors --
+-- 851 {-33.93} [second_vec : sentence2]: badminton, squash, tennis, athletics, sports, cricket, sporting, athletes, coaching, gymnastics
+-- 1467 {-34.04} [second_vec : sentence2]: slides, slide, presentation, presentations, lecture, projection, notes, poster, accompanying, talk
+-- 1960 {-34.10} [first_vec : sentence1]: pony, equestrian, horses, horse, saddle, reins, ridden, riding, rodeo, horseback
+-- 1436 {-34.51} [second_vec : sentence2]: vale, swansea, cardiff, newport, talbot, wales, valleys, barry, welsh, port
+-- 244 {-35.25} [elem_wise_prod]: toyota, nissan, mitsubishi, volvo, saab, sedan, mazda, hybrid, traction, braking
+-- 2076 {-36.72} [elem_wise_prod]: banking, bank, banks, halifax, atm, banker, jp, account, chase, savings
+-- 1191 {-39.39} [second_vec : sentence2]: dentist, dental, tooth, teeth, crowns, implants, decay, oral, cosmetic, plaque
+-- 1555 {-40.11} [second_vec : sentence2]: elephants, leopard, lions, buffalo, lion, elephant, tigers, tiger, panther, herds
+-- 2019 {-40.29} [first_vec : sentence1]: cocktail, juice, lemon, soda, lime, dash, pour, coke, shaken, sherry
+-- 1202 {-43.09} [first_vec : sentence1]: cypriot, cyprus, turkish, greece, 1974, estonia, belize, venetian, mediterranean, republic
+- Asynchronous [precision = 0.36363636363636365] :
+  ++ positive predictors ++
+-- 1800 {38.58} [second_vec : sentence2]: kane, hearst, gil, citizen, denny, simmons, frazier, split, patty, fresno
+-- 1365 {36.93} [second_vec : sentence2]: rosie, miranda, professor, dr, mcgill, anderson, professors, forbes, attending, philippe
+-- 1195 {32.41} [first_vec : sentence1]: sherwood, po, discography, norris, gigs, stephanie, box, 222, pete, weston
+-- 1373 {32.08} [first_vec : sentence1]: oslo, bergen, norway, norwegian, af, re-elected, hydro, municipalities, fk, play-off
+-- 2160 {31.32} [abs_diff]: coating, silicon, plastics, deposition, semiconductor, fabricated, synthetic, coated, ceramics, materials
+-- 1665 {31.20} [second_vec : sentence2]: breathe, breath, breathing, lungs, slowly, pause, forcefully, stops, deeply, unconscious
+-- 1992 {30.64} [abs_diff]: invoked, synopsis, window, motif, argument, parent, void, display, string, returns
+-- 2065 {30.23} [second_vec : sentence2]: dragons, wizards, fantasy, forgotten, 40,000, setting, dragon, greenwood, monsters, edition
+-- 1800 {30.11} [abs_diff]: kane, hearst, gil, citizen, denny, simmons, frazier, split, patty, fresno
+-- 1687 {29.87} [second_vec : sentence2]: disappear, fade, disappears, gradually, becomes, slowly, cracks, disappearing, rapidly, grows
+  -- negative predictors --
+-- 1200 {-44.71} [abs_diff]: wedding, dresses, groom, favors, bride, weddings, honeymoon, gown, attire, receptions
+-- 173 {-45.79} [first_vec : sentence1]: baja, san, valle, rancho, del, francisco, rey, norte, diego, arroyo
+-- 907 {-46.72} [second_vec : sentence2]: pharmacy, prescription, medicines, surgeries, pharmaceutical, chemist, nurses, nurse, doctors, gps
+-- 1960 {-48.54} [second_vec : sentence2]: pony, equestrian, horses, horse, saddle, reins, ridden, riding, rodeo, horseback
+-- 1255 {-49.63} [abs_diff]: coventry, faa, warwick, westwood, crusaders, lyons, warwickshire, brandon, jaguar, precinct
+-- 1405 {-55.91} [first_vec : sentence1]: mann, judith, jeremiah, judd, solomon, esther, williamson, simone, apocalypse, susan
+-- 1405 {-58.42} [abs_diff]: mann, judith, jeremiah, judd, solomon, esther, williamson, simone, apocalypse, susan
+-- 1615 {-61.00} [first_vec : sentence1]: zulu, durban, johannesburg, boer, apartheid, cape, mandela, africa, botswana, african
+-- 458 {-64.63} [first_vec : sentence1]: osaka, prefecture, yokohama, kobe, tanaka, nakamura, japan, nippon, kyoto, abe
+-- 458 {-65.47} [abs_diff]: osaka, prefecture, yokohama, kobe, tanaka, nakamura, japan, nippon, kyoto, abe
+- List [precision = 0.0] :
+  ++ positive predictors ++
+-- 792 {32.33} [first_vec : sentence1]: steep, slope, muddy, slopes, terrain, ridges, rocky, rough, hilly, cliffs
+-- 2173 {31.97} [abs_diff]: jerry, ricky, henson, larry, springer, billy, harmon, shea, comedian, bragg
+-- 628 {31.63} [abs_diff]: slade, surrey, 207, kent, govt, headlines, middleton, avery, broadway, walnut
+-- 888 {30.09} [abs_diff]: salisbury, avon, bath, somerset, gloucestershire, downs, plain, georges, barrow, bristol
+-- 2205 {29.83} [abs_diff]: reefs, coral, reef, sharks, oceans, depths, shark, seas, marine, turtles
+-- 1065 {29.66} [abs_diff]: camden, 213, heath, regents, hill, crescent, suburb, interchange, chalk, hazards
+-- 363 {29.01} [second_vec : sentence2]: mythology, goddess, troy, apollo, hercules, achilles, underworld, myth, gods, greeks
+-- 1065 {28.98} [first_vec : sentence1]: camden, 213, heath, regents, hill, crescent, suburb, interchange, chalk, hazards
+-- 888 {28.72} [first_vec : sentence1]: salisbury, avon, bath, somerset, gloucestershire, downs, plain, georges, barrow, bristol
+-- 155 {27.97} [abs_diff]: famine, starvation, orphans, humanitarian, drought, sanitation, poorest, aid, hunger, impoverished
+  -- negative predictors --
+-- 1557 {-52.09} [abs_diff]: transplant, marrow, kidney, liver, leukemia, rejection, organ, blood, donor, organs
+-- 996 {-54.00} [abs_diff]: lutheran, presbyterian, methodist, catholicism, congregations, protestant, reformed, denomination, anglican, protestants
+-- 472 {-55.09} [first_vec : sentence1]: fitness, endurance, gym, exercise, athletes, strength, athlete, cardiovascular, weights, stretching
+-- 18 {-56.27} [first_vec : sentence1]: solid, none, bold, margin, width, normal, dotted, important, border, float
+-- 1549 {-56.84} [first_vec : sentence1]: sperm, embryo, fertility, egg, donor, conception, reproductive, conceived, cycles, clinics
+-- 1534 {-57.37} [abs_diff]: slovakia, slovak, czech, hungary, prague, czechoslovakia, slovenia, budapest, bohemia, slovenian
+-- 2210 {-58.51} [first_vec : sentence1]: schizophrenia, depression, psychiatric, disorders, paranoid, traumatic, suicidal, mood, mental, panic
+-- 1557 {-63.36} [first_vec : sentence1]: transplant, marrow, kidney, liver, leukemia, rejection, organ, blood, donor, organs
+-- 18 {-65.96} [abs_diff]: solid, none, bold, margin, width, normal, dotted, important, border, float
+-- 1655 {-68.68} [second_vec : sentence2]: pills, greenwich, generic, prescription, casino, cheap, buy, maritime, pharmacy, discount
+- Instantiation [precision = 0.5849056603773585] :
+  ++ positive predictors ++
+-- 1471 {42.18} [second_vec : sentence2]: smiles, says, oath, laughs, ta, cheek, smile, quietly, say, loudly
+-- 1471 {36.36} [abs_diff]: smiles, says, oath, laughs, ta, cheek, smile, quietly, say, loudly
+-- 782 {35.90} [second_vec : sentence2]: juvenile, harbour, trapped, wb, dar, juveniles, yates, atkins, catcher, brooks
+-- 563 {35.66} [first_vec : sentence1]: saturn, jupiter, leo, mercury, lilly, mars, constellation, mundane, planets, sign
+-- 1671 {34.12} [second_vec : sentence2]: romans, jude, luke, verse, revelation, verses, jeremiah, genesis, paul, exodus
+-- 57 {33.57} [second_vec : sentence2]: ibn, quran, umar, allah, imam, muhammad, abd, prophet, muslims, islam
+-- 1657 {33.47} [second_vec : sentence2]: hanson, fuller, leroy, forrest, carlson, draper, lab, wolfgang, pasadena, kris
+-- 1865 {32.54} [first_vec : sentence1]: indigenous, traditions, cultures, tribal, germanic, religions, tribes, folklore, pagan, europeans
+-- 1138 {31.81} [second_vec : sentence2]: writes, libel, spoke, defends, galloway, reid, iqbal, admits, saul, remarked
+-- 1635 {31.75} [first_vec : sentence1]: interaction, mediated, collaborative, interactions, communication, dialogues, dialogue, cooperative, discourse, facilitated
+  -- negative predictors --
+-- 2169 {-48.92} [first_vec : sentence1]: acc, ms, unused, kidd, 162, drafts, cc, govt, 401, mc
+-- 14 {-49.56} [first_vec : sentence1]: planets, jupiter, orbit, orbiting, saturn, planetary, celestial, eclipse, moon, orbital
+-- 431 {-50.07} [first_vec : sentence1]: 3.3, 0.2, 3.2, 3.4, 3.0, 3.7, 2.7, 1.9, 3.6, 2.3
+-- 1131 {-50.99} [first_vec : sentence1]: cans, bottles, cardboard, plastic, foil, recycled, glass, wrapping, packaging, bags
+-- 1816 {-51.95} [elem_wise_prod]: shares, shareholders, dividends, isa, ordinary, share, shareholder, allotted, securities, bearer
+-- 379 {-53.00} [first_vec : sentence1]: carolina, greenville, pensacola, jacksonville, lauderdale, tampa, charleston, texas, nc, houston
+-- 1727 {-55.89} [first_vec : sentence1]: irvine, wallace, buzz, filed, curse, 04, 03, reviewer, here, click
+-- 854 {-58.84} [first_vec : sentence1]: salmon, fishery, fishing, fisheries, fishermen, rainbow, nets, fisherman, fish, fly
+-- 1647 {-59.25} [first_vec : sentence1]: whales, dolphins, dolphin, whaling, seals, shark, sharks, stranded, turtle, turtles
+-- 510 {-59.37} [first_vec : sentence1]: massacre, hooper, pt, drills, huskies, sanders, carving, texas, saw, siberian
+- Synchrony [precision = 0.0] :
+  ++ positive predictors ++
+-- 657 {29.09} [first_vec : sentence1]: percy, durham, newcastle, border, carlisle, castles, map, accommodations, robson, shields
+-- 142 {28.54} [abs_diff]: exterior, brightly, stained, rear, interior, front, glass, lights, curtain, sunlight
+-- 1556 {28.40} [first_vec : sentence1]: marcel, brasil, angola, willem, lp, shade, alexandre, luna, va, 1973
+-- 916 {27.40} [first_vec : sentence1]: er, en, anders, te, yo, tu, petit, ne, che, tal
+-- 972 {27.27} [first_vec : sentence1]: philanthropist, industrialist, businessman, banker, vanderbilt, entrepreneur, millionaire, inventor, wealthy, rockefeller
+-- 612 {27.03} [first_vec : sentence1]: robotic, robot, android, programmed, intelligent, artificial, mimic, remotely, autonomous, brains
+-- 337 {25.77} [second_vec : sentence2]: residing, households, census, families, 189, 163, 177, 186, 179, 181
+-- 175 {25.51} [abs_diff]: caravan, camping, tents, tent, berth, cabins, touring, camped, pitches, trailers
+-- 250 {25.19} [second_vec : sentence2]: nave, aisle, porch, arches, pulpit, altar, arch, flanked, projecting, facade
+-- 1304 {25.17} [abs_diff]: editions, volumes, edition, reprinted, edited, published, revised, reissued, philipp, johannes
+  -- negative predictors --
+-- 907 {-50.43} [first_vec : sentence1]: pharmacy, prescription, medicines, surgeries, pharmaceutical, chemist, nurses, nurse, doctors, gps
+-- 1237 {-51.25} [first_vec : sentence1]: wilder, 117, bristol, gloucester, gloucestershire, 1000, 900, 118, 2020, telephone
+-- 1555 {-52.50} [first_vec : sentence1]: elephants, leopard, lions, buffalo, lion, elephant, tigers, tiger, panther, herds
+-- 1339 {-52.54} [second_vec : sentence2]: spicy, flavor, smell, ripe, scent, texture, sour, flavors, tastes, hint
+-- 773 {-54.66} [second_vec : sentence2]: pan, oven, baking, dough, stir, lightly, fry, butter, cook, cooked
+-- 957 {-54.78} [first_vec : sentence1]: deer, elk, roe, moose, herds, hunted, wild, buck, nippon, herd
+-- 1647 {-55.11} [second_vec : sentence2]: whales, dolphins, dolphin, whaling, seals, shark, sharks, stranded, turtle, turtles
+-- 847 {-58.37} [first_vec : sentence1]: destiny, uc, counterattack, suits, suit, neo, seed, mobile, imperial, pilots
+-- 1527 {-60.72} [first_vec : sentence1]: monty, python, palin, sketch, supremacy, guido, ultimatum, terry, holy, sketches
+-- 1124 {-63.34} [second_vec : sentence2]: ps, recognition, synthesis, pronunciation, corpus, tagged, spoken, vocabulary, extraction, acoustic
+- Concession [precision = 0.0] :
+  ++ positive predictors ++
+-- 1973 {34.13} [second_vec : sentence2]: locke, philosophy, hume, philosophical, philosophers, philosopher, realism, critique, aristotle, morality
+-- 1973 {30.60} [abs_diff]: locke, philosophy, hume, philosophical, philosophers, philosopher, realism, critique, aristotle, morality
+-- 668 {28.81} [second_vec : sentence2]: citations, bibliography, databases, journals, subjects, resource, database, resources, citation, searched
+-- 1381 {28.62} [first_vec : sentence1]: peterborough, ramsey, lynn, eaton, stamford, suffolk, norfolk, cambridge, weston, journeys
+-- 1727 {27.29} [first_vec : sentence1]: irvine, wallace, buzz, filed, curse, 04, 03, reviewer, here, click
+-- 1743 {27.06} [second_vec : sentence2]: bricks, racers, wharf, perpetual, patterson, brick, clinic, robotic, siding, cosmetic
+-- 1094 {26.68} [abs_diff]: battles, downloads, newsletter, launches, auschwitz, publishing, appoints, libel, speaking, far
+-- 785 {26.31} [first_vec : sentence1]: roma, nomadic, seasoned, travelling, lore, romano, adventurous, eviction, traveling, payne
+-- 329 {25.76} [second_vec : sentence2]: expenses, fee, costs, charges, fees, deposit, cancellation, charge, expense, charged
+-- 1743 {25.30} [abs_diff]: bricks, racers, wharf, perpetual, patterson, brick, clinic, robotic, siding, cosmetic
+  -- negative predictors --
+-- 2171 {-54.30} [second_vec : sentence2]: dorset, poole, christchurch, portland, abbas, regis, hardy, jurassic, cove, salisbury
+-- 847 {-54.52} [second_vec : sentence2]: destiny, uc, counterattack, suits, suit, neo, seed, mobile, imperial, pilots
+-- 1163 {-54.69} [second_vec : sentence2]: dover, kent, chatham, canterbury, rochester, sandwich, hosted, partners, wilmington, hastings
+-- 1062 {-55.72} [first_vec : sentence1]: 161, 275, leicester, 255, 204, 116, hussain, booth, 265, 44
+-- 518 {-55.99} [second_vec : sentence2]: grocery, supermarket, supermarkets, stores, fireworks, retail, retailers, retailer, store, convenience
+-- 1727 {-56.21} [second_vec : sentence2]: irvine, wallace, buzz, filed, curse, 04, 03, reviewer, here, click
+-- 1655 {-56.63} [abs_diff]: pills, greenwich, generic, prescription, casino, cheap, buy, maritime, pharmacy, discount
+-- 1303 {-57.53} [second_vec : sentence2]: alfred, belfast, sloan, wolff, 28, 380, ireland, blackmail, northern, 21
+-- 1528 {-63.49} [abs_diff]: posture, u2, perception, optimal, pattern, mediation, origin, recognition, bell, reversal
+-- 18 {-69.05} [second_vec : sentence2]: solid, none, bold, margin, width, normal, dotted, important, border, float
+- Pragmatic concession [precision = 0.0] :
+  ++ positive predictors ++
+-- 1864 {13.89} [first_vec : sentence1]: creditors, bankruptcy, receiver, winding, trustee, debts, petition, assets, arrangement, petitions
+-- 1864 {13.23} [abs_diff]: creditors, bankruptcy, receiver, winding, trustee, debts, petition, assets, arrangement, petitions
+-- 835 {13.21} [second_vec : sentence2]: lankan, ltte, lanka, sri, colombo, tamil, nadu, tsunami, maldives, tigers
+-- 1901 {12.48} [first_vec : sentence1]: supreme, unconstitutional, court, judge, overturned, affirmed, appealed, judicial, upheld, judges
+-- 1584 {12.32} [first_vec : sentence1]: topic, created, dip, freestyle, author, kobe, europeans, message, desperate, two-year
+-- 1864 {12.21} [elem_wise_prod]: creditors, bankruptcy, receiver, winding, trustee, debts, petition, assets, arrangement, petitions
+-- 990 {12.09} [second_vec : sentence2]: eds, 1993, ed, 1992, blackwell, 1990, 1995, 1987, 1989, wiley
+-- 1203 {11.94} [first_vec : sentence1]: gilbert, murray, regards, sullivan, dear, abel, peyton, cc, sent, subject
+-- 835 {11.74} [abs_diff]: lankan, ltte, lanka, sri, colombo, tamil, nadu, tsunami, maldives, tigers
+-- 327 {11.73} [second_vec : sentence2]: 70s, 80s, 60s, 50s, 90s, disco, heyday, punk, swinging, psychedelic
+  -- negative predictors --
+-- 580 {-5.78} [second_vec : sentence2]: pleaded, sentenced, guilty, acquitted, felony, jury, convicted, plead, indicted, imprisonment
+-- 118 {-5.78} [abs_diff]: evolution, darwin, genetic, traits, organism, biology, genes, ecology, genetics, organisms
+-- 1338 {-5.79} [first_vec : sentence1]: java, developer, api, net, iphone, microsoft, beta, eclipse, visual, dora
+-- 428 {-5.87} [first_vec : sentence1]: dhabi, saudi, emirates, oman, bahrain, qatar, kuwait, dubai, yemen, arabian
+-- 1788 {-5.90} [first_vec : sentence1]: ltd, am, pm, creditors, co, noon, hale, interiors, birmingham, bangalore
+-- 1660 {-5.90} [first_vec : sentence1]: sec, nec, securities, lsu, planning, broadband, proposition, director, modem, report
+-- 634 {-5.94} [first_vec : sentence1]: opponents, digest, marks, mark, section, objection, hearing, opponent, applicant, contended
+-- 1901 {-6.10} [second_vec : sentence2]: supreme, unconstitutional, court, judge, overturned, affirmed, appealed, judicial, upheld, judges
+-- 1221 {-6.15} [second_vec : sentence2]: merrill, lynch, que, cliff, dyer, institutional, budapest, muhammad, mob, harmon
+-- 1788 {-6.24} [abs_diff]: ltd, am, pm, creditors, co, noon, hale, interiors, birmingham, bangalore
+- Pragmatic cause [precision = 0.0] :
+  ++ positive predictors ++
+-- 50 {26.44} [abs_diff]: confederate, brigadier, mcclellan, lieutenant, commanding, 1862, potomac, commandant, 1863, 1864
+-- 2051 {24.36} [abs_diff]: sorted, thread, messages, previous, date, next, ethan, message, subject, mailing
+-- 639 {23.22} [second_vec : sentence2]: caucus, cs, sorted, governance, tunisian, message, previous, mailing, tf, messages
+-- 2034 {22.85} [abs_diff]: pizza, hut, tavern, huts, domino, pub, burger, frequented, parlor, inn
+-- 915 {22.80} [abs_diff]: stick, punch, grab, shake, punches, knock, sticks, smash, knocks, punching
+-- 757 {22.80} [second_vec : sentence2]: sheridan, babylon, dora, shadows, aide, sinclair, pad, gee, leap, informs
+-- 2051 {22.60} [second_vec : sentence2]: sorted, thread, messages, previous, date, next, ethan, message, subject, mailing
+-- 295 {22.27} [abs_diff]: arrogant, shy, witty, rude, cheerful, polite, eccentric, cynical, persona, naive
+-- 221 {22.18} [second_vec : sentence2]: barton, grange, juniors, dale, ladies, outing, woods, halifax, albion, runners
+-- 639 {22.14} [abs_diff]: caucus, cs, sorted, governance, tunisian, message, previous, mailing, tf, messages
+  -- negative predictors --
+-- 2035 {-55.75} [abs_diff]: romania, tributary, romanian, bucharest, mare, ion, luca, emil, andrei, danube
+-- 1871 {-56.06} [second_vec : sentence2]: playboy, jules, stella, photographed, locke, posing, eighty, adler, cyber, heidi
+-- 1332 {-56.08} [second_vec : sentence2]: liverpool, crosby, everton, paterson, echo, walton, 151, pleasant, elliott, redmond
+-- 2238 {-56.21} [second_vec : sentence2]: cassette, tapes, tape, recorder, recordings, recording, stereo, demo, audio, vinyl
+-- 657 {-56.53} [abs_diff]: percy, durham, newcastle, border, carlisle, castles, map, accommodations, robson, shields
+-- 1461 {-57.50} [first_vec : sentence1]: snails, snail, aquatic, algae, shells, terrestrial, shrimp, worms, freshwater, crab
+-- 1275 {-58.45} [second_vec : sentence2]: gallagher, liam, quinn, murphy, mccarthy, rory, brendan, paddy, byrne, dolan
+-- 1156 {-59.87} [first_vec : sentence1]: frontal, activation, spatial, hemisphere, inferior, cerebral, anterior, nudity, evolution, memory
+-- 542 {-59.87} [first_vec : sentence1]: freud, jung, unconscious, psychiatrist, ego, adler, melanie, dreams, analyst, theories
+-- 1332 {-60.10} [abs_diff]: liverpool, crosby, everton, paterson, echo, walton, 151, pleasant, elliott, redmond
+- Exception [precision = 0.0] :
+  ++ positive predictors ++
+-- 366 {13.61} [first_vec : sentence1]: hiv, viral, infections, immune, infection, infected, immunity, viruses, infectious, malaria
+-- 366 {12.94} [abs_diff]: hiv, viral, infections, immune, infection, infected, immunity, viruses, infectious, malaria
+-- 1354 {12.87} [first_vec : sentence1]: antibodies, immune, affinity, complement, vaccines, bind, viral, receptor, proteins, vaccine
+-- 1815 {12.86} [second_vec : sentence2]: evelyn, middleton, 1850s, leaf, abbott, fletcher, stanley, 1870s, pat, pencil
+-- 507 {12.59} [second_vec : sentence2]: reagan, roosevelt, eisenhower, ronald, taft, truman, theodore, franklin, kennedy, winston
+-- 1119 {12.42} [first_vec : sentence1]: bored, havoc, miserable, paranoid, confused, utterly, insane, dull, seemingly, frustrated
+-- 240 {12.39} [second_vec : sentence2]: touchdowns, interceptions, fumble, tackles, quarterback, rushing, linebacker, yards, kickoff, touchdown
+-- 864 {12.16} [second_vec : sentence2]: unionist, sinn, ira, loyalist, ulster, paramilitary, ceasefire, paisley, fin, republicans
+-- 1864 {12.14} [second_vec : sentence2]: creditors, bankruptcy, receiver, winding, trustee, debts, petition, assets, arrangement, petitions
+-- 1054 {12.09} [second_vec : sentence2]: codex, numbering, manuscript, testament, manuscripts, leningrad, leaves, humane, representative, potter
+  -- negative predictors --
+-- 118 {-8.16} [second_vec : sentence2]: evolution, darwin, genetic, traits, organism, biology, genes, ecology, genetics, organisms
+-- 1859 {-8.17} [abs_diff]: proteins, protein, cellular, molecules, cell, bind, rna, plasma, bacterial, enzymes
+-- 1878 {-8.18} [second_vec : sentence2]: gps, positioning, navigation, compass, navigator, receivers, receiver, handheld, satellite, sat
+-- 1020 {-8.20} [second_vec : sentence2]: steven, spielberg, graeme, tim, gerry, stephen, mccall, welch, atkinson, steve
+-- 1875 {-8.21} [second_vec : sentence2]: screens, monitors, plasma, projection, screen, display, monitor, overhead, viewing, hd
+-- 516 {-8.26} [second_vec : sentence2]: fe, santa, albuquerque, kansas, colleges, railroad, rancho, railroads, mexico, claus
+-- 1715 {-8.27} [second_vec : sentence2]: mutations, mutation, genes, chromosome, trait, genetic, sporadic, hereditary, offspring, markers
+-- 75 {-8.32} [abs_diff]: rna, genome, dna, genes, sequences, chromosome, sequence, viral, genetics, proteins
+-- 1597 {-8.33} [second_vec : sentence2]: vegas, las, nevada, reno, mirage, casinos, mgm, casino, sierra, rancho
+-- 1788 {-8.44} [first_vec : sentence1]: ltd, am, pm, creditors, co, noon, hale, interiors, birmingham, bangalore
+- Pragmatic condition [precision = 0.0] :
+  ++ positive predictors ++
+-- 238 {14.22} [second_vec : sentence2]: meg, betty, joan, maggie, rita, phyllis, mcgrath, vera, garland, nora
+-- 238 {13.80} [abs_diff]: meg, betty, joan, maggie, rita, phyllis, mcgrath, vera, garland, nora
+-- 212 {13.33} [second_vec : sentence2]: musicals, broadway, comedies, productions, playwright, repertory, musical, playhouse, actresses, theater
+-- 528 {13.10} [first_vec : sentence1]: puppet, finger, sesame, glove, theater, henson, cinderella, merry, horton, thumb
+-- 528 {13.04} [second_vec : sentence2]: puppet, finger, sesame, glove, theater, henson, cinderella, merry, horton, thumb
+-- 628 {12.67} [second_vec : sentence2]: slade, surrey, 207, kent, govt, headlines, middleton, avery, broadway, walnut
+-- 445 {11.86} [second_vec : sentence2]: arc, vineyard, fallon, martha, winery, frankie, joan, stakes, oaks, jockey
+-- 1171 {11.28} [second_vec : sentence2]: gloucestershire, gloucester, worcestershire, worcester, commemorated, dean, resided, barn, berkeley, forest
+-- 212 {11.26} [abs_diff]: musicals, broadway, comedies, productions, playwright, repertory, musical, playhouse, actresses, theater
+-- 248 {11.17} [second_vec : sentence2]: starring, zach, starred, renee, damon, olivia, actor, hoffman, actress, vaughn
+  -- negative predictors --
+-- 118 {-5.53} [abs_diff]: evolution, darwin, genetic, traits, organism, biology, genes, ecology, genetics, organisms
+-- 634 {-5.54} [first_vec : sentence1]: opponents, digest, marks, mark, section, objection, hearing, opponent, applicant, contended
+-- 1516 {-5.54} [second_vec : sentence2]: pentagon, cheney, defense, u.s, powell, donald, bush, rice, secretary, reporters
+-- 1606 {-5.54} [first_vec : sentence1]: mediator, arbitration, mediation, dispute, disputes, mediate, resolving, litigation, resolve, resolution
+-- 928 {-5.55} [abs_diff]: hair, nail, salon, beard, blonde, hairs, blond, bald, facial, trimmed
+-- 928 {-5.56} [first_vec : sentence1]: hair, nail, salon, beard, blonde, hairs, blond, bald, facial, trimmed
+-- 1580 {-5.60} [second_vec : sentence2]: cherokee, sioux, indians, tribe, tribes, navajo, confederacy, settlers, pueblo, tribal
+-- 1020 {-5.64} [second_vec : sentence2]: steven, spielberg, graeme, tim, gerry, stephen, mccall, welch, atkinson, steve
+-- 1788 {-5.91} [abs_diff]: ltd, am, pm, creditors, co, noon, hale, interiors, birmingham, bangalore
+-- 1221 {-6.02} [second_vec : sentence2]: merrill, lynch, que, cliff, dyer, institutional, budapest, muhammad, mob, harmon
+- Pragmatic contrast [precision = 0.0] :
+  ++ positive predictors ++
+-- 545 {17.36} [second_vec : sentence2]: flush, hansen, alexis, why, gina, lines, think, owen, marty, adrian
+-- 545 {15.86} [abs_diff]: flush, hansen, alexis, why, gina, lines, think, owen, marty, adrian
+-- 1829 {14.13} [abs_diff]: pollard, suicidal, tile, magnet, serge, sol, burger, tiles, il, phil
+-- 633 {13.78} [abs_diff]: isbn, paperback, unavailable, price, basket, illustrated, booster, barbie, info, edition
+-- 633 {13.78} [second_vec : sentence2]: isbn, paperback, unavailable, price, basket, illustrated, booster, barbie, info, edition
+-- 1247 {12.93} [second_vec : sentence2]: der, das, die, mit, von, mir, im, des, lied, leipzig
+-- 967 {12.89} [second_vec : sentence2]: ch, deutsche, concluded, continued, mound, princes, edinburgh, 37, vicinity, db
+-- 719 {12.40} [first_vec : sentence1]: jessica, katie, nick, simpson, sarah, zoe, keith, jared, fabian, melanie
+-- 1439 {12.35} [second_vec : sentence2]: warsaw, poland, ghetto, pact, stefan, vilnius, jan, marian, poles, marshal
+-- 967 {12.29} [abs_diff]: ch, deutsche, concluded, continued, mound, princes, edinburgh, 37, vicinity, db
+  -- negative predictors --
+-- 1510 {-10.63} [second_vec : sentence2]: 129, comments, contact, email, derbyshire, tel, department, peak, office, press
+-- 1200 {-10.65} [abs_diff]: wedding, dresses, groom, favors, bride, weddings, honeymoon, gown, attire, receptions
+-- 988 {-10.69} [second_vec : sentence2]: skip, sub, navigation, proceed, bowman, content, rosa, barber, script, spence
+-- 76 {-10.72} [abs_diff]: janeiro, rio, porto, brasil, grande, serra, brazilian, verde, lisbon, brazil
+-- 1788 {-10.81} [first_vec : sentence1]: ltd, am, pm, creditors, co, noon, hale, interiors, birmingham, bangalore
+-- 127 {-10.84} [first_vec : sentence1]: allah, ye, pray, blessings, god, prayed, blessing, glory, righteous, obey
+-- 331 {-11.10} [second_vec : sentence2]: expressions, gestures, vocabulary, meanings, phrases, words, convey, meaning, sentences, metaphor
+-- 1471 {-11.37} [first_vec : sentence1]: smiles, says, oath, laughs, ta, cheek, smile, quietly, say, loudly
+-- 1788 {-11.53} [second_vec : sentence2]: ltd, am, pm, creditors, co, noon, hale, interiors, birmingham, bangalore
+-- 1788 {-12.74} [abs_diff]: ltd, am, pm, creditors, co, noon, hale, interiors, birmingham, bangalore
+- Condition [precision = 0.0] :
+  ++ positive predictors ++
+-- 400 {14.67} [first_vec : sentence1]: algebra, finite, subset, bundle, generalized, dimensional, lie, metric, bounded, infinite
+-- 1602 {14.53} [first_vec : sentence1]: angular, momentum, velocity, equation, acceleration, gravity, einstein, constant, metric, equations
+-- 1226 {13.85} [first_vec : sentence1]: radar, sensors, sonar, detectors, sensor, detector, antenna, passive, detecting, detection
+-- 2179 {13.82} [first_vec : sentence1]: adobe, flash, illustrator, fireworks, premiere, animation, cs, avid, pro, bundled
+-- 1799 {13.60} [first_vec : sentence1]: vivian, freddy, athletic, eastwood, vault, toe, mist, marshes, maintained, stanford
+-- 1799 {13.15} [abs_diff]: vivian, freddy, athletic, eastwood, vault, toe, mist, marshes, maintained, stanford
+-- 1288 {13.13} [first_vec : sentence1]: socially, culturally, economically, politically, morally, emotionally, financially, geographically, motivated, historically
+-- 1521 {12.92} [first_vec : sentence1]: galaxies, constellation, dwarf, orbiting, hubble, magnitude, stars, astronomers, spiral, orion
+-- 400 {12.78} [abs_diff]: algebra, finite, subset, bundle, generalized, dimensional, lie, metric, bounded, infinite
+-- 677 {12.57} [first_vec : sentence1]: portfolio, pupils, stage, lesson, key, teacher, subject, lessons, mythical, pupil
+  -- negative predictors --
+-- 1873 {-10.93} [first_vec : sentence1]: illustrations, sheet, sheets, accompanying, tables, descriptions, notes, drawings, printed, accompany
+-- 1859 {-10.94} [abs_diff]: proteins, protein, cellular, molecules, cell, bind, rna, plasma, bacterial, enzymes
+-- 658 {-10.97} [first_vec : sentence1]: app, corporate, secretary, director, report, district, head, planning, monitoring, colbert
+-- 1606 {-11.17} [first_vec : sentence1]: mediator, arbitration, mediation, dispute, disputes, mediate, resolving, litigation, resolve, resolution
+-- 1096 {-11.18} [first_vec : sentence1]: influenza, flu, vaccine, smallpox, cholera, vaccines, fever, malaria, plague, epidemic
+-- 118 {-11.24} [abs_diff]: evolution, darwin, genetic, traits, organism, biology, genes, ecology, genetics, organisms
+-- 752 {-11.47} [first_vec : sentence1]: simpsons, homer, bart, simpson, mona, lisa, moe, springfield, odyssey, patty
+-- 1660 {-11.55} [first_vec : sentence1]: sec, nec, securities, lsu, planning, broadband, proposition, director, modem, report
+-- 1788 {-11.72} [first_vec : sentence1]: ltd, am, pm, creditors, co, noon, hale, interiors, birmingham, bangalore
+-- 1788 {-12.19} [abs_diff]: ltd, am, pm, creditors, co, noon, hale, interiors, birmingham, bangalore

@@ -1,0 +1,73 @@
+=== CONFIG ===
+{'embeddings': 'Word2Sense', 'corpus': 'BoolQ', 'batch_size': 128, 'beta1': 0.99, 'beta2': 0.999, 'gamma': 0.65, 'lr': 0.01666048093398025, 'patience': 5, 'scheduler': 'plateau', 'weight_decay': 0.0, 'xavier': True, 'epochs': 200}
+=== ====== ===
+Evaluation:
+- test set evaluation:
+{'test_acc': 0.6629289984703064, 'test_loss': 0.6211891174316406}
+- report (test):
+              precision    recall  f1-score   support
+
+       False     0.5860    0.3345    0.4259      1100
+        True     0.6838    0.8589    0.7614      1843
+
+    accuracy                         0.6629      2943
+   macro avg     0.6349    0.5967    0.5937      2943
+weighted avg     0.6472    0.6629    0.6360      2943
+
+- random classifier (baseline):
+              precision    recall  f1-score   support
+
+       False     0.3633    0.3636    0.3635      1100
+        True     0.6200    0.6196    0.6198      1843
+
+    accuracy                         0.5240      2943
+   macro avg     0.4916    0.4916    0.4916      2943
+weighted avg     0.5240    0.5240    0.5240      2943
+
+Diagnostics for labels:
+- False [precision = 0.5859872611464968] :
+  ++ positive predictors ++
+-- 2103 {9.91} [second_vec : passage]: chess, anand, ignored, openings, ignoring, issuing, propaganda, norm, warning, pleas
+-- 276 {9.81} [elem_wise_prod]: dialects, dialect, fluent, languages, mandarin, spoken, malayalam, accent, telugu, arabic
+-- 616 {9.74} [abs_diff]: bosses, setback, yesterday, biggest, fears, boost, brink, warns, hails, amid
+-- 1832 {9.62} [second_vec : passage]: jensen, allison, laurie, rip, mutual, maximize, minimize, investing, 41, proves
+-- 806 {9.44} [second_vec : passage]: linguistics, linguistic, discourse, corpus, computational, language, languages, vocabulary, bilingual, dialects
+-- 612 {9.43} [second_vec : passage]: robotic, robot, android, programmed, intelligent, artificial, mimic, remotely, autonomous, brains
+-- 1046 {9.33} [second_vec : passage]: deleted, applicable, 2d, crocker, incorporation, scenes, programmes, programme, description, accidentally
+-- 25 {9.30} [second_vec : passage]: neither, nor, strongly, endorse, recommend, not, agree, agreeing, necessarily, cannot
+-- 1437 {9.18} [first_vec : question]: northampton, peterborough, stamford, catalyst, buckingham, diamonds, cedar, billing, eileen, midland
+-- 348 {8.75} [first_vec : question]: antenna, transmitter, fcc, mhz, watts, transmitting, radios, transmissions, broadcasts, frequencies
+  -- negative predictors --
+-- 1623 {-10.11} [second_vec : passage]: homeless, hostel, shelter, intentionally, shelters, rough, housing, youth, citizenship, exclusion
+-- 1333 {-10.13} [first_vec : question]: missile, ballistic, missiles, launchers, warhead, launcher, rocket, submarines, intercept, radar
+-- 928 {-10.42} [second_vec : passage]: hair, nail, salon, beard, blonde, hairs, blond, bald, facial, trimmed
+-- 963 {-10.62} [first_vec : question]: guantanamo, captives, detainees, detention, captive, empowered, memo, evade, lawful, pow
+-- 1248 {-10.74} [elem_wise_prod]: adverse, factors, negatively, detrimental, effects, impacts, impact, consequences, influencing, affect
+-- 1523 {-11.27} [second_vec : passage]: regis, shannon, basin, cobb, melvin, shores, houghton, shoreline, wiley, centred
+-- 1800 {-11.51} [first_vec : question]: kane, hearst, gil, citizen, denny, simmons, frazier, split, patty, fresno
+-- 2240 {-13.69} [first_vec : question]: selective, drugs, overdose, withdrawal, receptor, prescribed, doses, potent, receptors, dependence
+-- 142 {-13.77} [first_vec : question]: exterior, brightly, stained, rear, interior, front, glass, lights, curtain, sunlight
+-- 780 {-14.77} [first_vec : question]: manipulating, tasks, assembling, analyzing, task, sorting, accomplish, involves, storing, constructing
+- True [precision = 0.6838012958963283] :
+  ++ positive predictors ++
+-- 780 {14.79} [first_vec : question]: manipulating, tasks, assembling, analyzing, task, sorting, accomplish, involves, storing, constructing
+-- 142 {13.78} [first_vec : question]: exterior, brightly, stained, rear, interior, front, glass, lights, curtain, sunlight
+-- 2240 {13.66} [first_vec : question]: selective, drugs, overdose, withdrawal, receptor, prescribed, doses, potent, receptors, dependence
+-- 1800 {11.53} [first_vec : question]: kane, hearst, gil, citizen, denny, simmons, frazier, split, patty, fresno
+-- 1523 {11.30} [second_vec : passage]: regis, shannon, basin, cobb, melvin, shores, houghton, shoreline, wiley, centred
+-- 1248 {10.76} [elem_wise_prod]: adverse, factors, negatively, detrimental, effects, impacts, impact, consequences, influencing, affect
+-- 963 {10.60} [first_vec : question]: guantanamo, captives, detainees, detention, captive, empowered, memo, evade, lawful, pow
+-- 928 {10.43} [second_vec : passage]: hair, nail, salon, beard, blonde, hairs, blond, bald, facial, trimmed
+-- 1333 {10.11} [first_vec : question]: missile, ballistic, missiles, launchers, warhead, launcher, rocket, submarines, intercept, radar
+-- 1623 {10.09} [second_vec : passage]: homeless, hostel, shelter, intentionally, shelters, rough, housing, youth, citizenship, exclusion
+  -- negative predictors --
+-- 348 {-8.75} [first_vec : question]: antenna, transmitter, fcc, mhz, watts, transmitting, radios, transmissions, broadcasts, frequencies
+-- 1437 {-9.21} [first_vec : question]: northampton, peterborough, stamford, catalyst, buckingham, diamonds, cedar, billing, eileen, midland
+-- 25 {-9.27} [second_vec : passage]: neither, nor, strongly, endorse, recommend, not, agree, agreeing, necessarily, cannot
+-- 1046 {-9.33} [second_vec : passage]: deleted, applicable, 2d, crocker, incorporation, scenes, programmes, programme, description, accidentally
+-- 806 {-9.43} [second_vec : passage]: linguistics, linguistic, discourse, corpus, computational, language, languages, vocabulary, bilingual, dialects
+-- 612 {-9.43} [second_vec : passage]: robotic, robot, android, programmed, intelligent, artificial, mimic, remotely, autonomous, brains
+-- 1832 {-9.60} [second_vec : passage]: jensen, allison, laurie, rip, mutual, maximize, minimize, investing, 41, proves
+-- 616 {-9.75} [abs_diff]: bosses, setback, yesterday, biggest, fears, boost, brink, warns, hails, amid
+-- 276 {-9.79} [elem_wise_prod]: dialects, dialect, fluent, languages, mandarin, spoken, malayalam, accent, telugu, arabic
+-- 2103 {-9.88} [second_vec : passage]: chess, anand, ignored, openings, ignoring, issuing, propaganda, norm, warning, pleas

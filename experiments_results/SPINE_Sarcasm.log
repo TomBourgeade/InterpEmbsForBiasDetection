@@ -1,0 +1,73 @@
+=== CONFIG ===
+{'embeddings': 'SPINE', 'corpus': 'Sarcasm', 'batch_size': 64, 'beta1': 0.99, 'beta2': 0.999, 'gamma': 0.9, 'lr': 0.012060394609040797, 'patience': 5, 'scheduler': 'plateau', 'weight_decay': 0.0, 'xavier': True, 'epochs': 200}
+=== ====== ===
+Evaluation:
+- test set evaluation:
+{'test_acc': 0.6780383586883545, 'test_loss': 0.6186825037002563}
+- report (test):
+              precision    recall  f1-score   support
+
+        sarc     0.6833    0.6862    0.6848       239
+     notsarc     0.6725    0.6696    0.6710       230
+
+    accuracy                         0.6780       469
+   macro avg     0.6779    0.6779    0.6779       469
+weighted avg     0.6780    0.6780    0.6780       469
+
+- random classifier (baseline):
+              precision    recall  f1-score   support
+
+        sarc     0.5041    0.5188    0.5113       239
+     notsarc     0.4843    0.4696    0.4768       230
+
+    accuracy                         0.4947       469
+   macro avg     0.4942    0.4942    0.4941       469
+weighted avg     0.4944    0.4947    0.4944       469
+
+Diagnostics for labels:
+- sarc [precision = 0.6833333333333333] :
+  ++ positive predictors ++
+-- 787 {14.28} [elem_wise_prod]: urgent, eds, gov, govt, urges, pm, updates, rejects, kills, vows
+-- 956 {13.29} [first_vec : sentence1]: scotland, scottish, glasgow, edinburgh, aberdeen, highland, angus, loch, scots, mackenzie
+-- 631 {12.86} [elem_wise_prod]: outlined, implementing, unveiled, implement, proposals, ambitious, plan, reforms, measures, outlines
+-- 325 {11.35} [elem_wise_prod]: anand, prasad, bowlers, silk, bowling, rabbi, leningrad, pollock, chess, lankan
+-- 638 {11.29} [elem_wise_prod]: tenth, 33rd, 8th, 27th, 18th, 26th, 9th, 11th, 25th, 15th
+-- 231 {10.65} [second_vec : sentence2]: krishna, bahadur, rao, ram, chandra, lal, kumar, lau, mae, andhra
+-- 285 {10.49} [elem_wise_prod]: utter, utterly, ignorance, sheer, greed, disregard, reckless, exhaustion, insanity, absolutely
+-- 280 {9.86} [first_vec : sentence1]: recycling, sewage, garbage, waste, trash, landfill, sanitation, cans, contaminated, toilets
+-- 242 {9.74} [elem_wise_prod]: leinster, munster, all-ireland, viscount, 3rd, dorsal, 6th, 4th, 7th, 1st
+-- 10 {9.67} [second_vec : sentence2]: batsman, county, rodrigo, toulouse, worms, wickets, ion, warwickshire, putnam, batsmen
+  -- negative predictors --
+-- 561 {-10.44} [second_vec : sentence2]: maharashtra, gandhi, bengal, andhra, bangalore, telugu, kolkata, chennai, karnataka, raja
+-- 793 {-10.82} [abs_diff]: wilderness, ski, camping, mountain, hiking, skiing, yellowstone, alpine, himalayan, appalachian
+-- 720 {-11.05} [elem_wise_prod]: episcopal, catholics, communion, anglican, catholic, lutheran, bishops, catholicism, diocese, roman
+-- 946 {-11.36} [elem_wise_prod]: sar, tanzania, shillings, zambia, der, magistrate, kenya, judge, belgian, hk
+-- 229 {-11.81} [elem_wise_prod]: guns, pistol, rifle, caliber, grenades, handgun, artillery, gun, ammunition, rifles
+-- 349 {-11.92} [elem_wise_prod]: engines, submarines, aircraft, destroyers, missiles, locomotives, helicopters, engine, armament, powered
+-- 91 {-12.46} [elem_wise_prod]: factories, manufacturing, factory, aerospace, fiat, packard, maker, motors, siemens, auto
+-- 809 {-12.47} [elem_wise_prod]: pivotal, important, crucial, vital, ingredient, hugely, invaluable, key, factor, useful
+-- 35 {-13.40} [elem_wise_prod]: industry, enterprises, conglomerate, thriving, industries, textile, owned, retail, manufacturing, business
+-- 769 {-13.97} [elem_wise_prod]: tanks, helicopters, helicopter, doe, sarajevo, takeoff, rafael, adler, jet, grenades
+- notsarc [precision = 0.6724890829694323] :
+  ++ positive predictors ++
+-- 769 {13.99} [elem_wise_prod]: tanks, helicopters, helicopter, doe, sarajevo, takeoff, rafael, adler, jet, grenades
+-- 35 {13.40} [elem_wise_prod]: industry, enterprises, conglomerate, thriving, industries, textile, owned, retail, manufacturing, business
+-- 809 {12.48} [elem_wise_prod]: pivotal, important, crucial, vital, ingredient, hugely, invaluable, key, factor, useful
+-- 91 {12.47} [elem_wise_prod]: factories, manufacturing, factory, aerospace, fiat, packard, maker, motors, siemens, auto
+-- 349 {11.92} [elem_wise_prod]: engines, submarines, aircraft, destroyers, missiles, locomotives, helicopters, engine, armament, powered
+-- 229 {11.87} [elem_wise_prod]: guns, pistol, rifle, caliber, grenades, handgun, artillery, gun, ammunition, rifles
+-- 946 {11.35} [elem_wise_prod]: sar, tanzania, shillings, zambia, der, magistrate, kenya, judge, belgian, hk
+-- 720 {11.02} [elem_wise_prod]: episcopal, catholics, communion, anglican, catholic, lutheran, bishops, catholicism, diocese, roman
+-- 793 {10.82} [abs_diff]: wilderness, ski, camping, mountain, hiking, skiing, yellowstone, alpine, himalayan, appalachian
+-- 561 {10.46} [second_vec : sentence2]: maharashtra, gandhi, bengal, andhra, bangalore, telugu, kolkata, chennai, karnataka, raja
+  -- negative predictors --
+-- 10 {-9.65} [second_vec : sentence2]: batsman, county, rodrigo, toulouse, worms, wickets, ion, warwickshire, putnam, batsmen
+-- 242 {-9.73} [elem_wise_prod]: leinster, munster, all-ireland, viscount, 3rd, dorsal, 6th, 4th, 7th, 1st
+-- 280 {-9.90} [first_vec : sentence1]: recycling, sewage, garbage, waste, trash, landfill, sanitation, cans, contaminated, toilets
+-- 285 {-10.50} [elem_wise_prod]: utter, utterly, ignorance, sheer, greed, disregard, reckless, exhaustion, insanity, absolutely
+-- 231 {-10.68} [second_vec : sentence2]: krishna, bahadur, rao, ram, chandra, lal, kumar, lau, mae, andhra
+-- 638 {-11.24} [elem_wise_prod]: tenth, 33rd, 8th, 27th, 18th, 26th, 9th, 11th, 25th, 15th
+-- 325 {-11.31} [elem_wise_prod]: anand, prasad, bowlers, silk, bowling, rabbi, leningrad, pollock, chess, lankan
+-- 631 {-12.82} [elem_wise_prod]: outlined, implementing, unveiled, implement, proposals, ambitious, plan, reforms, measures, outlines
+-- 956 {-13.28} [first_vec : sentence1]: scotland, scottish, glasgow, edinburgh, aberdeen, highland, angus, loch, scots, mackenzie
+-- 787 {-14.26} [elem_wise_prod]: urgent, eds, gov, govt, urges, pm, updates, rejects, kills, vows

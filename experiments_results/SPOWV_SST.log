@@ -1,0 +1,98 @@
+=== CONFIG ===
+{'embeddings': 'SPOWV', 'corpus': 'SST', 'batch_size': 128, 'beta1': 0.99, 'beta2': 0.999, 'gamma': 0.6, 'lr': 0.014926324251125653, 'patience': 5, 'scheduler': 'plateau', 'weight_decay': 0.0, 'xavier': True, 'epochs': 200}
+=== ====== ===
+Evaluation:
+- test set evaluation:
+{'test_acc': 0.6289592981338501, 'test_loss': 0.865208625793457}
+- report (test):
+              precision    recall  f1-score   support
+
+     neutral     0.2683    0.0649    0.1045       339
+    positive     0.6529    0.7602    0.7025       834
+    negative     0.6357    0.7292    0.6792       816
+
+    accuracy                         0.6290      1989
+   macro avg     0.5190    0.5181    0.4954      1989
+weighted avg     0.5803    0.6290    0.5910      1989
+
+- random classifier (baseline):
+              precision    recall  f1-score   support
+
+     neutral     0.1696    0.1681    0.1689       339
+    positive     0.4148    0.4029    0.4088       834
+    negative     0.4104    0.4240    0.4171       816
+
+    accuracy                         0.3715      1989
+   macro avg     0.3316    0.3317    0.3316      1989
+weighted avg     0.3712    0.3715    0.3713      1989
+
+Diagnostics for labels:
+- neutral [precision = 0.2682926829268293] :
+  ++ positive predictors ++
+-- 488 {24.58} : 4-1, 3-1, 3-0, 2-1, tian, 3-2, 2-0, 1-0, 4-3, expeditionary
+-- 64 {22.68} : rene, pratt, supervisor, oriental, emil, lama, gloria, keeper, jessica, labrador
+-- 740 {21.41} : ankara, serbs, entities, armenia, hezbollah, nc, hostility, bosnian, zagreb, rift
+-- 620 {20.50} : google, packard, qin, manifesto, nokia, microsoft, xbox, handheld, dell, cyber
+-- 679 {19.71} : sir, wed, st, lord, cathedral, somerset, browne, thatcher, margaret, hadley
+-- 868 {19.46} : honoured, nobel, conferred, honorary, cakes, dividends, ribbons, crater, prize, facto
+-- 98 {19.45} : cautious, intel, slalom, domino, logic, amd, cisco, bohemia, environmentally, ulrich
+-- 337 {19.25} : tottenham, robson, sui, burnley, arsenal, programmer, heidi, everton, watford, portsmouth
+-- 407 {19.18} : incidence, abrupt, greatly, pupil, stabbing, competence, crime, murders, shaun, sniper
+-- 582 {19.17} : cholera, france, romania, diseases, finland, births, alps, accidents, russia, hiv
+  -- negative predictors --
+-- 269 {-17.88} : wine, louis, piers, pen, beer, guardian, ec, brown, jean, julie
+-- 403 {-17.99} : wingspan, hectares, fruit, seed, ft, cm, fertile, mature, fisheries, livestock
+-- 473 {-18.59} : generalized, classification, lb, inequality, hobart, gt, taxonomy, criterion, tight, buccaneers
+-- 381 {-18.96} : graf, tudor, palin, daryl, rhythmic, turnpike, 1870s, nadia, fitzgerald, connolly
+-- 268 {-19.18} : humanitarian, lebanese, jar, heinz, silvio, eduard, deteriorating, somalia, el, inter
+-- 872 {-19.87} : vessels, wii, warships, cypriot, discs, aground, ships, tombs, turkish, warship
+-- 527 {-20.03} : manor, preston, wingspan, sometime, wb, larvae, que, subtropical, comedies, kenneth
+-- 121 {-22.47} : rescue, operations, operation, heroic, robbery, submarine, mission, coordinates, algebra, detachment
+-- 172 {-32.84} : rowing, ioc, hostel, erect, lo, radcliffe, amenities, storey, baronet, constantine
+-- 222 {-37.41} : inflammatory, q, greece, hai, roosevelt, fiji, ana, equations, jeremiah, diseases
+- positive [precision = 0.6529351184346035] :
+  ++ positive predictors ++
+-- 500 {32.36} : all-ireland, induction, passage, slide, accommodations, climb, rolls, solitary, munster, roll
+-- 445 {32.20} : minerals, charcoal, nitrogen, inputs, mining, soils, diamonds, ore, atoms, nutrients
+-- 288 {31.31} : overwhelming, dominated, audiences, lowland, draws, neighbor, celtic, biggest, ndp, heaviest
+-- 798 {29.91} : rare, extant, boiler, twins, memorabilia, titanic, panda, marrow, paisley, rack
+-- 296 {27.75} : smile, gaze, discography, eyes, wrestling, ali, ko, piercing, heavyweight, undefeated
+-- 735 {27.68} : slavic, schuster, norse, doubleday, germanic, braun, warsaw, alba, cosmetics, memoir
+-- 590 {27.30} : chants, dotted, dolphins, kicker, mcbride, bernie, coral, gems, chant, mick
+-- 378 {25.33} : pascal, interred, blackburn, des, constitution, oaks, frontal, journal, restore, relations
+-- 678 {24.87} : designer, tomb, roberto, collection, francesco, blend, architect, illustrator, geometric, archaeologist
+-- 316 {24.50} : fargo, operation, pearl, mitch, cruise, nordic, routine, vessels, apollo, offshore
+  -- negative predictors --
+-- 577 {-26.51} : halftime, goal, penguins, scored, portland, panthers, rifle, yards, relegated, goals
+-- 976 {-27.86} : autism, stadiums, zimbabwe, 45,000, hampered, auctioned, survivors, disability, disabled, 60,000
+-- 142 {-28.25} : makeup, alzheimer, 5.1, 4.0, primera, 3.1, demographic, parkinson, bites, deficit
+-- 596 {-29.36} : tomas, ignacio, embarrassed, manila, rafael, loyola, ryder, leinster, tamil, philharmonic
+-- 923 {-30.72} : blackburn, premier, coventry, ipswich, rovers, sunderland, radar, same-sex, empress, katie
+-- 215 {-31.10} : sant, da, dino, butterfly, herzog, giovanni, cisco, werner, bee, tom
+-- 205 {-32.73} : cocaine, fined, pontiac, kilograms, nascar, nba, particles, heroin, offenses, punt
+-- 635 {-38.98} : swansea, insurance, syndicate, landlords, blues, scrapping, lock, arkansas, broker, fairs
+-- 620 {-41.37} : google, packard, qin, manifesto, nokia, microsoft, xbox, handheld, dell, cyber
+-- 201 {-45.45} : canucks, sioux, lowell, roberto, suzuki, hindu, shale, navajo, phi, underwood
+- negative [precision = 0.6356837606837606] :
+  ++ positive predictors ++
+-- 635 {41.70} : swansea, insurance, syndicate, landlords, blues, scrapping, lock, arkansas, broker, fairs
+-- 205 {29.68} : cocaine, fined, pontiac, kilograms, nascar, nba, particles, heroin, offenses, punt
+-- 492 {29.10} : sichuan, homer, branding, plaque, condemning, sid, earthquake, manuel, nave, reluctantly
+-- 976 {28.38} : autism, stadiums, zimbabwe, 45,000, hampered, auctioned, survivors, disability, disabled, 60,000
+-- 872 {27.85} : vessels, wii, warships, cypriot, discs, aground, ships, tombs, turkish, warship
+-- 332 {27.43} : graphics, upgrades, 3d, 2d, hardware, 3-d, loading, cosmetic, refining, combustion
+-- 656 {26.57} : fatty, acid, zombie, hello, freddie, acids, spam, mortgage, toxic, all-american
+-- 601 {25.98} : modeling, krishna, lyle, tidal, ballistic, deportation, avalanche, eli, browser, extensions
+-- 577 {25.65} : halftime, goal, penguins, scored, portland, panthers, rifle, yards, relegated, goals
+-- 250 {25.36} : ankara, logan, pistol, lara, cypriot, beirut, handgun, paralyzed, fails, delhi
+  -- negative predictors --
+-- 597 {-25.07} : il, chants, o, tu, fortunes, que, bach, les, hooks, daily
+-- 500 {-25.65} : all-ireland, induction, passage, slide, accommodations, climb, rolls, solitary, munster, roll
+-- 378 {-26.22} : pascal, interred, blackburn, des, constitution, oaks, frontal, journal, restore, relations
+-- 735 {-26.26} : slavic, schuster, norse, doubleday, germanic, braun, warsaw, alba, cosmetics, memoir
+-- 665 {-26.68} : stroke, flowering, commodore, 1812, pinch, statesman, ruler, shear, 1794, abd
+-- 296 {-26.99} : smile, gaze, discography, eyes, wrestling, ali, ko, piercing, heavyweight, undefeated
+-- 127 {-27.12} : 60,000, migrate, 200,000, 50,000, 120,000, pageant, plaster, earth, migrated, descend
+-- 765 {-28.61} : thermal, shipbuilding, kw, playhouse, worth, marcia, station, hd, bai, lancaster
+-- 697 {-29.73} : lancashire, ppp, yorkshire, warwickshire, wigan, gaza, lil, carnegie, st, locomotives
+-- 798 {-30.85} : rare, extant, boiler, twins, memorabilia, titanic, panda, marrow, paisley, rack

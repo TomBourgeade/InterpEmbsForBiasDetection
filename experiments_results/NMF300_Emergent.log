@@ -1,0 +1,98 @@
+=== CONFIG ===
+{'embeddings': 'NMF300', 'corpus': 'Emergent', 'batch_size': 64, 'beta1': 0.99, 'beta2': 0.999, 'gamma': 0.6, 'lr': 0.08956593338505815, 'patience': 5, 'scheduler': 'plateau', 'weight_decay': 0.0, 'xavier': True, 'epochs': 200}
+=== ====== ===
+Evaluation:
+- test set evaluation:
+{'test_acc': 0.5096524953842163, 'test_loss': 0.9141898155212402}
+- report (test):
+              precision    recall  f1-score   support
+
+   observing     0.5714    0.0412    0.0769        97
+         for     0.5079    0.9846    0.6702       130
+     against     0.0000    0.0000    0.0000        32
+
+    accuracy                         0.5097       259
+   macro avg     0.3598    0.3420    0.2490       259
+weighted avg     0.4690    0.5097    0.3652       259
+
+- random classifier (baseline):
+              precision    recall  f1-score   support
+
+   observing     0.4149    0.4021    0.4084        97
+         for     0.4885    0.4923    0.4904       130
+     against     0.1176    0.1250    0.1212        32
+
+    accuracy                         0.4131       259
+   macro avg     0.3404    0.3398    0.3400       259
+weighted avg     0.4151    0.4131    0.4141       259
+
+Diagnostics for labels:
+- observing [precision = 0.5714285714285714] :
+  ++ positive predictors ++
+-- 7 {88.35} [second_vec : sentence2]: desktop, server, linux, microsoft, firmware, nvidia, voip, proprietary, intel, servers
+-- 7 {85.34} [first_vec : sentence1]: desktop, server, linux, microsoft, firmware, nvidia, voip, proprietary, intel, servers
+-- 187 {81.68} [abs_diff]: billion, million, trillion, usd, euros, pesos, dollars, billions, amounting, rubles
+-- 227 {76.30} [second_vec : sentence2]: syria, damascus, iraq, baghdad, al, yemen, arab, abu, saudi, beirut
+-- 143 {76.28} [first_vec : sentence1]: eine, und, leben, ein, wir, wie, nicht, der, auf, einer
+-- 164 {73.38} [first_vec : sentence1]: pp, xxiv, xxv, xvii, xxii, vols, vol, xxvi, xxvii, chap
+-- 34 {73.08} [second_vec : sentence2]: sensor, analog, sensors, signals, optical, signal, cameras, amplifier, antenna, circuits
+-- 228 {71.86} [second_vec : sentence2]: leaved, eucalyptus, trees, planted, juniper, tree, rhododendron, spp, dogwood, alder
+-- 113 {70.02} [second_vec : sentence2]: citigroup, hsbc, vodafone, citibank, ubs, telecom, plc, subsidiaries, barclays, corp
+-- 121 {69.92} [second_vec : sentence2]: terrorists, criminals, suspected, tortured, prisoners, civilians, detained, murdered, arrested, allegedly
+  -- negative predictors --
+-- 199 {-74.14} [first_vec : sentence1]: orphaned, teenager, her, teenage, elderly, mothers, homeless, child, parents, childhood
+-- 204 {-74.52} [first_vec : sentence1]: arrogant, cheerful, demeanor, handsome, witty, cynical, courageous, stubborn, hearted, intelligent
+-- 72 {-74.95} [first_vec : sentence1]: deer, rabbits, tailed, rhinoceros, leopard, crocodile, squirrel, squirrels, foxes, birds
+-- 10 {-75.08} [second_vec : sentence2]: remix, ep, mix, aka, dreams, titled, love, paradise, sweet, dream
+-- 37 {-77.19} [first_vec : sentence1]: justifies, transcends, immaterial, insofar, perceives, embodiment, pertains, unchanging, transcending, presupposes
+-- 185 {-81.28} [first_vec : sentence1]: prostitution, pornography, discrimination, sexual, homosexual, illegal, illicit, sex, homosexuals, violence
+-- 72 {-83.21} [second_vec : sentence2]: deer, rabbits, tailed, rhinoceros, leopard, crocodile, squirrel, squirrels, foxes, birds
+-- 148 {-84.57} [abs_diff]: goofy, cartoon, bunny, daffy, porky, freleng, popeye, cartoons, duck, flintstones
+-- 148 {-89.66} [first_vec : sentence1]: goofy, cartoon, bunny, daffy, porky, freleng, popeye, cartoons, duck, flintstones
+-- 148 {-89.97} [second_vec : sentence2]: goofy, cartoon, bunny, daffy, porky, freleng, popeye, cartoons, duck, flintstones
+- for [precision = 0.5079365079365079] :
+  ++ positive predictors ++
+-- 72 {86.49} [second_vec : sentence2]: deer, rabbits, tailed, rhinoceros, leopard, crocodile, squirrel, squirrels, foxes, birds
+-- 199 {71.67} [first_vec : sentence1]: orphaned, teenager, her, teenage, elderly, mothers, homeless, child, parents, childhood
+-- 148 {70.49} [second_vec : sentence2]: goofy, cartoon, bunny, daffy, porky, freleng, popeye, cartoons, duck, flintstones
+-- 204 {69.34} [first_vec : sentence1]: arrogant, cheerful, demeanor, handsome, witty, cynical, courageous, stubborn, hearted, intelligent
+-- 72 {68.35} [first_vec : sentence1]: deer, rabbits, tailed, rhinoceros, leopard, crocodile, squirrel, squirrels, foxes, birds
+-- 58 {68.18} [first_vec : sentence1]: sylar, bree, stewie, cartman, hiro, cordelia, marge, distraught, lynette, sookie
+-- 144 {63.01} [first_vec : sentence1]: corpse, bag, corpses, suitcase, accidentally, clothes, bags, bottle, debris, garbage
+-- 108 {61.99} [second_vec : sentence2]: wears, wore, tunic, trousers, wearing, sleeves, beige, yellow, jacket, blue
+-- 120 {61.29} [first_vec : sentence1]: confronts, asks, convinces, tells, informs, discovers, learns, realizes, reveals, agrees
+-- 54 {60.40} [first_vec : sentence1]: yelling, staring, yelled, shoved, shouted, drags, stares, handcuffed, crawled, smashes
+  -- negative predictors --
+-- 116 {-71.13} [second_vec : sentence2]: khrushchev, diệm, bhutto, putin, musharraf, netanyahu, gorbachev, sukarno, erdoğan, ahmadinejad
+-- 162 {-71.42} [second_vec : sentence2]: fraud, felony, bribery, manslaughter, perjury, charges, guilty, misconduct, crimes, alleged
+-- 162 {-72.34} [abs_diff]: fraud, felony, bribery, manslaughter, perjury, charges, guilty, misconduct, crimes, alleged
+-- 143 {-72.86} [first_vec : sentence1]: eine, und, leben, ein, wir, wie, nicht, der, auf, einer
+-- 29 {-74.27} [second_vec : sentence2]: assumptions, hypothesis, validity, errors, criteria, argument, statements, facts, conclusions, arguments
+-- 256 {-77.17} [second_vec : sentence2]: gamespot, ign, reviewer, popmatters, pitchfork, reviewers, nme, eurogamer, gamepro, cnet
+-- 176 {-77.55} [second_vec : sentence2]: epa, audit, guideline, guidelines, standards, certification, compliance, fda, inspection, osha
+-- 202 {-78.76} [second_vec : sentence2]: plaintiffs, plaintiff, court, appeals, appeal, appellate, writ, judgment, extradition, rulings
+-- 261 {-78.80} [second_vec : sentence2]: aspx, php, www, cfm, http, org, https, asp, edu, htm
+-- 153 {-89.04} [second_vec : sentence2]: denouncing, regarding, stating, statements, condemning, comments, criticised, refuted, accusing, erroneous
+- against [precision = 0.0] :
+  ++ positive predictors ++
+-- 153 {87.58} [second_vec : sentence2]: denouncing, regarding, stating, statements, condemning, comments, criticised, refuted, accusing, erroneous
+-- 208 {85.55} [second_vec : sentence2]: humorous, comical, amusing, gags, jokes, comedic, ironic, surreal, witty, interspersed
+-- 208 {78.81} [abs_diff]: humorous, comical, amusing, gags, jokes, comedic, ironic, surreal, witty, interspersed
+-- 196 {78.11} [second_vec : sentence2]: yuliya, yelena, yekaterina, tatyana, iryna, nataliya, olena, anastasiya, natalya, oksana
+-- 37 {77.52} [abs_diff]: justifies, transcends, immaterial, insofar, perceives, embodiment, pertains, unchanging, transcending, presupposes
+-- 153 {75.53} [abs_diff]: denouncing, regarding, stating, statements, condemning, comments, criticised, refuted, accusing, erroneous
+-- 37 {75.36} [second_vec : sentence2]: justifies, transcends, immaterial, insofar, perceives, embodiment, pertains, unchanging, transcending, presupposes
+-- 29 {73.21} [second_vec : sentence2]: assumptions, hypothesis, validity, errors, criteria, argument, statements, facts, conclusions, arguments
+-- 256 {70.11} [second_vec : sentence2]: gamespot, ign, reviewer, popmatters, pitchfork, reviewers, nme, eurogamer, gamepro, cnet
+-- 33 {69.69} [first_vec : sentence1]: maría, enrique, jorge, julio, alejandra, gonzález, luis, guillermo, eduardo, javier
+  -- negative predictors --
+-- 239 {-79.39} [first_vec : sentence1]: clothing, lingerie, clothes, apparel, footwear, underwear, dresses, accessories, jewelry, shoes
+-- 24 {-80.29} [first_vec : sentence1]: dz, sl, rg, cl, ch, bb, bl, bh, sn, tr
+-- 191 {-83.59} [first_vec : sentence1]: machining, welding, milling, metalworking, plumbing, woodworking, tooling, refrigeration, polishing, lathes
+-- 34 {-83.90} [second_vec : sentence2]: sensor, analog, sensors, signals, optical, signal, cameras, amplifier, antenna, circuits
+-- 168 {-84.87} [second_vec : sentence2]: missile, missiles, rocket, spacecraft, launcher, launchers, unmanned, payload, warhead, manned
+-- 17 {-86.40} [first_vec : sentence1]: choi, chung, chun, kwan, cheong, wai, cheung, ho, siu, yee
+-- 17 {-87.12} [second_vec : sentence2]: choi, chung, chun, kwan, cheong, wai, cheung, ho, siu, yee
+-- 7 {-87.66} [second_vec : sentence2]: desktop, server, linux, microsoft, firmware, nvidia, voip, proprietary, intel, servers
+-- 102 {-94.78} [second_vec : sentence2]: corps, battalion, regiment, brigade, detachment, detachments, hq, battalions, regimental, squadron
+-- 7 {-95.76} [first_vec : sentence1]: desktop, server, linux, microsoft, firmware, nvidia, voip, proprietary, intel, servers

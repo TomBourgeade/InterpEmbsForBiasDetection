@@ -1,0 +1,98 @@
+=== CONFIG ===
+{'embeddings': 'NNSE', 'corpus': 'SNLI', 'batch_size': 256, 'beta1': 0.99, 'beta2': 0.999, 'gamma': 0.6, 'lr': 0.041844501504400056, 'patience': 5, 'scheduler': 'plateau', 'weight_decay': 0.0, 'xavier': True, 'epochs': 200}
+=== ====== ===
+Evaluation:
+- test set evaluation:
+{'test_acc': 0.5636197328567505, 'test_loss': 0.9570308327674866}
+- report (test):
+               precision    recall  f1-score   support
+
+      neutral     0.5985    0.4303    0.5006      3219
+   entailment     0.5227    0.7363    0.6114      3368
+contradiction     0.6047    0.5165    0.5571      3237
+
+     accuracy                         0.5636      9824
+    macro avg     0.5753    0.5610    0.5564      9824
+ weighted avg     0.5746    0.5636    0.5572      9824
+
+- random classifier (baseline):
+               precision    recall  f1-score   support
+
+      neutral     0.3228    0.3159    0.3193      3219
+   entailment     0.3464    0.3545    0.3504      3368
+contradiction     0.3407    0.3395    0.3401      3237
+
+     accuracy                         0.3369      9824
+    macro avg     0.3366    0.3367    0.3366      9824
+ weighted avg     0.3368    0.3369    0.3368      9824
+
+Diagnostics for labels:
+- neutral [precision = 0.5985306828003457] :
+  ++ positive predictors ++
+-- 119 {172.57} [elem_wise_prod]: helsinki, slovakia, stockholm, slovenia, lithuania, serbia, estonia, macedonia, fraser, bosnia
+-- 60 {129.81} [elem_wise_prod]: equation, equations, algebra, approximation, theorem, geometry, fourier, calculus, matrices, euclidean
+-- 268 {97.63} [elem_wise_prod]: dimensional, one-dimensional, two-dimensional, hierarchical, planar, spatial, three-dimensional, temporal, punctate, power-law
+-- 9 {97.27} [elem_wise_prod]: tweed, cashmere, plaid, flannel, silk, velvet, corduroy, polyester, pleated, satin
+-- 141 {91.60} [elem_wise_prod]: off-the-shelf, high-performance, cross-platform, multifunctional, stand-alone, modular, open-source, self-service, well-designed, networked
+-- 297 {62.11} [elem_wise_prod]: ka, ta, pe, od, ili, hai, bu, kar, ve, cl
+-- 19 {58.97} [elem_wise_prod]: earthly, heavenly, corporeal, supernatural, demonic, divine, malevolent, angelic, mythical, transcendent
+-- 216 {52.23} [elem_wise_prod]: pius, benedict, xvi, clement, xxiii, catholicism, cyril, aquinas, papacy, constantinople
+-- 36 {40.49} [elem_wise_prod]: steaks, steak, burgers, stew, hamburgers, brisket, tacos, burger, sausages, lasagna
+-- 167 {37.48} [elem_wise_prod]: nerd, optimist, fangirl, cynic, middlebrow, perfectionist, dumbass, dork, weirdo, slob
+  -- negative predictors --
+-- 25 {-186.20} [elem_wise_prod]: duplicated, reproduced, copied, exported, reused, resold, downloaded, reprinted, transferred, converted
+-- 263 {-187.56} [elem_wise_prod]: moha, lutea, dexfenfluramine, tacrolimus, psst, maritima, grrr, cyclophosphamide, alpha-tocopherol, gefitinib
+-- 149 {-190.05} [elem_wise_prod]: intrepid, long-time, first-time, seasoned, would-be, avid, inexperienced, free-lance, fellow, longtime
+-- 132 {-198.12} [elem_wise_prod]: incorporate, utilizing, utilize, utilizes, integrating, leveraging, integrate, combining, integrates, incorporates
+-- 215 {-204.91} [elem_wise_prod]: snip, dusted, ripped, slacked, yanked, hacked, busted, chalked, booted, ticked
+-- 245 {-208.68} [elem_wise_prod]: dreaming, obsessing, meditating, worrying, apologizing, pondering, drooling, gossiping, fretting, complaining
+-- 237 {-209.30} [elem_wise_prod]: four-day, three-day, two-day, five-day, four-hour, daylong, two-hour, three-hour, one-day, weeklong
+-- 282 {-226.94} [elem_wise_prod]: revisited, inspected, snowed, audited, bathed, briefed, interviewed, upgraded, checked, rained
+-- 22 {-261.23} [elem_wise_prod]: premise, supposition, assumption, circumstance, notion, misconception, coincidence, proposition, caveat, assertion
+-- 95 {-311.95} [elem_wise_prod]: wrest, resurrect, capitalize, recapture, dislodge, reunite, extinguish, resuscitate, defuse, subvert
+- entailment [precision = 0.5226554267650158] :
+  ++ positive predictors ++
+-- 42 {216.83} [elem_wise_prod]: waiter, waitress, warden, prosecutor, sheriff, clerk, coroner, policeman, constable, cashier
+-- 193 {216.29} [elem_wise_prod]: sparking, provoked, provoke, sparked, provoking, incite, quell, inciting, triggered, aroused
+-- 175 {207.90} [elem_wise_prod]: kicking, jumping, swinging, falling, bouncing, grabbing, shaking, bending, crashing, slipping
+-- 205 {190.32} [elem_wise_prod]: entice, informing, instruct, alienate, impress, empower, motivate, alienating, mislead, remind
+-- 211 {183.91} [elem_wise_prod]: formal, voluntary, cold, simultaneous, tacit, false-positive, overcast, windy, rainy, subjective
+-- 13 {180.48} [elem_wise_prod]: pox, typhoid, polio, measles, cholera, rabies, malaria, dengue, smallpox, influenza
+-- 272 {169.42} [elem_wise_prod]: cracks, seams, holes, scratches, bumps, scars, fissures, nicks, seam, hole
+-- 245 {165.86} [elem_wise_prod]: dreaming, obsessing, meditating, worrying, apologizing, pondering, drooling, gossiping, fretting, complaining
+-- 22 {161.48} [elem_wise_prod]: premise, supposition, assumption, circumstance, notion, misconception, coincidence, proposition, caveat, assertion
+-- 47 {161.14} [elem_wise_prod]: coincides, bodes, hurts, reminds, revolves, coincided, lingers, lasts, irks, amazes
+  -- negative predictors --
+-- 145 {-122.80} [elem_wise_prod]: teamwork, self-discipline, empowerment, self-awareness, self-expression, accountability, self-reliance, self-regulation, collaboration, engagement
+-- 264 {-134.49} [elem_wise_prod]: tiers, subgroups, subfamilies, subtypes, genders, subsections, epochs, isoforms, groupings, ethnicities
+-- 40 {-134.59} [elem_wise_prod]: active-duty, front-line, uniformed, paramilitary, law-enforcement, off-duty, civilian, anti-terrorist, high-ranking, counterterrorist
+-- 162 {-143.56} [elem_wise_prod]: allude, backfire, devalue, detract, reciprocate, balk, proffer, ensue, revel, culminate
+-- 60 {-145.92} [elem_wise_prod]: equation, equations, algebra, approximation, theorem, geometry, fourier, calculus, matrices, euclidean
+-- 141 {-150.87} [elem_wise_prod]: off-the-shelf, high-performance, cross-platform, multifunctional, stand-alone, modular, open-source, self-service, well-designed, networked
+-- 297 {-153.69} [elem_wise_prod]: ka, ta, pe, od, ili, hai, bu, kar, ve, cl
+-- 268 {-177.87} [elem_wise_prod]: dimensional, one-dimensional, two-dimensional, hierarchical, planar, spatial, three-dimensional, temporal, punctate, power-law
+-- 85 {-214.21} [elem_wise_prod]: rees, thatcher, tory, davies, munro, unionist, nigel, mp, ian, hutton
+-- 119 {-231.47} [elem_wise_prod]: helsinki, slovakia, stockholm, slovenia, lithuania, serbia, estonia, macedonia, fraser, bosnia
+- contradiction [precision = 0.6047016274864376] :
+  ++ positive predictors ++
+-- 162 {269.95} [elem_wise_prod]: allude, backfire, devalue, detract, reciprocate, balk, proffer, ensue, revel, culminate
+-- 237 {237.96} [elem_wise_prod]: four-day, three-day, two-day, five-day, four-hour, daylong, two-hour, three-hour, one-day, weeklong
+-- 290 {234.34} [elem_wise_prod]: wail, whisper, scream, clack, moan, roar, shrieks, groan, murmur, screams
+-- 85 {225.73} [elem_wise_prod]: rees, thatcher, tory, davies, munro, unionist, nigel, mp, ian, hutton
+-- 97 {220.88} [elem_wise_prod]: dignified, imperious, impeccable, graceful, thoughtless, uncompromising, masterly, stately, inimitable, methodical
+-- 191 {200.61} [elem_wise_prod]: spiraling, drifted, striding, hurtling, steered, deflected, floated, herded, swooping, strode
+-- 95 {195.10} [elem_wise_prod]: wrest, resurrect, capitalize, recapture, dislodge, reunite, extinguish, resuscitate, defuse, subvert
+-- 8 {182.28} [elem_wise_prod]: zach, kyle, jeremy, aaron, josh, matt, adam, ryan, brandon, ethan
+-- 44 {179.43} [elem_wise_prod]: deputized, ablated, misclassified, sedimented, demonized, couched, remeasured, rehydrated, dephosphorylated, pre-empted
+-- 241 {179.41} [elem_wise_prod]: statutory, campaign-finance, anti-trust, anti-discrimination, strictest, conflict-of-interest, antitrust, penal, child-support, stricter
+  -- negative predictors --
+-- 42 {-113.08} [elem_wise_prod]: waiter, waitress, warden, prosecutor, sheriff, clerk, coroner, policeman, constable, cashier
+-- 118 {-113.57} [elem_wise_prod]: unintelligible, ineffectual, worthless, unusable, unrecognizable, incapable, non-existent, unassailable, nonexistent, impotent
+-- 193 {-117.55} [elem_wise_prod]: sparking, provoked, provoke, sparked, provoking, incite, quell, inciting, triggered, aroused
+-- 110 {-125.42} [elem_wise_prod]: autoantigen, nebbish, tearsheet, cutpoint, cell-line, paralog, moralist, explainer, paean, hate-on
+-- 9 {-129.63} [elem_wise_prod]: tweed, cashmere, plaid, flannel, silk, velvet, corduroy, polyester, pleated, satin
+-- 154 {-150.51} [elem_wise_prod]: robbery, burglary, arson, homicide, perjury, treason, extortion, rape, manslaughter, molestation
+-- 167 {-152.36} [elem_wise_prod]: nerd, optimist, fangirl, cynic, middlebrow, perfectionist, dumbass, dork, weirdo, slob
+-- 279 {-184.76} [elem_wise_prod]: streisand, barbra, beatles, stevie, aretha, clapton, sinatra, jimi, elton, dylan
+-- 211 {-201.61} [elem_wise_prod]: formal, voluntary, cold, simultaneous, tacit, false-positive, overcast, windy, rainy, subjective
+-- 175 {-238.19} [elem_wise_prod]: kicking, jumping, swinging, falling, bouncing, grabbing, shaking, bending, crashing, slipping

@@ -1,0 +1,73 @@
+=== CONFIG ===
+{'embeddings': 'Word2Sense', 'corpus': 'Sarcasm', 'batch_size': 128, 'beta1': 0.99, 'beta2': 0.999, 'gamma': 0.6, 'lr': 0.03658640215179907, 'patience': 5, 'scheduler': 'plateau', 'weight_decay': 0.0, 'xavier': True, 'epochs': 200}
+=== ====== ===
+Evaluation:
+- test set evaluation:
+{'test_acc': 0.673774003982544, 'test_loss': 0.584209680557251}
+- report (test):
+              precision    recall  f1-score   support
+
+        sarc     0.6853    0.6653    0.6752       239
+     notsarc     0.6624    0.6826    0.6724       230
+
+    accuracy                         0.6738       469
+   macro avg     0.6739    0.6739    0.6738       469
+weighted avg     0.6741    0.6738    0.6738       469
+
+- random classifier (baseline):
+              precision    recall  f1-score   support
+
+        sarc     0.5093    0.4603    0.4835       239
+     notsarc     0.4901    0.5391    0.5135       230
+
+    accuracy                         0.4989       469
+   macro avg     0.4997    0.4997    0.4985       469
+weighted avg     0.4999    0.4989    0.4982       469
+
+Diagnostics for labels:
+- sarc [precision = 0.6853448275862069] :
+  ++ positive predictors ++
+-- 913 {22.34} [second_vec : sentence2]: beverly, owens, montana, lamar, billings, malone, jesse, rodeo, bass, buck
+-- 1016 {21.66} [abs_diff]: marseille, rue, toulouse, bordeaux, lyon, paris, gaulle, strasbourg, nord, france
+-- 350 {21.50} [second_vec : sentence2]: yoga, meditation, relaxation, poses, breathing, malik, practicing, awakening, posture, breath
+-- 1736 {21.40} [second_vec : sentence2]: chung, lim, cheung, singaporean, lai, lam, shan, wan, chong, wong
+-- 192 {20.76} [abs_diff]: refueling, squadrons, bomber, ju, fighter, redesignated, reassigned, bombardment, airfield, squadron
+-- 308 {20.75} [first_vec : sentence1]: hewitt, macdonald, mackay, mackenzie, duncan, mclean, paterson, donald, mcmillan, fraser
+-- 1229 {20.63} [second_vec : sentence2]: bunny, bugs, gag, duck, moe, cartoon, tunes, rabbit, sylvester, dodgers
+-- 1137 {20.55} [abs_diff]: bolts, screw, bolt, nuts, locking, drilled, mounting, pins, bracket, tapped
+-- 2171 {20.38} [abs_diff]: dorset, poole, christchurch, portland, abbas, regis, hardy, jurassic, cove, salisbury
+-- 1548 {20.18} [second_vec : sentence2]: sony, ericsson, emi, playstation, rca, thorn, entertainment, stick, pictures, launches
+  -- negative predictors --
+-- 445 {-20.41} [second_vec : sentence2]: arc, vineyard, fallon, martha, winery, frankie, joan, stakes, oaks, jockey
+-- 1692 {-20.66} [second_vec : sentence2]: wembley, 196, grove, po, underwood, leroy, middlesex, islamic, 107, 181
+-- 75 {-20.74} [second_vec : sentence2]: rna, genome, dna, genes, sequences, chromosome, sequence, viral, genetics, proteins
+-- 623 {-21.10} [second_vec : sentence2]: licence, licensing, licenses, premises, revoked, licensed, liquor, permits, permit, firearms
+-- 550 {-21.40} [second_vec : sentence2]: cite, acronym, tags, title, tag, allowed, strike, displayed, tt, strong
+-- 142 {-21.45} [second_vec : sentence2]: exterior, brightly, stained, rear, interior, front, glass, lights, curtain, sunlight
+-- 182 {-21.99} [elem_wise_prod]: grenades, guns, armament, artillery, launchers, grenade, turret, gun, cannon, mortar
+-- 75 {-23.04} [abs_diff]: rna, genome, dna, genes, sequences, chromosome, sequence, viral, genetics, proteins
+-- 2121 {-23.93} [second_vec : sentence2]: sediment, deposition, deposits, erosion, chronology, geological, dating, tertiary, environments, greenland
+-- 1423 {-24.41} [second_vec : sentence2]: plymouth, zimbabwe, drake, brethren, joshua, patriotic, citadel, vera, dodge, morgan
+- notsarc [precision = 0.6624472573839663] :
+  ++ positive predictors ++
+-- 1423 {24.43} [second_vec : sentence2]: plymouth, zimbabwe, drake, brethren, joshua, patriotic, citadel, vera, dodge, morgan
+-- 2121 {23.90} [second_vec : sentence2]: sediment, deposition, deposits, erosion, chronology, geological, dating, tertiary, environments, greenland
+-- 75 {23.03} [abs_diff]: rna, genome, dna, genes, sequences, chromosome, sequence, viral, genetics, proteins
+-- 182 {21.95} [elem_wise_prod]: grenades, guns, armament, artillery, launchers, grenade, turret, gun, cannon, mortar
+-- 142 {21.47} [second_vec : sentence2]: exterior, brightly, stained, rear, interior, front, glass, lights, curtain, sunlight
+-- 550 {21.46} [second_vec : sentence2]: cite, acronym, tags, title, tag, allowed, strike, displayed, tt, strong
+-- 623 {21.11} [second_vec : sentence2]: licence, licensing, licenses, premises, revoked, licensed, liquor, permits, permit, firearms
+-- 75 {20.73} [second_vec : sentence2]: rna, genome, dna, genes, sequences, chromosome, sequence, viral, genetics, proteins
+-- 1692 {20.69} [second_vec : sentence2]: wembley, 196, grove, po, underwood, leroy, middlesex, islamic, 107, 181
+-- 445 {20.42} [second_vec : sentence2]: arc, vineyard, fallon, martha, winery, frankie, joan, stakes, oaks, jockey
+  -- negative predictors --
+-- 1548 {-20.19} [second_vec : sentence2]: sony, ericsson, emi, playstation, rca, thorn, entertainment, stick, pictures, launches
+-- 2171 {-20.40} [abs_diff]: dorset, poole, christchurch, portland, abbas, regis, hardy, jurassic, cove, salisbury
+-- 1137 {-20.52} [abs_diff]: bolts, screw, bolt, nuts, locking, drilled, mounting, pins, bracket, tapped
+-- 1229 {-20.62} [second_vec : sentence2]: bunny, bugs, gag, duck, moe, cartoon, tunes, rabbit, sylvester, dodgers
+-- 308 {-20.74} [first_vec : sentence1]: hewitt, macdonald, mackay, mackenzie, duncan, mclean, paterson, donald, mcmillan, fraser
+-- 192 {-20.76} [abs_diff]: refueling, squadrons, bomber, ju, fighter, redesignated, reassigned, bombardment, airfield, squadron
+-- 1736 {-21.40} [second_vec : sentence2]: chung, lim, cheung, singaporean, lai, lam, shan, wan, chong, wong
+-- 350 {-21.51} [second_vec : sentence2]: yoga, meditation, relaxation, poses, breathing, malik, practicing, awakening, posture, breath
+-- 1016 {-21.68} [abs_diff]: marseille, rue, toulouse, bordeaux, lyon, paris, gaulle, strasbourg, nord, france
+-- 913 {-22.34} [second_vec : sentence2]: beverly, owens, montana, lamar, billings, malone, jesse, rodeo, bass, buck

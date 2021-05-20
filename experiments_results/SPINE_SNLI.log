@@ -1,0 +1,98 @@
+=== CONFIG ===
+{'embeddings': 'SPINE', 'corpus': 'SNLI', 'batch_size': 256, 'beta1': 0.99, 'beta2': 0.999, 'gamma': 0.65, 'lr': 0.018915718691793194, 'patience': 5, 'scheduler': 'plateau', 'weight_decay': 0.0, 'xavier': True, 'epochs': 200}
+=== ====== ===
+Evaluation:
+- test set evaluation:
+{'test_acc': 0.6409812569618225, 'test_loss': 0.8289259672164917}
+- report (test):
+               precision    recall  f1-score   support
+
+      neutral     0.6516    0.5788    0.6130      3219
+   entailment     0.6177    0.7396    0.6732      3368
+contradiction     0.6627    0.6002    0.6299      3237
+
+     accuracy                         0.6410      9824
+    macro avg     0.6440    0.6395    0.6387      9824
+ weighted avg     0.6436    0.6410    0.6392      9824
+
+- random classifier (baseline):
+               precision    recall  f1-score   support
+
+      neutral     0.3373    0.3386    0.3379      3219
+   entailment     0.3410    0.3370    0.3390      3368
+contradiction     0.3281    0.3309    0.3295      3237
+
+     accuracy                         0.3355      9824
+    macro avg     0.3355    0.3355    0.3355      9824
+ weighted avg     0.3355    0.3355    0.3355      9824
+
+Diagnostics for labels:
+- neutral [precision = 0.6516264428121721] :
+  ++ positive predictors ++
+-- 640 {44.56} [elem_wise_prod]: sleep, pain, exhaustion, depression, fatigue, feeling, waking, meditation, symptoms, nervous
+-- 352 {41.03} [elem_wise_prod]: efficiently, swiftly, forcefully, favorably, react, properly, aggressively, respond, vigorously, professionally
+-- 655 {40.75} [elem_wise_prod]: wicket, oath, lie, scoreboard, 3-0, strokes, exams, 4-1, blood, standardized
+-- 728 {37.81} [elem_wise_prod]: hide, conceal, concealed, hid, hidden, hiding, uncover, disguise, hides, identities
+-- 148 {36.73} [elem_wise_prod]: lounge, rooms, desk, cafe, room, lamp, tables, upstairs, meditation, café
+-- 995 {35.10} [elem_wise_prod]: requests, email, mail, reply, queries, e, answering, messages, answered, send
+-- 205 {34.56} [elem_wise_prod]: refuses, refusal, refusing, unwilling, refuse, apologize, acknowledge, accept, comply, recognise
+-- 188 {34.48} [elem_wise_prod]: palestinian, hamas, blockade, gaza, israel, emancipation, lifting, palestinians, hezbollah, sanctions
+-- 833 {33.46} [elem_wise_prod]: sums, donations, assets, funds, fund, cash, billion, charitable, loans, contributions
+-- 649 {33.30} [elem_wise_prod]: longtime, supporter, long-time, contributor, sole, ally, biggest, principal, staunch, supplier
+  -- negative predictors --
+-- 2 {-68.22} [elem_wise_prod]: goalkeeper, gesture, gestures, keeper, umpire, rude, inappropriate, first-team, harmless, powerless
+-- 641 {-69.69} [elem_wise_prod]: née, novelist, playwright, born, poet, 1902, helen, 1926, actress, maría
+-- 87 {-70.78} [elem_wise_prod]: duchy, battleship, socialist, soviet, confederate, union, uss, vowel, 1918, breakup
+-- 292 {-71.06} [elem_wise_prod]: mentioning, distract, comment, avoided, controversies, spotlight, mention, whatsoever, wrongdoing, any
+-- 1 {-72.48} [elem_wise_prod]: absolutely, wonderful, unfortunate, awful, fantastic, unfair, pretty, fundamentally, horrible, situation
+-- 900 {-73.13} [elem_wise_prod]: potassium, gems, zinc, vitamin, crystals, 5th, 6th, algebra, bronze, silver
+-- 340 {-77.15} [elem_wise_prod]: museum, renovated, orchestra, auditorium, national, philharmonic, library, academy, classrooms, reopened
+-- 980 {-80.43} [elem_wise_prod]: conclusions, recommendations, evaluation, submit, preliminary, review, audit, reviews, findings, reviewed
+-- 196 {-88.10} [elem_wise_prod]: 3-0, 4-1, 3-1, 2-1, 3-2, 2-0, 1-0, 4-3, victory, defeated
+-- 759 {-89.17} [elem_wise_prod]: ardent, lifelong, dislike, wary, reluctance, disillusioned, disliked, openly, ambition, desire
+- entailment [precision = 0.6176543515993057] :
+  ++ positive predictors ++
+-- 340 {108.87} [elem_wise_prod]: museum, renovated, orchestra, auditorium, national, philharmonic, library, academy, classrooms, reopened
+-- 187 {97.02} [elem_wise_prod]: deng, retirement, retire, 50s, 60s, pensions, 70s, sinatra, 401, alzheimer
+-- 980 {95.61} [elem_wise_prod]: conclusions, recommendations, evaluation, submit, preliminary, review, audit, reviews, findings, reviewed
+-- 655 {88.78} [elem_wise_prod]: wicket, oath, lie, scoreboard, 3-0, strokes, exams, 4-1, blood, standardized
+-- 480 {87.89} [elem_wise_prod]: sensory, comparative, vfl, spatial, feeder, preferences, neurons, ants, dialects, dialect
+-- 2 {86.42} [elem_wise_prod]: goalkeeper, gesture, gestures, keeper, umpire, rude, inappropriate, first-team, harmless, powerless
+-- 242 {82.40} [elem_wise_prod]: leinster, munster, all-ireland, viscount, 3rd, dorsal, 6th, 4th, 7th, 1st
+-- 112 {82.06} [elem_wise_prod]: simpsons, rip, tore, tearing, tornadoes, wipe, ----, whistle, wiped, worm
+-- 640 {80.23} [elem_wise_prod]: sleep, pain, exhaustion, depression, fatigue, feeling, waking, meditation, symptoms, nervous
+-- 883 {78.58} [elem_wise_prod]: missiles, rockets, rocket, targets, target, bounds, shells, ballistic, mortar, proton
+  -- negative predictors --
+-- 833 {-39.98} [elem_wise_prod]: sums, donations, assets, funds, fund, cash, billion, charitable, loans, contributions
+-- 649 {-41.37} [elem_wise_prod]: longtime, supporter, long-time, contributor, sole, ally, biggest, principal, staunch, supplier
+-- 239 {-43.44} [elem_wise_prod]: spokesman, comment, reporters, quoted, ministry, details, confirmed, confirm, told, spokesperson
+-- 919 {-44.08} [elem_wise_prod]: palestinians, gaza, palestinian, jerusalem, israel, israelis, jewish, settlements, settlers, hamas
+-- 226 {-46.09} [elem_wise_prod]: 1850s, 2000s, 1880s, 60s, 1870s, 80s, 50s, 1860s, 1800s, 70s
+-- 518 {-47.25} [elem_wise_prod]: machinery, plastics, electronics, industries, sectors, appliances, miscellaneous, agriculture, sciences, engineering
+-- 840 {-48.41} [elem_wise_prod]: airports, airport, runways, aquino, airspace, flights, grounded, gaulle, cory, luton
+-- 729 {-49.27} [elem_wise_prod]: turkish, cyprus, cypriot, greece, aegean, ankara, anatolia, armenians, ottoman, athens
+-- 492 {-53.32} [elem_wise_prod]: languages, translations, subtitles, editions, cds, arabic, discs, dvd, manuscripts, translation
+-- 844 {-58.92} [elem_wise_prod]: signs, differences, contradiction, inherent, weaknesses, noticeable, bias, hostility, apparent, similarity
+- contradiction [precision = 0.66268758526603] :
+  ++ positive predictors ++
+-- 881 {94.63} [elem_wise_prod]: 0.2, 0.1, 1.0, 0.5, 3.0, 1.1, 1.9, 1.6, 1.8, 1.4
+-- 404 {78.40} [elem_wise_prod]: sen., senate, rep., d, r, senator, democrat, ill., judiciary, republican
+-- 844 {73.30} [elem_wise_prod]: signs, differences, contradiction, inherent, weaknesses, noticeable, bias, hostility, apparent, similarity
+-- 907 {72.21} [elem_wise_prod]: playstation, nintendo, wii, sega, arcade, xbox, comics, gameplay, marvel, manga
+-- 520 {68.78} [elem_wise_prod]: 36th, 33rd, 42nd, 38th, 32nd, 41st, 35th, 34th, defender, header
+-- 196 {63.23} [elem_wise_prod]: 3-0, 4-1, 3-1, 2-1, 3-2, 2-0, 1-0, 4-3, victory, defeated
+-- 1 {61.57} [elem_wise_prod]: absolutely, wonderful, unfortunate, awful, fantastic, unfair, pretty, fundamentally, horrible, situation
+-- 221 {58.26} [elem_wise_prod]: aires, tel, taipei, bangkok, dhaka, nairobi, aviv, istanbul, brussels, budapest
+-- 602 {55.43} [elem_wise_prod]: river, thames, bridge, dam, estuary, danube, gorge, upstream, avon, nile
+-- 763 {54.14} [elem_wise_prod]: ltte, tamil, norte, laguna, león, granada, manila, philippines, maría, lankan
+  -- negative predictors --
+-- 97 {-70.86} [elem_wise_prod]: treasury, yield, yields, bonds, 10-year, benchmark, debt, maturity, mortgage, 182
+-- 187 {-71.43} [elem_wise_prod]: deng, retirement, retire, 50s, 60s, pensions, 70s, sinatra, 401, alzheimer
+-- 480 {-76.02} [elem_wise_prod]: sensory, comparative, vfl, spatial, feeder, preferences, neurons, ants, dialects, dialect
+-- 214 {-80.74} [elem_wise_prod]: lansing, arbor, sunni, paramount, vhs, theaters, theatres, cinemas, kurdish, criterion
+-- 948 {-82.89} [elem_wise_prod]: 26, june, 1934, 1911, 1921, 1923, april, 1832, 1979, 1830
+-- 847 {-83.77} [elem_wise_prod]: swimming, kobe, clint, dolly, butch, freestyle, robbie, bulls, eastwood, blazers
+-- 148 {-90.62} [elem_wise_prod]: lounge, rooms, desk, cafe, room, lamp, tables, upstairs, meditation, café
+-- 242 {-97.32} [elem_wise_prod]: leinster, munster, all-ireland, viscount, 3rd, dorsal, 6th, 4th, 7th, 1st
+-- 655 {-132.75} [elem_wise_prod]: wicket, oath, lie, scoreboard, 3-0, strokes, exams, 4-1, blood, standardized
+-- 640 {-134.76} [elem_wise_prod]: sleep, pain, exhaustion, depression, fatigue, feeling, waking, meditation, symptoms, nervous

@@ -1,0 +1,73 @@
+=== CONFIG ===
+{'embeddings': 'NMF300', 'corpus': 'BoolQ', 'batch_size': 64, 'beta1': 0.99, 'beta2': 0.999, 'gamma': 0.75, 'lr': 0.012726438567804388, 'patience': 5, 'scheduler': 'plateau', 'weight_decay': 0.0, 'xavier': True, 'epochs': 200}
+=== ====== ===
+Evaluation:
+- test set evaluation:
+{'test_acc': 0.6262317299842834, 'test_loss': 0.6597195267677307}
+- report (test):
+              precision    recall  f1-score   support
+
+       False     0.0000    0.0000    0.0000      1100
+        True     0.6262    1.0000    0.7702      1843
+
+    accuracy                         0.6262      2943
+   macro avg     0.3131    0.5000    0.3851      2943
+weighted avg     0.3922    0.6262    0.4823      2943
+
+- random classifier (baseline):
+              precision    recall  f1-score   support
+
+       False     0.3779    0.3755    0.3767      1100
+        True     0.6286    0.6310    0.6298      1843
+
+    accuracy                         0.5355      2943
+   macro avg     0.5033    0.5032    0.5032      2943
+weighted avg     0.5349    0.5355    0.5352      2943
+
+Diagnostics for labels:
+- False [precision = 0.0] :
+  ++ positive predictors ++
+-- 208 {16.60} [first_vec : question]: humorous, comical, amusing, gags, jokes, comedic, ironic, surreal, witty, interspersed
+-- 78 {12.67} [first_vec : question]: holographic, stereoscopic, monochrome, widescreen, customizable, anamorphic, crt, bitmap, hologram, projector
+-- 36 {12.04} [first_vec : question]: temperature, maximum, velocity, measured, amplitude, ratio, minimum, thickness, frequency, relative
+-- 92 {11.86} [second_vec : passage]: really, you, maybe, wouldn, shouldn, think, myself, we, something, fucking
+-- 282 {11.76} [first_vec : question]: adaptation, shakespeare, novel, tale, othello, macbeth, adaptations, adventures, tales, dickens
+-- 153 {11.72} [abs_diff]: denouncing, regarding, stating, statements, condemning, comments, criticised, refuted, accusing, erroneous
+-- 288 {11.57} [first_vec : question]: potawatomi, lenape, ojibwe, ojibwa, choctaw, paiute, lakota, chickasaw, abenaki, shoshone
+-- 224 {11.51} [first_vec : question]: river, tributaries, tributary, downstream, upstream, ganges, waterway, dammed, navigable, vistula
+-- 84 {11.31} [abs_diff]: joão, ribeiro, gonçalves, antônio, carvalho, júnior, são, antónio, mário, soares
+-- 226 {11.24} [first_vec : question]: statue, depicts, symbolizing, symbolizes, depicting, wreath, depicted, statues, seated, surmounted
+  -- negative predictors --
+-- 87 {-10.59} [first_vec : question]: incapacitated, healed, interfered, disregarded, distanced, discredited, undermined, ignored, supplanted, rewritten
+-- 26 {-11.09} [second_vec : passage]: headache, congenital, edema, abnormalities, dysfunction, paralysis, epilepsy, syndrome, vomiting, chronic
+-- 288 {-11.60} [abs_diff]: potawatomi, lenape, ojibwe, ojibwa, choctaw, paiute, lakota, chickasaw, abenaki, shoshone
+-- 156 {-11.72} [second_vec : passage]: playstation, sega, nintendo, wii, activision, xbox, arcade, konami, gameplay, capcom
+-- 156 {-11.81} [first_vec : question]: playstation, sega, nintendo, wii, activision, xbox, arcade, konami, gameplay, capcom
+-- 103 {-11.84} [abs_diff]: lil, ludacris, rapper, dogg, snoop, feat, minaj, eminem, pharrell, featuring
+-- 277 {-12.91} [abs_diff]: swe, arg, gbr, ita, fra, bra, jpn, ger, mex, esp
+-- 243 {-13.88} [first_vec : question]: malaria, measles, rabies, influenza, tuberculosis, polio, infections, infection, smallpox, cholera
+-- 277 {-14.03} [first_vec : question]: swe, arg, gbr, ita, fra, bra, jpn, ger, mex, esp
+-- 26 {-14.25} [first_vec : question]: headache, congenital, edema, abnormalities, dysfunction, paralysis, epilepsy, syndrome, vomiting, chronic
+- True [precision = 0.6262317363234794] :
+  ++ positive predictors ++
+-- 26 {14.35} [first_vec : question]: headache, congenital, edema, abnormalities, dysfunction, paralysis, epilepsy, syndrome, vomiting, chronic
+-- 277 {14.12} [first_vec : question]: swe, arg, gbr, ita, fra, bra, jpn, ger, mex, esp
+-- 243 {13.87} [first_vec : question]: malaria, measles, rabies, influenza, tuberculosis, polio, infections, infection, smallpox, cholera
+-- 277 {12.96} [abs_diff]: swe, arg, gbr, ita, fra, bra, jpn, ger, mex, esp
+-- 156 {11.86} [first_vec : question]: playstation, sega, nintendo, wii, activision, xbox, arcade, konami, gameplay, capcom
+-- 103 {11.82} [abs_diff]: lil, ludacris, rapper, dogg, snoop, feat, minaj, eminem, pharrell, featuring
+-- 156 {11.78} [second_vec : passage]: playstation, sega, nintendo, wii, activision, xbox, arcade, konami, gameplay, capcom
+-- 288 {11.58} [abs_diff]: potawatomi, lenape, ojibwe, ojibwa, choctaw, paiute, lakota, chickasaw, abenaki, shoshone
+-- 26 {11.16} [second_vec : passage]: headache, congenital, edema, abnormalities, dysfunction, paralysis, epilepsy, syndrome, vomiting, chronic
+-- 87 {10.62} [first_vec : question]: incapacitated, healed, interfered, disregarded, distanced, discredited, undermined, ignored, supplanted, rewritten
+  -- negative predictors --
+-- 84 {-11.27} [abs_diff]: joão, ribeiro, gonçalves, antônio, carvalho, júnior, são, antónio, mário, soares
+-- 211 {-11.28} [first_vec : question]: toponym, erroneously, upanishad, neologism, placename, purana, ethnonym, rigveda, etymologically, nomen
+-- 224 {-11.59} [first_vec : question]: river, tributaries, tributary, downstream, upstream, ganges, waterway, dammed, navigable, vistula
+-- 288 {-11.62} [first_vec : question]: potawatomi, lenape, ojibwe, ojibwa, choctaw, paiute, lakota, chickasaw, abenaki, shoshone
+-- 153 {-11.67} [abs_diff]: denouncing, regarding, stating, statements, condemning, comments, criticised, refuted, accusing, erroneous
+-- 282 {-11.81} [first_vec : question]: adaptation, shakespeare, novel, tale, othello, macbeth, adaptations, adventures, tales, dickens
+-- 92 {-11.89} [second_vec : passage]: really, you, maybe, wouldn, shouldn, think, myself, we, something, fucking
+-- 36 {-12.00} [first_vec : question]: temperature, maximum, velocity, measured, amplitude, ratio, minimum, thickness, frequency, relative
+-- 78 {-12.67} [first_vec : question]: holographic, stereoscopic, monochrome, widescreen, customizable, anamorphic, crt, bitmap, hologram, projector
+-- 208 {-16.52} [first_vec : question]: humorous, comical, amusing, gags, jokes, comedic, ironic, surreal, witty, interspersed

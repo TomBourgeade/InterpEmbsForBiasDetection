@@ -1,0 +1,73 @@
+=== CONFIG ===
+{'embeddings': 'Word2Sense', 'corpus': 'URFUNNY', 'batch_size': 128, 'beta1': 0.99, 'beta2': 0.999, 'gamma': 0.7, 'lr': 0.026651059575252812, 'patience': 5, 'scheduler': 'plateau', 'weight_decay': 0.0, 'xavier': True, 'epochs': 200}
+=== ====== ===
+Evaluation:
+- test set evaluation:
+{'test_acc': 0.6398865580558777, 'test_loss': 0.6365142464637756}
+- report (test):
+              precision    recall  f1-score   support
+
+       funny     0.6289    0.6590    0.6436       522
+   not_funny     0.6517    0.6213    0.6361       536
+
+    accuracy                         0.6399      1058
+   macro avg     0.6403    0.6401    0.6398      1058
+weighted avg     0.6404    0.6399    0.6398      1058
+
+- random classifier (baseline):
+              precision    recall  f1-score   support
+
+       funny     0.4952    0.4923    0.4938       522
+   not_funny     0.5083    0.5112    0.5098       536
+
+    accuracy                         0.5019      1058
+   macro avg     0.5018    0.5018    0.5018      1058
+weighted avg     0.5019    0.5019    0.5019      1058
+
+Diagnostics for labels:
+- funny [precision = 0.6288848263254113] :
+  ++ positive predictors ++
+-- 1431 {29.19} [first_vec : context]: richardson, adams, hancock, leigh, howe, jonas, andersen, hurry, averages, johnston
+-- 803 {27.20} [abs_diff]: boca, duplicate, morse, pt, juniors, retrieved, spying, nominal, nighttime, mls
+-- 1860 {26.11} [second_vec : punchline]: barack, obama, mccain, clinton, senator, inauguration, presidential, palin, gore, gov
+-- 928 {26.09} [second_vec : punchline]: hair, nail, salon, beard, blonde, hairs, blond, bald, facial, trimmed
+-- 1542 {25.84} [second_vec : punchline]: motorcycles, motorcycle, bikes, bike, bicycles, harley, helmets, bicycle, riders, ridden
+-- 1407 {25.40} [second_vec : punchline]: macy, sears, mall, anchors, anchor, upscale, stores, anchored, malls, store
+-- 1054 {25.32} [first_vec : context]: codex, numbering, manuscript, testament, manuscripts, leningrad, leaves, humane, representative, potter
+-- 1472 {25.23} [abs_diff]: drummond, buster, markers, ewing, hopper, jams, shepard, overturned, guns, paterson
+-- 879 {25.07} [second_vec : punchline]: lancaster, roland, duchy, burt, priory, draft, linguistics, dukes, 1918, gate
+-- 1054 {24.81} [abs_diff]: codex, numbering, manuscript, testament, manuscripts, leningrad, leaves, humane, representative, potter
+  -- negative predictors --
+-- 540 {-25.15} [second_vec : punchline]: regional, sustainability, strategic, transport, viability, strategy, sustainable, development, planning, priorities
+-- 885 {-25.72} [second_vec : punchline]: artery, cardiac, veins, vein, heart, cardiovascular, stroke, blood, cerebral, systemic
+-- 2212 {-26.01} [second_vec : punchline]: oriented, environments, deploying, ubiquitous, architecture, interface, integration, integrating, applications, functionality
+-- 1709 {-26.05} [second_vec : punchline]: cognitive, behavioral, developmental, psychiatry, psychological, rhythms, brain, functioning, neural, perception
+-- 1898 {-26.69} [second_vec : punchline]: disclose, disclosed, confidential, exemption, exempt, consent, information, personal, protection, processed
+-- 474 {-28.79} [second_vec : punchline]: sustaining, protecting, enhancing, sustainable, strengthening, sustainability, promoting, securing, preserving, restoring
+-- 1680 {-29.13} [second_vec : punchline]: participation, widening, strategies, initiatives, inclusive, stakeholders, inclusion, agenda, lifelong, barriers
+-- 2220 {-29.32} [second_vec : punchline]: centralized, routing, deploy, networks, deployment, multiple, enables, deploying, infrastructure, integrate
+-- 40 {-31.68} [second_vec : punchline]: alzheimer, chronic, asthma, inflammatory, parkinson, inflammation, systemic, cardiovascular, stroke, diseases
+-- 1057 {-33.95} [second_vec : punchline]: particles, crystals, grains, liquid, crystal, silicon, solid, metallic, tiny, dispersed
+- not_funny [precision = 0.6516634050880626] :
+  ++ positive predictors ++
+-- 1057 {33.93} [second_vec : punchline]: particles, crystals, grains, liquid, crystal, silicon, solid, metallic, tiny, dispersed
+-- 40 {31.69} [second_vec : punchline]: alzheimer, chronic, asthma, inflammatory, parkinson, inflammation, systemic, cardiovascular, stroke, diseases
+-- 2220 {29.35} [second_vec : punchline]: centralized, routing, deploy, networks, deployment, multiple, enables, deploying, infrastructure, integrate
+-- 1680 {29.18} [second_vec : punchline]: participation, widening, strategies, initiatives, inclusive, stakeholders, inclusion, agenda, lifelong, barriers
+-- 474 {28.76} [second_vec : punchline]: sustaining, protecting, enhancing, sustainable, strengthening, sustainability, promoting, securing, preserving, restoring
+-- 1898 {26.72} [second_vec : punchline]: disclose, disclosed, confidential, exemption, exempt, consent, information, personal, protection, processed
+-- 1709 {26.07} [second_vec : punchline]: cognitive, behavioral, developmental, psychiatry, psychological, rhythms, brain, functioning, neural, perception
+-- 2212 {26.04} [second_vec : punchline]: oriented, environments, deploying, ubiquitous, architecture, interface, integration, integrating, applications, functionality
+-- 885 {25.73} [second_vec : punchline]: artery, cardiac, veins, vein, heart, cardiovascular, stroke, blood, cerebral, systemic
+-- 540 {25.17} [second_vec : punchline]: regional, sustainability, strategic, transport, viability, strategy, sustainable, development, planning, priorities
+  -- negative predictors --
+-- 2137 {-24.82} [second_vec : punchline]: brad, pitt, jennifer, reese, vaughn, lopez, gossip, celebrity, lindsay, jude
+-- 879 {-25.05} [second_vec : punchline]: lancaster, roland, duchy, burt, priory, draft, linguistics, dukes, 1918, gate
+-- 1472 {-25.22} [abs_diff]: drummond, buster, markers, ewing, hopper, jams, shepard, overturned, guns, paterson
+-- 1054 {-25.34} [first_vec : context]: codex, numbering, manuscript, testament, manuscripts, leningrad, leaves, humane, representative, potter
+-- 1407 {-25.39} [second_vec : punchline]: macy, sears, mall, anchors, anchor, upscale, stores, anchored, malls, store
+-- 1542 {-25.85} [second_vec : punchline]: motorcycles, motorcycle, bikes, bike, bicycles, harley, helmets, bicycle, riders, ridden
+-- 928 {-26.14} [second_vec : punchline]: hair, nail, salon, beard, blonde, hairs, blond, bald, facial, trimmed
+-- 1860 {-26.15} [second_vec : punchline]: barack, obama, mccain, clinton, senator, inauguration, presidential, palin, gore, gov
+-- 803 {-27.18} [abs_diff]: boca, duplicate, morse, pt, juniors, retrieved, spying, nominal, nighttime, mls
+-- 1431 {-29.20} [first_vec : context]: richardson, adams, hancock, leigh, howe, jonas, andersen, hurry, averages, johnston

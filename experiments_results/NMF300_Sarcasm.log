@@ -1,0 +1,73 @@
+=== CONFIG ===
+{'embeddings': 'NMF300', 'corpus': 'Sarcasm', 'batch_size': 256, 'beta1': 0.99, 'beta2': 0.999, 'gamma': 0.75, 'lr': 0.05377222896065425, 'patience': 5, 'scheduler': 'plateau', 'weight_decay': 0.0, 'xavier': True, 'epochs': 200}
+=== ====== ===
+Evaluation:
+- test set evaluation:
+{'test_acc': 0.6055437326431274, 'test_loss': 0.658950924873352}
+- report (test):
+              precision    recall  f1-score   support
+
+        sarc     0.6957    0.4017    0.5093       239
+     notsarc     0.5680    0.8174    0.6702       230
+
+    accuracy                         0.6055       469
+   macro avg     0.6318    0.6095    0.5898       469
+weighted avg     0.6330    0.6055    0.5882       469
+
+- random classifier (baseline):
+              precision    recall  f1-score   support
+
+        sarc     0.4844    0.5188    0.5010       239
+     notsarc     0.4601    0.4261    0.4424       230
+
+    accuracy                         0.4733       469
+   macro avg     0.4722    0.4725    0.4717       469
+weighted avg     0.4725    0.4733    0.4723       469
+
+Diagnostics for labels:
+- sarc [precision = 0.6956521739130435] :
+  ++ positive predictors ++
+-- 12 {118.00} [second_vec : sentence2]: burnin, dreamin, rmx, blowin, movin, tonite, groovin, heartbreaker, feelin, dancin
+-- 252 {108.84} [second_vec : sentence2]: foxtrot, quickstep, rumba, jive, waltz, samba, doble, salsa, mambo, cha
+-- 12 {106.81} [abs_diff]: burnin, dreamin, rmx, blowin, movin, tonite, groovin, heartbreaker, feelin, dancin
+-- 103 {101.53} [second_vec : sentence2]: lil, ludacris, rapper, dogg, snoop, feat, minaj, eminem, pharrell, featuring
+-- 252 {101.40} [first_vec : sentence1]: foxtrot, quickstep, rumba, jive, waltz, samba, doble, salsa, mambo, cha
+-- 252 {100.83} [abs_diff]: foxtrot, quickstep, rumba, jive, waltz, samba, doble, salsa, mambo, cha
+-- 12 {100.31} [first_vec : sentence1]: burnin, dreamin, rmx, blowin, movin, tonite, groovin, heartbreaker, feelin, dancin
+-- 103 {98.68} [first_vec : sentence1]: lil, ludacris, rapper, dogg, snoop, feat, minaj, eminem, pharrell, featuring
+-- 103 {96.16} [abs_diff]: lil, ludacris, rapper, dogg, snoop, feat, minaj, eminem, pharrell, featuring
+-- 10 {94.38} [first_vec : sentence1]: remix, ep, mix, aka, dreams, titled, love, paradise, sweet, dream
+  -- negative predictors --
+-- 188 {-92.96} [second_vec : sentence2]: neurology, ophthalmology, oncology, radiology, microbiology, cardiology, pharmacology, obstetrics, immunology, dermatology
+-- 202 {-93.06} [second_vec : sentence2]: plaintiffs, plaintiff, court, appeals, appeal, appellate, writ, judgment, extradition, rulings
+-- 231 {-93.12} [second_vec : sentence2]: orbiting, ngc, planetary, planets, asteroid, gliese, jupiter, uranus, exoplanet, kepler
+-- 29 {-98.98} [second_vec : sentence2]: assumptions, hypothesis, validity, errors, criteria, argument, statements, facts, conclusions, arguments
+-- 28 {-101.01} [second_vec : sentence2]: cognition, linguistic, interpersonal, normative, affective, conceptual, cognitive, sociological, perspectives, metaphysical
+-- 41 {-101.97} [second_vec : sentence2]: formulations, usages, locales, architectures, vocabularies, typefaces, cuisines, spellings, tunings, subgenres
+-- 38 {-106.03} [second_vec : sentence2]: electron, photon, photons, electromagnetic, particle, scattering, spectroscopy, magnetic, electrons, neutron
+-- 49 {-106.68} [second_vec : sentence2]: laws, provisions, amendment, enforce, statute, ordinance, enacted, act, legislation, amendments
+-- 75 {-115.79} [second_vec : sentence2]: protein, proteins, mrna, rna, nucleotide, kinase, dna, genes, subunit, histone
+-- 170 {-118.86} [second_vec : sentence2]: mtdna, phylogenetic, haplogroup, speciation, morphological, neanderthal, phylogeny, genetic, fossils, lineages
+- notsarc [precision = 0.56797583081571] :
+  ++ positive predictors ++
+-- 170 {118.77} [second_vec : sentence2]: mtdna, phylogenetic, haplogroup, speciation, morphological, neanderthal, phylogeny, genetic, fossils, lineages
+-- 75 {115.71} [second_vec : sentence2]: protein, proteins, mrna, rna, nucleotide, kinase, dna, genes, subunit, histone
+-- 49 {106.66} [second_vec : sentence2]: laws, provisions, amendment, enforce, statute, ordinance, enacted, act, legislation, amendments
+-- 38 {106.15} [second_vec : sentence2]: electron, photon, photons, electromagnetic, particle, scattering, spectroscopy, magnetic, electrons, neutron
+-- 41 {101.90} [second_vec : sentence2]: formulations, usages, locales, architectures, vocabularies, typefaces, cuisines, spellings, tunings, subgenres
+-- 28 {100.97} [second_vec : sentence2]: cognition, linguistic, interpersonal, normative, affective, conceptual, cognitive, sociological, perspectives, metaphysical
+-- 29 {98.99} [second_vec : sentence2]: assumptions, hypothesis, validity, errors, criteria, argument, statements, facts, conclusions, arguments
+-- 231 {93.13} [second_vec : sentence2]: orbiting, ngc, planetary, planets, asteroid, gliese, jupiter, uranus, exoplanet, kepler
+-- 202 {93.10} [second_vec : sentence2]: plaintiffs, plaintiff, court, appeals, appeal, appellate, writ, judgment, extradition, rulings
+-- 188 {93.09} [second_vec : sentence2]: neurology, ophthalmology, oncology, radiology, microbiology, cardiology, pharmacology, obstetrics, immunology, dermatology
+  -- negative predictors --
+-- 10 {-94.33} [first_vec : sentence1]: remix, ep, mix, aka, dreams, titled, love, paradise, sweet, dream
+-- 103 {-96.13} [abs_diff]: lil, ludacris, rapper, dogg, snoop, feat, minaj, eminem, pharrell, featuring
+-- 103 {-98.64} [first_vec : sentence1]: lil, ludacris, rapper, dogg, snoop, feat, minaj, eminem, pharrell, featuring
+-- 12 {-100.43} [first_vec : sentence1]: burnin, dreamin, rmx, blowin, movin, tonite, groovin, heartbreaker, feelin, dancin
+-- 252 {-100.89} [abs_diff]: foxtrot, quickstep, rumba, jive, waltz, samba, doble, salsa, mambo, cha
+-- 252 {-101.40} [first_vec : sentence1]: foxtrot, quickstep, rumba, jive, waltz, samba, doble, salsa, mambo, cha
+-- 103 {-101.54} [second_vec : sentence2]: lil, ludacris, rapper, dogg, snoop, feat, minaj, eminem, pharrell, featuring
+-- 12 {-106.83} [abs_diff]: burnin, dreamin, rmx, blowin, movin, tonite, groovin, heartbreaker, feelin, dancin
+-- 252 {-108.78} [second_vec : sentence2]: foxtrot, quickstep, rumba, jive, waltz, samba, doble, salsa, mambo, cha
+-- 12 {-117.92} [second_vec : sentence2]: burnin, dreamin, rmx, blowin, movin, tonite, groovin, heartbreaker, feelin, dancin

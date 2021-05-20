@@ -1,0 +1,98 @@
+=== CONFIG ===
+{'embeddings': 'NNSE', 'corpus': 'SST', 'batch_size': 256, 'beta1': 0.99, 'beta2': 0.999, 'gamma': 0.9, 'lr': 0.017944281755049005, 'patience': 5, 'scheduler': 'plateau', 'weight_decay': 0.0, 'xavier': True, 'epochs': 200}
+=== ====== ===
+Evaluation:
+- test set evaluation:
+{'test_acc': 0.6068376302719116, 'test_loss': 0.8910213112831116}
+- report (test):
+              precision    recall  f1-score   support
+
+     neutral     0.2653    0.0383    0.0670       339
+    positive     0.6224    0.7530    0.6815       834
+    negative     0.6079    0.6936    0.6480       816
+
+    accuracy                         0.6068      1989
+   macro avg     0.4986    0.4950    0.4655      1989
+weighted avg     0.5556    0.6068    0.5630      1989
+
+- random classifier (baseline):
+              precision    recall  f1-score   support
+
+     neutral     0.1955    0.2035    0.1994       339
+    positive     0.4350    0.4412    0.4381       834
+    negative     0.4430    0.4289    0.4359       816
+
+    accuracy                         0.3957      1989
+   macro avg     0.3578    0.3579    0.3578      1989
+weighted avg     0.3975    0.3957    0.3965      1989
+
+Diagnostics for labels:
+- neutral [precision = 0.2653061224489796] :
+  ++ positive predictors ++
+-- 218 {17.59} : megabytes, kilograms, liters, micrograms, millimeters, nanometers, milligrams, centimeters, volts, microns
+-- 151 {16.48} : landlords, merchants, landowners, speculators, bankers, purchasers, issuers, shopkeepers, capitalists, wholesalers
+-- 224 {15.30} : gg, dd, jj, kk, ff, hh, tt, nn, aa, rr
+-- 263 {14.03} : moha, lutea, dexfenfluramine, tacrolimus, psst, maritima, grrr, cyclophosphamide, alpha-tocopherol, gefitinib
+-- 281 {13.10} : ussr, kremlin, russians, soviet, duma, moscow, vladimir, russia, putin, kgb
+-- 237 {13.03} : four-day, three-day, two-day, five-day, four-hour, daylong, two-hour, three-hour, one-day, weeklong
+-- 297 {11.90} : ka, ta, pe, od, ili, hai, bu, kar, ve, cl
+-- 68 {11.72} : compounds, oxides, hydrocarbons, chemical, gases, solvent, compound, chemistry, intermediates, hydrogen
+-- 61 {11.60} : whiff, breather, jab, lowdown, peek, shout-out, mouthful, inkling, jolt, siesta
+-- 235 {10.99} : occupy, occupying, inhabit, ravaged, inhabits, populate, inhabiting, roamed, occupied, conquering
+  -- negative predictors --
+-- 275 {-10.56} : diligently, faithfully, responsibly, constructively, intelligently, cooperatively, systematically, aggressively, productively, profitably
+-- 114 {-10.88} : write-offs, lebowski, understatement, iceberg, fireball, conglomerates, quakes, payoffs, upswing, strides
+-- 122 {-11.16} : double-decker, horse-drawn, commuter, oncoming, trolley, tram, tow, ferry, motorized, taxi
+-- 24 {-11.60} : phillies, orioles, dodgers, astros, mets, braves, yankees, padres, diamondbacks, marlins
+-- 31 {-11.71} : wwe, jericho, heavyweight, michaels, benoit, ric, ppv, bret, smackdown, guerrero
+-- 49 {-12.69} : necks, snout, tails, beak, claws, noses, ears, jaws, paws, tail
+-- 127 {-14.37} : brick, masonry, granite, plaster, stucco, cement, concrete, marble, asphalt, limestone
+-- 271 {-15.14} : thigh, knee, shoulder, elbow, wrist, ankle, groin, forearm, leg, pelvis
+-- 186 {-16.00} : surgery, anesthesia, liposuction, augmentation, angioplasty, implant, cardiology, implants, surgical, catheterization
+-- 262 {-22.10} : rugs, pillows, carpets, mattresses, cushions, linens, upholstery, curtains, blankets, hangings
+- positive [precision = 0.622398414271556] :
+  ++ positive predictors ++
+-- 130 {20.01} : elegantly, attractively, beautifully, brilliantly, exquisitely, delicately, artfully, tastefully, elaborately, superbly
+-- 169 {17.34} : earthy, unmistakable, soothing, mellow, plaintive, sensuous, high-pitched, sultry, mournful, dreamy
+-- 67 {16.09} : jain, krishna, ganga, singh, sikh, punjab, gandhi, hindus, hindu, madras
+-- 280 {15.45} : neisseria, haemophilus, igg, brucella, emerg, borrelia, clostridium, plasmodium, mycobacterium, staphylococcus
+-- 142 {14.82} : self-determination, equality, unity, prosperity, self-sufficiency, self-government, liberty, autonomy, reconciliation, dignity
+-- 126 {14.79} : worshipped, glorified, praised, obeyed, admired, worshiped, glorify, revered, bless, honored
+-- 106 {14.50} : deionized, pouring, spilled, poured, pumping, spilling, pours, leaking, contaminate, ingesting
+-- 186 {13.80} : surgery, anesthesia, liposuction, augmentation, angioplasty, implant, cardiology, implants, surgical, catheterization
+-- 24 {13.64} : phillies, orioles, dodgers, astros, mets, braves, yankees, padres, diamondbacks, marlins
+-- 34 {13.07} : fatty, carbohydrate, dietary, polyunsaturated, amino, unsaturated, vitamin, creatine, long-chain, nutritional
+  -- negative predictors --
+-- 199 {-15.38} : hmmmm, hmm, geez, ahem, whee, mmm, nope, hah, heh, yikes
+-- 138 {-15.46} : stove, refrigerator, fridge, dryer, dishwasher, washer, freezer, sink, toaster, ovens
+-- 3 {-16.99} : celery, zucchini, onions, lettuce, spinach, cabbage, peppers, eggplant, cauliflower, broccoli
+-- 253 {-17.38} : mohammed, khalid, abdullah, hassan, abd, ahmed, ibrahim, abdul, sunni, sheikh
+-- 215 {-17.62} : snip, dusted, ripped, slacked, yanked, hacked, busted, chalked, booted, ticked
+-- 146 {-17.73} : khakis, overalls, underwear, tights, trousers, slacks, pajamas, undergarments, vest, vests
+-- 25 {-17.84} : duplicated, reproduced, copied, exported, reused, resold, downloaded, reprinted, transferred, converted
+-- 157 {-18.74} : squirrels, raccoons, foxes, owls, monkeys, otters, alligators, crocodiles, rabbits, coyotes
+-- 298 {-24.30} : default, descriptor, numeric, null, parameter, boolean, integer, int, header, user-defined
+-- 217 {-25.33} : debris, trash, garbage, lint, rubbish, sludge, dust, dirt, manure, ashes
+- negative [precision = 0.6079484425349087] :
+  ++ positive predictors ++
+-- 217 {17.74} : debris, trash, garbage, lint, rubbish, sludge, dust, dirt, manure, ashes
+-- 298 {17.23} : default, descriptor, numeric, null, parameter, boolean, integer, int, header, user-defined
+-- 251 {16.42} : low-interest, unsecured, interest-free, bxd, refinancing, payday, credit-card, deferred, amortization, equity
+-- 94 {14.90} : dumb, stupid, selfish, insane, foolish, heartless, ignorant, idiotic, childish, arrogant
+-- 120 {13.52} : additives, detergents, dyes, antioxidants, vitamins, solvents, sprays, perfumes, pesticides, creams
+-- 114 {13.36} : write-offs, lebowski, understatement, iceberg, fireball, conglomerates, quakes, payoffs, upswing, strides
+-- 242 {13.20} : eighty, thirty-five, twenty-five, forty-five, eighteen, seventy, sixty, forty, fifteen, twenty-two
+-- 22 {12.99} : premise, supposition, assumption, circumstance, notion, misconception, coincidence, proposition, caveat, assertion
+-- 295 {12.88} : unethical, deceptive, immoral, inappropriate, unfair, obscene, hurtful, misleading, irresponsible, abusive
+-- 271 {12.83} : thigh, knee, shoulder, elbow, wrist, ankle, groin, forearm, leg, pelvis
+  -- negative predictors --
+-- 297 {-14.70} : ka, ta, pe, od, ili, hai, bu, kar, ve, cl
+-- 169 {-14.90} : earthy, unmistakable, soothing, mellow, plaintive, sensuous, high-pitched, sultry, mournful, dreamy
+-- 67 {-15.08} : jain, krishna, ganga, singh, sikh, punjab, gandhi, hindus, hindu, madras
+-- 70 {-15.89} : hand-painted, decorative, hand-made, polychrome, colorful, exquisite, trompe, handmade, colored, one-of-a-kind
+-- 218 {-16.31} : megabytes, kilograms, liters, micrograms, millimeters, nanometers, milligrams, centimeters, volts, microns
+-- 10 {-16.70} : tulsa, wichita, christi, houston, dallas, amarillo, lubbock, jacksonville, austin, huntsville
+-- 41 {-16.82} : witty, insightful, provocative, entertaining, imaginative, humorous, engaging, inventive, clever, irreverent
+-- 281 {-19.50} : ussr, kremlin, russians, soviet, duma, moscow, vladimir, russia, putin, kgb
+-- 280 {-21.46} : neisseria, haemophilus, igg, brucella, emerg, borrelia, clostridium, plasmodium, mycobacterium, staphylococcus
+-- 130 {-21.85} : elegantly, attractively, beautifully, brilliantly, exquisitely, delicately, artfully, tastefully, elaborately, superbly

@@ -1,0 +1,98 @@
+=== CONFIG ===
+{'embeddings': 'SPOWV', 'corpus': 'SNLI', 'batch_size': 256, 'beta1': 0.99, 'beta2': 0.999, 'gamma': 0.6, 'lr': 0.07421511265274539, 'patience': 5, 'scheduler': 'plateau', 'weight_decay': 0.0, 'xavier': True, 'epochs': 200}
+=== ====== ===
+Evaluation:
+- test set evaluation:
+{'test_acc': 0.6297842264175415, 'test_loss': 0.8402754068374634}
+- report (test):
+               precision    recall  f1-score   support
+
+      neutral     0.6453    0.5775    0.6095      3219
+   entailment     0.6153    0.7132    0.6606      3368
+contradiction     0.6338    0.5950    0.6138      3237
+
+     accuracy                         0.6298      9824
+    macro avg     0.6314    0.6286    0.6280      9824
+ weighted avg     0.6312    0.6298    0.6284      9824
+
+- random classifier (baseline):
+               precision    recall  f1-score   support
+
+      neutral     0.3196    0.3082    0.3138      3219
+   entailment     0.3463    0.3468    0.3465      3368
+contradiction     0.3179    0.3287    0.3232      3237
+
+     accuracy                         0.3282      9824
+    macro avg     0.3279    0.3279    0.3278      9824
+ weighted avg     0.3282    0.3282    0.3281      9824
+
+Diagnostics for labels:
+- neutral [precision = 0.6452620617841027] :
+  ++ positive predictors ++
+-- 647 {136.64} [elem_wise_prod]: magnetic, junction, fitted, lamps, cyclone, cyclists, bathing, avenue, baths, interchange
+-- 745 {112.24} [elem_wise_prod]: somali, yao, somalia, jung, yi, di, shelling, mediterranean, palermo, boarded
+-- 151 {111.64} [elem_wise_prod]: oakland, coliseum, denny, marshall, ucla, middlesex, incumbent, ryder, walsh, bob
+-- 484 {110.85} [elem_wise_prod]: curves, antenna, wooded, digitally, drone, charting, 158, subtropical, meadows, acres
+-- 210 {95.98} [elem_wise_prod]: beetle, fungi, beetles, integrate, county, earthquake, cb, insects, hui, stricken
+-- 828 {80.16} [elem_wise_prod]: substances, ni, sar, tumors, ms, tumor, tu, kwan, zheng, ct
+-- 979 {79.01} [elem_wise_prod]: shepard, middlesex, innings, iss, soyuz, sacks, toss, atlantis, recycled, sa
+-- 272 {78.19} [elem_wise_prod]: ahl, dora, prison, kitty, four-year, medina, densely, maze, ark, inmates
+-- 421 {76.51} [elem_wise_prod]: gonzales, pete, senate, chairman, rod, executive, antarctic, oblast, regulatory, ballots
+-- 469 {74.72} [elem_wise_prod]: franks, republican, pork, ambassador, daisy, melissa, meat, velvet, olson, beef
+  -- negative predictors --
+-- 717 {-432.13} [elem_wise_prod]: unpopular, universidad, enroll, contracting, indirect, ariel, diocese, pace, architect, enrolled
+-- 732 {-448.78} [elem_wise_prod]: bureau, contributed, apartheid, secretariat, institute, estimates, foundation, rand, poverty, liberation
+-- 653 {-461.83} [elem_wise_prod]: cindy, liberties, sherry, crawford, gerry, levine, que, ransom, espionage, sinn
+-- 818 {-462.86} [elem_wise_prod]: conflicting, motives, factors, sentencing, incorrect, wording, influencing, jury, charting, directions
+-- 978 {-472.42} [elem_wise_prod]: nintendo, lumpur, minh, blazers, wizards, wii, muslim, kirby, ipswich, kuala
+-- 547 {-481.38} [elem_wise_prod]: peruvian, derivatives, upbringing, father, customs, integral, burial, emissions, paternal, role
+-- 453 {-486.02} [elem_wise_prod]: chevrolet, asphalt, dam, speedway, shale, gravel, preliminary, hatch, stages, microsoft
+-- 306 {-515.73} [elem_wise_prod]: environmentally, sophisticated, gotten, rigorous, privileged, accurate, pest, getting, moisture, reliable
+-- 891 {-529.69} [elem_wise_prod]: swelling, shaking, rip, strain, gently, pour, compression, fm, ligament, earthquakes
+-- 348 {-566.10} [elem_wise_prod]: cultivate, enhance, percy, consolidate, megan, strengthen, avenge, helps, cohen, colleagues
+- entailment [precision = 0.6152663934426229] :
+  ++ positive predictors ++
+-- 891 {683.26} [elem_wise_prod]: swelling, shaking, rip, strain, gently, pour, compression, fm, ligament, earthquakes
+-- 356 {590.82} [elem_wise_prod]: bethlehem, palestinian, sarajevo, hezbollah, nasser, hamas, occupation, gaza, landings, checkpoint
+-- 968 {589.78} [elem_wise_prod]: arabic, serge, rupert, mapping, myspace, vinci, multimedia, cas, paradigm, yusuf
+-- 318 {574.63} [elem_wise_prod]: batsman, torque, endemic, ambrose, sedan, right-handed, engines, species, diesel, viral
+-- 547 {568.87} [elem_wise_prod]: peruvian, derivatives, upbringing, father, customs, integral, burial, emissions, paternal, role
+-- 453 {564.08} [elem_wise_prod]: chevrolet, asphalt, dam, speedway, shale, gravel, preliminary, hatch, stages, microsoft
+-- 978 {562.41} [elem_wise_prod]: nintendo, lumpur, minh, blazers, wizards, wii, muslim, kirby, ipswich, kuala
+-- 96 {558.88} [elem_wise_prod]: ulster, unionist, orioles, displeasure, settlers, slade, libyan, batters, sultan, christmas
+-- 732 {551.33} [elem_wise_prod]: bureau, contributed, apartheid, secretariat, institute, estimates, foundation, rand, poverty, liberation
+-- 882 {546.42} [elem_wise_prod]: mine, page, accessed, list, keeper, prospective, pages, no., disposal, del
+  -- negative predictors --
+-- 461 {-46.14} [elem_wise_prod]: sen, keynote, boer, sec, posthumous, manned, kickoff, eurovision, grammy, rap
+-- 469 {-46.19} [second_vec : hypothesis]: franks, republican, pork, ambassador, daisy, melissa, meat, velvet, olson, beef
+-- 474 {-46.76} [elem_wise_prod]: aviv, mhz, beers, siena, oblast, holders, quota, salzburg, leasing, heinrich
+-- 735 {-48.11} [abs_diff]: slavic, schuster, norse, doubleday, germanic, braun, warsaw, alba, cosmetics, memoir
+-- 397 {-48.34} [second_vec : hypothesis]: ty, hank, brooke, phantom, barry, married, 10:00, short-lived, decommissioned, episode
+-- 67 {-55.30} [elem_wise_prod]: railways, cornish, 1858, 1856, survives, 1850s, electorate, 1860s, nsw, 1880s
+-- 948 {-61.93} [abs_diff]: mazda, holden, royce, lindsey, discography, dodge, confidential, gallon, ill., mustang
+-- 853 {-66.23} [elem_wise_prod]: gathers, facility, inhabit, entity, que, center, resides, reside, greenwood, generating
+-- 267 {-92.43} [elem_wise_prod]: chicks, enthusiastically, kathleen, eviction, nesting, derrick, poultry, temperate, bilingual, turtle
+-- 425 {-124.65} [elem_wise_prod]: gm, johnson, uss, docked, orioles, dolan, norfolk, reese, gerry, kidd
+- contradiction [precision = 0.633761105626851] :
+  ++ positive predictors ++
+-- 425 {371.46} [elem_wise_prod]: gm, johnson, uss, docked, orioles, dolan, norfolk, reese, gerry, kidd
+-- 474 {338.73} [elem_wise_prod]: aviv, mhz, beers, siena, oblast, holders, quota, salzburg, leasing, heinrich
+-- 906 {295.71} [elem_wise_prod]: beers, brokers, compression, hilary, celebrity, grammy, trophy, accredited, wines, bargaining
+-- 267 {270.78} [elem_wise_prod]: chicks, enthusiastically, kathleen, eviction, nesting, derrick, poultry, temperate, bilingual, turtle
+-- 990 {245.88} [elem_wise_prod]: nov, lifts, feb, das, appoints, wed, allmusic, apex, sm, rabbis
+-- 693 {243.25} [elem_wise_prod]: barrels, kuwait, iran, blanc, chatham, lao, dhabi, wbc, abe, mazda
+-- 959 {212.60} [elem_wise_prod]: steel, industries, shipbuilding, collapses, commodities, cement, sectors, exchanges, spa, machinery
+-- 758 {205.93} [elem_wise_prod]: cyclone, katrina, hurricane, disaster, ike, flooded, shear, dolly, marshes, storms
+-- 740 {175.46} [elem_wise_prod]: ankara, serbs, entities, armenia, hezbollah, nc, hostility, bosnian, zagreb, rift
+-- 888 {170.79} [elem_wise_prod]: governor, bulb, malay, apologize, r&b, breasts, fumble, okinawa, commanded, sar
+  -- negative predictors --
+-- 733 {-449.58} [elem_wise_prod]: answering, hang, sing, pray, orders, wines, individually, shout, balcony, upstairs
+-- 318 {-456.24} [elem_wise_prod]: batsman, torque, endemic, ambrose, sedan, right-handed, engines, species, diesel, viral
+-- 151 {-474.92} [elem_wise_prod]: oakland, coliseum, denny, marshall, ucla, middlesex, incumbent, ryder, walsh, bob
+-- 115 {-476.43} [elem_wise_prod]: geoff, terri, float, billion, judgments, tubes, funded, hussein, libby, cheung
+-- 210 {-479.03} [elem_wise_prod]: beetle, fungi, beetles, integrate, county, earthquake, cb, insects, hui, stricken
+-- 152 {-498.34} [elem_wise_prod]: sandwiches, downloads, mobility, itunes, amazon, gameplay, coli, partnerships, windows, sauce
+-- 548 {-506.38} [elem_wise_prod]: quiz, col, columnist, cnn, hezbollah, straw, hay, pak, abu, headline
+-- 155 {-509.52} [elem_wise_prod]: embryonic, desmond, gibbs, gubernatorial, mccarthy, ballistic, specification, mutant, warhead, theoretical
+-- 899 {-517.28} [elem_wise_prod]: sacked, corporal, deputy, all-ireland, footballer, cypriot, sway, wanderers, turkish, reins
+-- 637 {-528.66} [elem_wise_prod]: eu, ni, unanimously, commissioners, hereditary, indices, ministerial, kuala, sanctions, lords

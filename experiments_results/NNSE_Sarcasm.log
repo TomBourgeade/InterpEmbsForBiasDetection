@@ -1,0 +1,73 @@
+=== CONFIG ===
+{'embeddings': 'NNSE', 'corpus': 'Sarcasm', 'batch_size': 64, 'beta1': 0.99, 'beta2': 0.999, 'gamma': 0.9, 'lr': 0.013343039475101338, 'patience': 5, 'scheduler': 'plateau', 'weight_decay': 0.0, 'xavier': True, 'epochs': 200}
+=== ====== ===
+Evaluation:
+- test set evaluation:
+{'test_acc': 0.6396588683128357, 'test_loss': 0.6178476810455322}
+- report (test):
+              precision    recall  f1-score   support
+
+        sarc     0.6606    0.6025    0.6302       239
+     notsarc     0.6215    0.6783    0.6486       230
+
+    accuracy                         0.6397       469
+   macro avg     0.6410    0.6404    0.6394       469
+weighted avg     0.6414    0.6397    0.6392       469
+
+- random classifier (baseline):
+              precision    recall  f1-score   support
+
+        sarc     0.5394    0.5439    0.5417       239
+     notsarc     0.5219    0.5174    0.5197       230
+
+    accuracy                         0.5309       469
+   macro avg     0.5307    0.5307    0.5307       469
+weighted avg     0.5308    0.5309    0.5309       469
+
+Diagnostics for labels:
+- sarc [precision = 0.6605504587155964] :
+  ++ positive predictors ++
+-- 138 {21.89} [first_vec : sentence1]: stove, refrigerator, fridge, dryer, dishwasher, washer, freezer, sink, toaster, ovens
+-- 162 {19.59} [elem_wise_prod]: allude, backfire, devalue, detract, reciprocate, balk, proffer, ensue, revel, culminate
+-- 106 {17.62} [elem_wise_prod]: deionized, pouring, spilled, poured, pumping, spilling, pours, leaking, contaminate, ingesting
+-- 90 {16.73} [second_vec : sentence2]: bastille, montmartre, rue, strasbourg, louvre, palais, eiffel, parisian, pont, gare
+-- 143 {16.63} [second_vec : sentence2]: wu, chen, cheng, liu, zhang, ming, wang, lin, yi, wei
+-- 121 {16.63} [second_vec : sentence2]: dizziness, nausea, vomiting, shortness, restlessness, headache, tremors, diarrhea, cramps, irritability
+-- 2 {16.54} [elem_wise_prod]: middle-aged, indigent, needy, dark-skinned, hapless, wayward, underprivileged, dark-haired, non-diabetic, callow
+-- 76 {16.53} [elem_wise_prod]: tweezers, toothbrush, screwdriver, chisel, scissors, razor, broom, razors, pliers, comb
+-- 293 {16.31} [elem_wise_prod]: emphysema, epilepsy, osteoporosis, glaucoma, lupus, cataracts, anemia, colitis, mellitus, diabetes
+-- 200 {16.27} [elem_wise_prod]: intending, obligated, intend, hesitate, instructed, obliged, compelled, opted, vowed, vowing
+  -- negative predictors --
+-- 136 {-17.45} [second_vec : sentence2]: handout, pamphlet, leaflet, bulletins, flyer, prospectus, booklets, syllabus, memos, booklet
+-- 72 {-17.47} [elem_wise_prod]: injunction, prosecution, subpoena, indictment, writ, subpoenas, rulings, indictments, probation, verdict
+-- 133 {-17.80} [second_vec : sentence2]: high-technology, multibillion-dollar, money-losing, mail-order, old-line, billion-dollar, state-owned, blue-chip, biotech, for-profit
+-- 178 {-17.89} [second_vec : sentence2]: divergence, cross-reactivity, disparity, hesitation, commonality, asymmetry, heterogeneity, ambiguity, resemblance, discrepancy
+-- 55 {-18.22} [elem_wise_prod]: earl, duke, duchess, tudor, isabella, buckingham, sir, baron, henry, augustus
+-- 229 {-18.99} [second_vec : sentence2]: markedly, dramatically, drastically, substantially, appreciably, immeasurably, radically, tenfold, vastly, exponentially
+-- 64 {-19.07} [abs_diff]: supercoiling, hypermethylation, holoenzyme, ligases, sequences, microarrays, rearrangements, oligonucleotides, helicase, polymorphisms
+-- 219 {-19.20} [second_vec : sentence2]: gambia, liberia, gibraltar, malawi, djibouti, mali, rwanda, marino, senegal, leone
+-- 64 {-20.51} [second_vec : sentence2]: supercoiling, hypermethylation, holoenzyme, ligases, sequences, microarrays, rearrangements, oligonucleotides, helicase, polymorphisms
+-- 51 {-27.36} [elem_wise_prod]: rifle, gun, pistol, rifles, shotguns, pistols, guns, ammunition, shotgun, firearms
+- notsarc [precision = 0.6215139442231076] :
+  ++ positive predictors ++
+-- 51 {27.40} [elem_wise_prod]: rifle, gun, pistol, rifles, shotguns, pistols, guns, ammunition, shotgun, firearms
+-- 64 {20.41} [second_vec : sentence2]: supercoiling, hypermethylation, holoenzyme, ligases, sequences, microarrays, rearrangements, oligonucleotides, helicase, polymorphisms
+-- 219 {19.23} [second_vec : sentence2]: gambia, liberia, gibraltar, malawi, djibouti, mali, rwanda, marino, senegal, leone
+-- 64 {19.11} [abs_diff]: supercoiling, hypermethylation, holoenzyme, ligases, sequences, microarrays, rearrangements, oligonucleotides, helicase, polymorphisms
+-- 229 {18.96} [second_vec : sentence2]: markedly, dramatically, drastically, substantially, appreciably, immeasurably, radically, tenfold, vastly, exponentially
+-- 55 {18.14} [elem_wise_prod]: earl, duke, duchess, tudor, isabella, buckingham, sir, baron, henry, augustus
+-- 178 {17.92} [second_vec : sentence2]: divergence, cross-reactivity, disparity, hesitation, commonality, asymmetry, heterogeneity, ambiguity, resemblance, discrepancy
+-- 133 {17.88} [second_vec : sentence2]: high-technology, multibillion-dollar, money-losing, mail-order, old-line, billion-dollar, state-owned, blue-chip, biotech, for-profit
+-- 72 {17.57} [elem_wise_prod]: injunction, prosecution, subpoena, indictment, writ, subpoenas, rulings, indictments, probation, verdict
+-- 136 {17.39} [second_vec : sentence2]: handout, pamphlet, leaflet, bulletins, flyer, prospectus, booklets, syllabus, memos, booklet
+  -- negative predictors --
+-- 200 {-16.30} [elem_wise_prod]: intending, obligated, intend, hesitate, instructed, obliged, compelled, opted, vowed, vowing
+-- 293 {-16.40} [elem_wise_prod]: emphysema, epilepsy, osteoporosis, glaucoma, lupus, cataracts, anemia, colitis, mellitus, diabetes
+-- 2 {-16.55} [elem_wise_prod]: middle-aged, indigent, needy, dark-skinned, hapless, wayward, underprivileged, dark-haired, non-diabetic, callow
+-- 76 {-16.55} [elem_wise_prod]: tweezers, toothbrush, screwdriver, chisel, scissors, razor, broom, razors, pliers, comb
+-- 121 {-16.67} [second_vec : sentence2]: dizziness, nausea, vomiting, shortness, restlessness, headache, tremors, diarrhea, cramps, irritability
+-- 90 {-16.68} [second_vec : sentence2]: bastille, montmartre, rue, strasbourg, louvre, palais, eiffel, parisian, pont, gare
+-- 143 {-16.70} [second_vec : sentence2]: wu, chen, cheng, liu, zhang, ming, wang, lin, yi, wei
+-- 106 {-17.61} [elem_wise_prod]: deionized, pouring, spilled, poured, pumping, spilling, pours, leaking, contaminate, ingesting
+-- 162 {-19.64} [elem_wise_prod]: allude, backfire, devalue, detract, reciprocate, balk, proffer, ensue, revel, culminate
+-- 138 {-21.95} [first_vec : sentence1]: stove, refrigerator, fridge, dryer, dishwasher, washer, freezer, sink, toaster, ovens

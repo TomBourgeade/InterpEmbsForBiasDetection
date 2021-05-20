@@ -1,0 +1,73 @@
+=== CONFIG ===
+{'embeddings': 'SPINE', 'corpus': 'URFUNNY', 'batch_size': 128, 'beta1': 0.99, 'beta2': 0.999, 'gamma': 0.6, 'lr': 0.013650108288339142, 'patience': 5, 'scheduler': 'plateau', 'weight_decay': 0.0, 'xavier': True, 'epochs': 200}
+=== ====== ===
+Evaluation:
+- test set evaluation:
+{'test_acc': 0.6361058354377747, 'test_loss': 0.6322205066680908}
+- report (test):
+              precision    recall  f1-score   support
+
+       funny     0.6271    0.6475    0.6371       522
+   not_funny     0.6455    0.6250    0.6351       536
+
+    accuracy                         0.6361      1058
+   macro avg     0.6363    0.6363    0.6361      1058
+weighted avg     0.6364    0.6361    0.6361      1058
+
+- random classifier (baseline):
+              precision    recall  f1-score   support
+
+       funny     0.4901    0.4732    0.4815       522
+   not_funny     0.5036    0.5205    0.5119       536
+
+    accuracy                         0.4972      1058
+   macro avg     0.4968    0.4969    0.4967      1058
+weighted avg     0.4969    0.4972    0.4969      1058
+
+Diagnostics for labels:
+- funny [precision = 0.62708719851577] :
+  ++ positive predictors ++
+-- 423 {6.52} [elem_wise_prod]: ip, prophet, node, umar, wan, omar, nodes, abu, packets, sa
+-- 954 {6.37} [second_vec : punchline]: secretary, bush, nesting, obama, adviser, ari, treasury, migratory, hadley, barack
+-- 957 {6.21} [second_vec : punchline]: 4.1, 5.0, 5.5, earthquake, magnitude, 5.1, 4.0, richter, 6.5, 4.2
+-- 798 {5.72} [elem_wise_prod]: ignacio, costa, liga, norte, enrique, del, da, francesco, cruz, pedro
+-- 542 {5.45} [elem_wise_prod]: goalkeeper, header, defender, striker, midfielder, minute, winger, midfield, kick, claudio
+-- 957 {5.44} [elem_wise_prod]: 4.1, 5.0, 5.5, earthquake, magnitude, 5.1, 4.0, richter, 6.5, 4.2
+-- 762 {5.38} [elem_wise_prod]: db, w, ct, q, sm, sv, p, ms, j, n
+-- 560 {5.04} [second_vec : punchline]: pork, salad, onion, sauce, shrimp, tomato, fried, cooked, chopped, tomatoes
+-- 922 {5.02} [elem_wise_prod]: 73, 56, 186, 41, 199, 43, 118, 275, 203, 460
+-- 423 {4.99} [second_vec : punchline]: ip, prophet, node, umar, wan, omar, nodes, abu, packets, sa
+  -- negative predictors --
+-- 913 {-6.02} [elem_wise_prod]: threads, wires, fibers, rope, thread, woven, cables, knot, twisted, strings
+-- 35 {-6.07} [elem_wise_prod]: industry, enterprises, conglomerate, thriving, industries, textile, owned, retail, manufacturing, business
+-- 36 {-6.34} [elem_wise_prod]: grassland, hectares, soils, forests, moist, lush, acres, habitats, soil, farmland
+-- 860 {-6.34} [second_vec : punchline]: landfall, hurricane, tropical, typhoon, winds, mph, km/h, cyclone, gustav, ike
+-- 861 {-6.50} [elem_wise_prod]: damages, liability, habitat, intentional, property, maximize, unlawful, damage, trusts, grassland
+-- 942 {-6.94} [elem_wise_prod]: metals, minerals, potassium, acids, atoms, organic, compounds, chemical, particles, dioxide
+-- 541 {-7.36} [elem_wise_prod]: realities, crises, adapt, horrific, norms, consequences, horrible, histories, hardships, conflicts
+-- 519 {-7.67} [elem_wise_prod]: sustainability, sustainable, server, computational, management, data, specification, governance, networking, outcomes
+-- 599 {-7.90} [elem_wise_prod]: particles, electromagnetic, electrons, galaxies, radiation, planets, electron, magnetic, atoms, ions
+-- 334 {-9.71} [elem_wise_prod]: ecosystems, ecosystem, ecology, biodiversity, disrupt, ecological, threaten, impacts, reproductive, affect
+- not_funny [precision = 0.6454720616570327] :
+  ++ positive predictors ++
+-- 334 {9.70} [elem_wise_prod]: ecosystems, ecosystem, ecology, biodiversity, disrupt, ecological, threaten, impacts, reproductive, affect
+-- 599 {7.86} [elem_wise_prod]: particles, electromagnetic, electrons, galaxies, radiation, planets, electron, magnetic, atoms, ions
+-- 519 {7.71} [elem_wise_prod]: sustainability, sustainable, server, computational, management, data, specification, governance, networking, outcomes
+-- 541 {7.35} [elem_wise_prod]: realities, crises, adapt, horrific, norms, consequences, horrible, histories, hardships, conflicts
+-- 942 {6.88} [elem_wise_prod]: metals, minerals, potassium, acids, atoms, organic, compounds, chemical, particles, dioxide
+-- 861 {6.48} [elem_wise_prod]: damages, liability, habitat, intentional, property, maximize, unlawful, damage, trusts, grassland
+-- 36 {6.33} [elem_wise_prod]: grassland, hectares, soils, forests, moist, lush, acres, habitats, soil, farmland
+-- 860 {6.32} [second_vec : punchline]: landfall, hurricane, tropical, typhoon, winds, mph, km/h, cyclone, gustav, ike
+-- 35 {6.09} [elem_wise_prod]: industry, enterprises, conglomerate, thriving, industries, textile, owned, retail, manufacturing, business
+-- 207 {6.02} [elem_wise_prod]: collaborative, innovation, educational, sustainable, partnerships, development, sustainability, technologies, infrastructure, cooperation
+  -- negative predictors --
+-- 423 {-4.98} [second_vec : punchline]: ip, prophet, node, umar, wan, omar, nodes, abu, packets, sa
+-- 922 {-5.02} [elem_wise_prod]: 73, 56, 186, 41, 199, 43, 118, 275, 203, 460
+-- 560 {-5.03} [second_vec : punchline]: pork, salad, onion, sauce, shrimp, tomato, fried, cooked, chopped, tomatoes
+-- 762 {-5.37} [elem_wise_prod]: db, w, ct, q, sm, sv, p, ms, j, n
+-- 957 {-5.39} [elem_wise_prod]: 4.1, 5.0, 5.5, earthquake, magnitude, 5.1, 4.0, richter, 6.5, 4.2
+-- 542 {-5.45} [elem_wise_prod]: goalkeeper, header, defender, striker, midfielder, minute, winger, midfield, kick, claudio
+-- 798 {-5.72} [elem_wise_prod]: ignacio, costa, liga, norte, enrique, del, da, francesco, cruz, pedro
+-- 957 {-6.22} [second_vec : punchline]: 4.1, 5.0, 5.5, earthquake, magnitude, 5.1, 4.0, richter, 6.5, 4.2
+-- 954 {-6.33} [second_vec : punchline]: secretary, bush, nesting, obama, adviser, ari, treasury, migratory, hadley, barack
+-- 423 {-6.50} [elem_wise_prod]: ip, prophet, node, umar, wan, omar, nodes, abu, packets, sa

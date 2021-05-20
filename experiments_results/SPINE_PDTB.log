@@ -1,0 +1,413 @@
+=== CONFIG ===
+{'embeddings': 'SPINE', 'corpus': 'PDTB', 'batch_size': 256, 'beta1': 0.99, 'beta2': 0.999, 'gamma': 0.9, 'lr': 0.010124685651344913, 'patience': 5, 'scheduler': 'plateau', 'weight_decay': 0.0, 'xavier': True, 'epochs': 200}
+=== ====== ===
+Evaluation:
+- test set evaluation:
+{'test_acc': 0.34562212228775024, 'test_loss': 1.7934455871582031}
+- report (test):
+                 precision    recall  f1-score   support
+
+    Alternative     0.0000    0.0000    0.0000         9
+       Contrast     0.2857    0.1364    0.1846       132
+    Restatement     0.2857    0.2977    0.2916       215
+          Cause     0.3866    0.5282    0.4464       284
+    Conjunction     0.3278    0.4757    0.3881       206
+   Asynchronous     0.3421    0.2031    0.2549        64
+           List     0.0000    0.0000    0.0000        12
+  Instantiation     0.5000    0.2667    0.3478       120
+      Synchrony     0.0000    0.0000    0.0000        18
+     Concession     0.0000    0.0000    0.0000        18
+Pragmatic cause     0.0000    0.0000    0.0000         7
+
+       accuracy                         0.3456      1085
+      macro avg     0.1934    0.1734    0.1740      1085
+   weighted avg     0.3303    0.3456    0.3243      1085
+
+- random classifier (baseline):
+                 precision    recall  f1-score   support
+
+    Alternative     0.0000    0.0000    0.0000         9
+       Contrast     0.1550    0.1515    0.1533       132
+    Restatement     0.2000    0.1953    0.1976       215
+          Cause     0.2508    0.2711    0.2606       284
+    Conjunction     0.1972    0.2087    0.2028       206
+   Asynchronous     0.0862    0.0781    0.0820        64
+           List     0.0000    0.0000    0.0000        12
+  Instantiation     0.0680    0.0583    0.0628       120
+      Synchrony     0.0000    0.0000    0.0000        18
+     Concession     0.0000    0.0000    0.0000        18
+Pragmatic cause     0.0000    0.0000    0.0000         7
+
+       accuracy                         0.1788      1085
+      macro avg     0.0870    0.0876    0.0872      1085
+   weighted avg     0.1742    0.1788    0.1763      1085
+
+Diagnostics for labels:
+- Alternative [precision = 0.0] :
+  ++ positive predictors ++
+-- 308 {9.82} [elem_wise_prod]: purely, mere, subjective, cynical, aesthetic, motives, superficial, rational, philosophical, pure
+-- 829 {8.29} [first_vec : sentence1]: kilometre, mile, beetles, kilometer, occupancy, medley, km, mans, larvae, uci
+-- 683 {7.46} [first_vec : sentence1]: arrangements, pending, details, disclose, contractual, exact, cancelled, finalized, postponed, delayed
+-- 372 {7.11} [elem_wise_prod]: economists, economist, analyst, academics, scholars, expert, eminent, advisory, economics, consultants
+-- 951 {7.11} [elem_wise_prod]: makeup, median, households, density, population, census, km, residing, age, 5.0
+-- 617 {6.93} [elem_wise_prod]: coal, pt, doubleday, nan, shipbuilding, willem, miner, ore, mine, shipyard
+-- 308 {6.81} [second_vec : sentence2]: purely, mere, subjective, cynical, aesthetic, motives, superficial, rational, philosophical, pure
+-- 209 {6.75} [elem_wise_prod]: fashion, clothing, dresses, apparel, trousers, wear, jeans, clothes, pants, shoes
+-- 246 {6.74} [second_vec : sentence2]: jays, canadiens, phillies, astros, canucks, marlins, brewers, 3, orioles, royals
+-- 749 {6.64} [abs_diff]: mt., mount, bundesliga, sv, notch, marble, verona, pulpit, ajax, wed
+  -- negative predictors --
+-- 556 {-21.66} [second_vec : sentence2]: netherlands, van, dutch, willem, gogh, utrecht, flemish, amsterdam, rotterdam, antwerp
+-- 634 {-21.84} [second_vec : sentence2]: weather, humid, temperatures, showers, precipitation, snowfall, rains, rainfall, winds, rain
+-- 644 {-22.03} [second_vec : sentence2]: loud, screams, noises, heard, cries, alarm, sounds, sound, scream, ringing
+-- 800 {-22.71} [second_vec : sentence2]: leinster, dublin, ulster, ireland, belfast, all-ireland, sinn, munster, ira, galway
+-- 692 {-23.12} [first_vec : sentence1]: kappa, sigma, phi, delta, fraternity, alpha, omega, chi, beta, pi
+-- 353 {-24.35} [first_vec : sentence1]: malaysian, bangladesh, thai, tamil, brunei, lankan, malaysia, sri, thailand, malay
+-- 556 {-24.52} [abs_diff]: netherlands, van, dutch, willem, gogh, utrecht, flemish, amsterdam, rotterdam, antwerp
+-- 834 {-24.53} [first_vec : sentence1]: drugs, vaccine, drug, vaccines, prescription, insulin, antibiotics, doses, hormone, generic
+-- 857 {-25.18} [first_vec : sentence1]: refinery, katrina, louisiana, bp, gulf, barrels, drilling, orleans, hurricane, ike
+-- 131 {-26.58} [second_vec : sentence2]: mali, togo, cameroon, somali, ethiopia, african, africa, congo, zambia, kenya
+- Contrast [precision = 0.2857142857142857] :
+  ++ positive predictors ++
+-- 567 {11.69} [elem_wise_prod]: years, five, months, eight, seven, eighteen, twenty, sixty, twelve, fifteen
+-- 544 {10.36} [elem_wise_prod]: islanders, nhl, canucks, puck, penguins, leafs, flyers, canadiens, assists, bruins
+-- 433 {10.05} [elem_wise_prod]: subspecies, latitude, varies, dialects, frequency, magnitude, ranges, frequencies, width, precipitation
+-- 740 {9.73} [elem_wise_prod]: gradual, sudden, abrupt, reversal, drastic, rapid, eventual, impending, dramatic, withdrawal
+-- 743 {9.55} [elem_wise_prod]: thirds, respondents, majority, percent, turnout, 85, 90, 83, 67, 82
+-- 731 {9.53} [elem_wise_prod]: reckless, wit, demeanor, attitude, honesty, arrogant, kindness, humor, manners, generosity
+-- 810 {9.30} [elem_wise_prod]: rapidly, gradually, slowly, steadily, fade, onset, recession, suddenly, progressed, bubble
+-- 66 {9.15} [elem_wise_prod]: portuguese, macau, prix, maps, explorers, liga, stamps, basque, colonial, colony
+-- 878 {8.71} [elem_wise_prod]: hungarians, turks, 300,000, armenians, 600,000, filipinos, 200,000, 500,000, arabs, egyptians
+-- 282 {8.35} [elem_wise_prod]: errors, error, flaw, flaws, mistakes, weaknesses, faults, procedural, gaps, corrected
+  -- negative predictors --
+-- 165 {-12.82} [elem_wise_prod]: enzyme, receptors, proteins, receptor, enzymes, protein, rna, amino, genes, molecule
+-- 879 {-13.01} [elem_wise_prod]: infection, malaria, infected, infections, hiv, flu, influenza, pneumonia, viruses, cholera
+-- 69 {-13.49} [elem_wise_prod]: bowled, bowlers, pollock, overs, collingwood, waugh, wicket, batsman, bowling, batsmen
+-- 981 {-13.76} [elem_wise_prod]: smiles, applause, smile, greeted, smiling, laughter, tears, laughed, laughing, enthusiastically
+-- 821 {-13.77} [elem_wise_prod]: dough, baking, pan, oven, crust, butter, stir, evenly, pour, lightly
+-- 284 {-14.17} [second_vec : sentence2]: islamabad, kashmir, pakistani, ali, khan, shah, singh, bahadur, mohammad, bhutto
+-- 216 {-15.14} [elem_wise_prod]: killings, bombings, bombing, killing, massacre, assassination, killed, hindus, attacks, murders
+-- 23 {-15.67} [elem_wise_prod]: demon, spider-man, sword, monsters, vampire, dragon, assassin, weapon, thor, avengers
+-- 841 {-16.26} [elem_wise_prod]: astronaut, soyuz, spacecraft, iss, nasa, astronauts, shuttle, mir, orbiting, space
+-- 118 {-16.47} [elem_wise_prod]: hydro, coal, cornwall, lincolnshire, alps, electricity, somerset, yorkshire, ni, turbines
+- Restatement [precision = 0.2857142857142857] :
+  ++ positive predictors ++
+-- 495 {11.06} [elem_wise_prod]: renovation, construction, redevelopment, hydroelectric, project, stadium, renovations, expressway, projects, dam
+-- 575 {10.52} [elem_wise_prod]: leaked, confidential, libby, fbi, classified, memo, leak, intelligence, informant, secrets
+-- 409 {9.51} [elem_wise_prod]: tennis, pga, federer, masters, golf, mon, tournament, open, buick, invitational
+-- 199 {8.98} [elem_wise_prod]: medina, injection, insulin, uranium, fk, needle, unix, trajectory, needles, enrichment
+-- 360 {8.82} [elem_wise_prod]: coach, keane, tottenham, midfielder, chelsea, striker, manager, skipper, squad, arsenal
+-- 977 {8.81} [elem_wise_prod]: procedures, methods, method, efficient, techniques, automated, centralized, computerized, simplify, procurement
+-- 137 {8.50} [elem_wise_prod]: badminton, tennis, volleyball, handball, softball, squash, golf, gymnastics, chess, championships
+-- 901 {8.37} [second_vec : sentence2]: tempo, all-ireland, under-21, primera, midfield, percussion, captained, midfielder, footballer, dice
+-- 472 {8.14} [elem_wise_prod]: lincolnshire, watford, midlands, luton, peterborough, surrey, cornwall, sussex, exeter, dorset
+-- 455 {8.08} [elem_wise_prod]: rated, uranium, under-21, linebacker, right-handed, analyst, batsman, accumulate, munster, senior
+  -- negative predictors --
+-- 983 {-11.51} [elem_wise_prod]: sioux, navajo, rodeo, reservation, apache, cherokee, ranch, cowboy, texas, wyoming
+-- 922 {-11.76} [elem_wise_prod]: 73, 56, 186, 41, 199, 43, 118, 275, 203, 460
+-- 460 {-11.77} [elem_wise_prod]: seconds, minutes, mile, hour, kilometer, kilometre, minute, laps, kilometres, miles
+-- 365 {-11.85} [first_vec : sentence1]: pine, oak, birch, candle, trees, bamboo, burning, candles, tree, burn
+-- 801 {-11.88} [elem_wise_prod]: relegation, narrowly, escaping, escaped, escape, starvation, escapes, bankruptcy, re-election, hiding
+-- 62 {-12.10} [elem_wise_prod]: comedy, movies, film, comedies, paramount, grossed, disney, horror, bros., animation
+-- 594 {-12.41} [elem_wise_prod]: baseman, strikeouts, cubs, rbi, outfielder, padres, pitches, mariners, pinch, marlins
+-- 770 {-12.50} [elem_wise_prod]: wounding, roadside, detonated, insurgents, wounded, grenade, grenades, mortar, afghan, baghdad
+-- 106 {-15.20} [elem_wise_prod]: superman, spider-man, superhero, marvel, comics, avengers, villains, villain, characters, batman
+-- 209 {-15.74} [elem_wise_prod]: fashion, clothing, dresses, apparel, trousers, wear, jeans, clothes, pants, shoes
+- Cause [precision = 0.3865979381443299] :
+  ++ positive predictors ++
+-- 624 {10.54} [elem_wise_prod]: economies, nations, countries, bloc, poorest, eu, asian, poorer, oecd, tariffs
+-- 103 {9.93} [elem_wise_prod]: estonia, iceland, greece, sweden, romania, lithuania, baltic, finland, eu, estonian
+-- 735 {8.61} [elem_wise_prod]: emissions, pollution, dioxide, toxic, gases, dust, ash, carbon, waste, garbage
+-- 62 {8.27} [elem_wise_prod]: comedy, movies, film, comedies, paramount, grossed, disney, horror, bros., animation
+-- 705 {7.92} [second_vec : sentence2]: mclaren, ferrari, schumacher, renault, sinn, f1, alonso, massa, jaguar, mercedes
+-- 610 {7.89} [second_vec : sentence2]: 1794, 1797, 1809, 1799, 1793, 1815, 1813, 1802, 1804, 1819
+-- 622 {7.67} [elem_wise_prod]: warming, gases, emissions, dioxide, atmospheric, methane, volcanoes, carbon, climate, earthquakes
+-- 412 {7.61} [elem_wise_prod]: pot, ames, monte, fcc, nacional, papa, sway, luxembourg, whistle, paddy
+-- 457 {7.60} [elem_wise_prod]: neighborhood, latino, gangs, neighborhoods, harlem, brooklyn, underworld, gangster, bronx, rapper
+-- 96 {7.52} [elem_wise_prod]: airspace, restrict, restricting, lawful, piracy, copyright, violate, restrictions, violated, illegally
+  -- negative predictors --
+-- 920 {-13.21} [elem_wise_prod]: cartridge, pow, playoff, binary, ammunition, holes, bunker, snail, tnt, button
+-- 948 {-13.21} [elem_wise_prod]: 26, june, 1934, 1911, 1921, 1923, april, 1832, 1979, 1830
+-- 567 {-13.60} [elem_wise_prod]: years, five, months, eight, seven, eighteen, twenty, sixty, twelve, fifteen
+-- 472 {-13.83} [elem_wise_prod]: lincolnshire, watford, midlands, luton, peterborough, surrey, cornwall, sussex, exeter, dorset
+-- 743 {-14.14} [elem_wise_prod]: thirds, respondents, majority, percent, turnout, 85, 90, 83, 67, 82
+-- 570 {-14.36} [elem_wise_prod]: minister, deputy, ministry, spokesman, finance, agriculture, director, interior, told, secretary
+-- 963 {-14.53} [elem_wise_prod]: mm, bc, x, inches, graphic, illustration, ni, 146, fin, ap
+-- 903 {-17.01} [elem_wise_prod]: sunlight, glow, brighter, bright, lens, lenses, laser, lights, sky, shine
+-- 239 {-17.35} [elem_wise_prod]: spokesman, comment, reporters, quoted, ministry, details, confirmed, confirm, told, spokesperson
+-- 805 {-18.72} [elem_wise_prod]: twelve, eleven, thirteen, four, fourteen, sixteen, eighteen, five, seven, three
+- Conjunction [precision = 0.3277591973244147] :
+  ++ positive predictors ++
+-- 991 {13.20} [elem_wise_prod]: registration, id, electronically, mailing, mail, identification, checks, card, ballots, billing
+-- 292 {10.80} [elem_wise_prod]: mentioning, distract, comment, avoided, controversies, spotlight, mention, whatsoever, wrongdoing, any
+-- 738 {9.74} [elem_wise_prod]: hawk, eclipse, sentinel, communion, statesman, lenses, crystal, freshwater, unmanned, heath
+-- 350 {9.68} [elem_wise_prod]: airplay, peaking, chart, billboard, singles, peaked, r&b, charting, aria, platinum
+-- 23 {9.27} [elem_wise_prod]: demon, spider-man, sword, monsters, vampire, dragon, assassin, weapon, thor, avengers
+-- 423 {9.26} [elem_wise_prod]: ip, prophet, node, umar, wan, omar, nodes, abu, packets, sa
+-- 82 {9.06} [elem_wise_prod]: statue, statues, adorned, iconic, flags, flag, symbol, monuments, monumental, ornate
+-- 126 {9.00} [elem_wise_prod]: licenses, patents, licence, patent, copyright, lease, royalties, licensing, mhz, fcc
+-- 938 {8.84} [elem_wise_prod]: tapes, excerpts, messages, manuscripts, manuscript, leaked, documents, letters, circulated, printed
+-- 597 {8.58} [elem_wise_prod]: baskets, wrapped, stuffed, balloons, flags, bags, gifts, babies, blessings, unloaded
+  -- negative predictors --
+-- 856 {-10.83} [elem_wise_prod]: battles, bitter, battle, feud, brawl, bloody, confrontation, rivalries, fierce, heated
+-- 277 {-11.58} [elem_wise_prod]: evenly, halves, reconcile, sexes, pairs, split, divided, couples, respective, separated
+-- 67 {-11.66} [elem_wise_prod]: der, shoe, du, amazon, mp3, macy, retailer, ipod, iphone, hooker
+-- 707 {-11.69} [elem_wise_prod]: same-sex, couples, marriages, marriage, divorce, marital, divorced, marry, unmarried, wedding
+-- 598 {-11.80} [elem_wise_prod]: troupe, cabaret, concerts, theater, performing, theatres, gigs, concert, dancers, ballet
+-- 218 {-11.95} [elem_wise_prod]: colombian, manuel, maría, javier, honduras, jose, peruvian, morales, castro, salvador
+-- 989 {-12.42} [first_vec : sentence1]: thoroughbred, derby, stakes, handicap, horse, breeders, belmont, colt, jockey, horses
+-- 346 {-12.52} [elem_wise_prod]: nave, subtropical, bays, arches, font, sandstone, limestone, tropical, glaciers, nfc
+-- 610 {-13.25} [second_vec : sentence2]: 1794, 1797, 1809, 1799, 1793, 1815, 1813, 1802, 1804, 1819
+-- 572 {-13.61} [elem_wise_prod]: reefs, beach, ashore, coral, coastline, beaches, bay, coast, inlet, coastal
+- Asynchronous [precision = 0.34210526315789475] :
+  ++ positive predictors ++
+-- 143 {9.85} [second_vec : sentence2]: abruptly, voluntarily, quit, temporarily, gradually, forcibly, rejoin, resigned, resigning, permanently
+-- 568 {9.50} [elem_wise_prod]: huts, hut, cottages, barn, vegetable, cottage, bamboo, ufc, makeshift, tin
+-- 810 {9.37} [second_vec : sentence2]: rapidly, gradually, slowly, steadily, fade, onset, recession, suddenly, progressed, bubble
+-- 821 {9.30} [elem_wise_prod]: dough, baking, pan, oven, crust, butter, stir, evenly, pour, lightly
+-- 485 {9.11} [first_vec : sentence1]: drummer, bassist, vocalist, singer-songwriter, guitarist, justin, jessica, sarah, megan, twitter
+-- 620 {8.82} [second_vec : sentence2]: dance, dancers, choreographed, rhythms, choreography, drum, choreographer, enzyme, dances, ballet
+-- 150 {8.81} [abs_diff]: poet, viii, 1816, venetian, 1826, 1797, 1813, 1818, 1866, ca.
+-- 143 {8.67} [abs_diff]: abruptly, voluntarily, quit, temporarily, gradually, forcibly, rejoin, resigned, resigning, permanently
+-- 146 {8.47} [elem_wise_prod]: sequel, starring, thriller, witch, phantom, miniseries, adventures, batman, novel, vampire
+-- 851 {8.35} [elem_wise_prod]: akbar, fk, dorset, sk, ali, tehran, iranian, worcestershire, cheese, safari
+  -- negative predictors --
+-- 806 {-14.14} [elem_wise_prod]: olympic, olympics, ioc, doping, athletes, torch, athens, medals, winter, games
+-- 36 {-14.24} [elem_wise_prod]: grassland, hectares, soils, forests, moist, lush, acres, habitats, soil, farmland
+-- 661 {-14.44} [elem_wise_prod]: 3,500, 3,000, 12,000, 4,000, 8,000, 5,000, 11,000, 13,000, 2,500, 17,000
+-- 127 {-15.95} [elem_wise_prod]: remain, remained, resides, stays, currently, remains, interred, indefinitely, staying, camped
+-- 610 {-16.14} [second_vec : sentence2]: 1794, 1797, 1809, 1799, 1793, 1815, 1813, 1802, 1804, 1819
+-- 881 {-16.23} [elem_wise_prod]: 0.2, 0.1, 1.0, 0.5, 3.0, 1.1, 1.9, 1.6, 1.8, 1.4
+-- 859 {-17.27} [elem_wise_prod]: creativity, prowess, energetic, talents, imaginative, flair, brilliant, skills, creative, talent
+-- 97 {-18.04} [elem_wise_prod]: treasury, yield, yields, bonds, 10-year, benchmark, debt, maturity, mortgage, 182
+-- 132 {-20.09} [second_vec : sentence2]: grape, wine, wines, vineyards, winery, hezbollah, fruit, vineyard, orchards, citrus
+-- 422 {-20.43} [elem_wise_prod]: slender, centimeters, cm, dorsal, hairs, thin, narrow, rounded, ridges, thick
+- List [precision = 0.0] :
+  ++ positive predictors ++
+-- 422 {10.59} [elem_wise_prod]: slender, centimeters, cm, dorsal, hairs, thin, narrow, rounded, ridges, thick
+-- 908 {9.95} [elem_wise_prod]: transported, punished, removed, inspected, tortured, wrongly, beaten, thoroughly, interrogated, renovated
+-- 845 {9.40} [elem_wise_prod]: crab, moth, frog, snake, beetle, snails, honey, yellow, genus, rat
+-- 766 {9.04} [elem_wise_prod]: neighbor, farmer, apartment, old, family, landlord, father, salesman, mother, backyard
+-- 849 {8.87} [second_vec : sentence2]: massa, refueling, syrian, shelling, dominance, boeing, ferrari, tankers, lockheed, domination
+-- 208 {8.40} [elem_wise_prod]: cavity, shaft, tunnel, underground, ventilation, chamber, deepest, hole, tunnels, deeper
+-- 537 {8.23} [second_vec : sentence2]: un, unicef, aids, nations, climate, unesco, global, poverty, malaria, hiv
+-- 849 {8.22} [elem_wise_prod]: massa, refueling, syrian, shelling, dominance, boeing, ferrari, tankers, lockheed, domination
+-- 335 {8.03} [elem_wise_prod]: serbs, serb, sarajevo, bosnian, bosnia, zagreb, mclaren, col, mccartney, daimler
+-- 400 {7.99} [elem_wise_prod]: scheduled, will, lasts, 2014, tomorrow, slated, begin, 2015, occur, begins
+  -- negative predictors --
+-- 896 {-16.55} [elem_wise_prod]: advocacy, rights, abortion, activist, advocates, liberties, advocate, lgbt, same-sex, activists
+-- 105 {-16.62} [first_vec : sentence1]: passports, citizenship, passport, visa, certificates, certificate, licenses, valid, permits, registration
+-- 168 {-16.88} [elem_wise_prod]: poland, germany, german, warsaw, prussia, saxony, czechoslovakia, prague, czech, nazi
+-- 979 {-17.07} [elem_wise_prod]: bach, singers, sings, chorus, concerto, orchestra, singing, beethoven, sing, ballad
+-- 887 {-17.17} [elem_wise_prod]: emi, vinyl, rca, label, reissued, re-released, records, studios, motown, labels
+-- 168 {-17.43} [second_vec : sentence2]: poland, germany, german, warsaw, prussia, saxony, czechoslovakia, prague, czech, nazi
+-- 919 {-17.47} [elem_wise_prod]: palestinians, gaza, palestinian, jerusalem, israel, israelis, jewish, settlements, settlers, hamas
+-- 175 {-18.46} [elem_wise_prod]: pizza, vegetarian, dessert, sandwiches, meal, snack, cuisine, restaurant, restaurants, meals
+-- 8 {-18.48} [elem_wise_prod]: wages, wage, workers, strike, labor, worker, mechanics, union, attendants, bargaining
+-- 937 {-19.52} [elem_wise_prod]: sporadic, explosions, intervals, earthquakes, bombings, skirmishes, periodic, frequent, intermittent, occurrence
+- Instantiation [precision = 0.5] :
+  ++ positive predictors ++
+-- 614 {8.83} [abs_diff]: toilets, algebra, recycling, toilet, pickups, generator, trash, mats, porsche, metric
+-- 70 {8.75} [first_vec : sentence1]: statehood, partition, mb, bubble, vapor, foam, buffer, insanity, annexation, absorption
+-- 631 {8.64} [elem_wise_prod]: outlined, implementing, unveiled, implement, proposals, ambitious, plan, reforms, measures, outlines
+-- 880 {8.47} [elem_wise_prod]: launched, campaigns, unsuccessful, launches, campaign, raids, blitz, spearheaded, coordinated, futile
+-- 758 {8.28} [first_vec : sentence1]: logistical, ample, insight, insights, clues, encouragement, impetus, invaluable, plenty, opportunities
+-- 548 {8.16} [elem_wise_prod]: consultancy, consulting, firm, consultants, consultant, analyst, associates, specializes, llc, boutique
+-- 183 {8.10} [first_vec : sentence1]: cm, kilograms, tall, kg, centimeters, weighing, weight, inches, pounds, weighed
+-- 484 {7.77} [elem_wise_prod]: rugged, mountainous, scenic, wooded, terrain, jungle, mountains, bunkers, landscape, countryside
+-- 10 {7.69} [abs_diff]: batsman, county, rodrigo, toulouse, worms, wickets, ion, warwickshire, putnam, batsmen
+-- 681 {7.68} [second_vec : sentence2]: fastest, longest, largest, wealthiest, busiest, richest, oldest, tallest, poorest, heaviest
+  -- negative predictors --
+-- 419 {-14.80} [elem_wise_prod]: emissions, kyoto, gases, treaty, protocol, carbon, dioxide, 2020, reductions, ratified
+-- 551 {-14.87} [elem_wise_prod]: brewery, beers, beer, champagne, ale, drink, wine, bottle, wines, bottles
+-- 576 {-15.66} [elem_wise_prod]: pitched, strikeouts, innings, 1-3, 2-3, starter, shutout, pitchers, inning, pitching
+-- 925 {-16.14} [elem_wise_prod]: bahrain, belgium, guatemala, maldives, algeria, togo, denmark, thailand, slovenia, romania
+-- 194 {-16.37} [elem_wise_prod]: b, primera, aa, f, c, d, grade, aaa, serie, vitamin
+-- 300 {-17.15} [elem_wise_prod]: quarterback, bengals, touchdowns, colts, receiver, td, nfc, yards, fumble, broncos
+-- 565 {-18.57} [elem_wise_prod]: payment, royalties, unpaid, compensation, damages, payments, lawsuits, dues, pays, pay
+-- 924 {-18.79} [elem_wise_prod]: directive, statute, treaty, ordinance, statutes, amended, ratified, clause, constitution, stipulated
+-- 501 {-19.36} [first_vec : sentence1]: lama, tibetan, monks, dalai, buddhist, buddhism, monk, buddhists, tibet, buddha
+-- 210 {-21.12} [elem_wise_prod]: 1975, 1982, 1976, 1891, 1969, 1961, 1967, 1974, 1977, 1972
+- Synchrony [precision = 0.0] :
+  ++ positive predictors ++
+-- 481 {8.59} [first_vec : sentence1]: ah, refueling, dion, sicilian, maltese, rae, jammu, r&b, raja, whip
+-- 724 {7.99} [first_vec : sentence1]: convent, jesuit, missionary, missionaries, presbyterian, baptist, sisters, methodist, priory, seminary
+-- 864 {7.52} [second_vec : sentence2]: mgm, ct, rays, walt, regis, casinos, ge, casino, disney, pascal
+-- 124 {7.50} [elem_wise_prod]: loeb, rider, schumacher, slalom, massa, ferrari, seconds, standings, cyclist, laps
+-- 454 {7.48} [first_vec : sentence1]: landis, jammu, nfc, kashmir, crosby, rajasthan, lil, punjab, receptors, 49ers
+-- 896 {7.38} [second_vec : sentence2]: advocacy, rights, abortion, activist, advocates, liberties, advocate, lgbt, same-sex, activists
+-- 48 {7.32} [first_vec : sentence1]: axel, harcourt, weber, schultz, heinz, abbott, byrd, horn, brandenburg, jill
+-- 768 {7.25} [second_vec : sentence2]: appointed, deputy, full-time, assistant, honorary, part-time, duties, vacant, served, lecturer
+-- 397 {7.14} [first_vec : sentence1]: eastward, westward, northward, toward, farther, towards, backwards, slowly, drifted, smoothly
+-- 290 {7.12} [abs_diff]: daisy, frog, lemon, felipe, bugs, genus, ni, fay, tributary, bahamas
+  -- negative predictors --
+-- 279 {-19.65} [elem_wise_prod]: accidents, leak, accident, spill, faulty, explosion, fatal, contamination, negligence, leaks
+-- 284 {-19.76} [first_vec : sentence1]: islamabad, kashmir, pakistani, ali, khan, shah, singh, bahadur, mohammad, bhutto
+-- 665 {-20.02} [second_vec : sentence2]: piano, guitars, flute, guitar, trumpet, bass, drums, percussion, cello, keyboards
+-- 271 {-20.13} [elem_wise_prod]: destroyer, hms, harbor, destroyers, shipyard, naval, ships, uss, decommissioned, cruiser
+-- 516 {-20.95} [elem_wise_prod]: humanitarian, unicef, aid, relief, donor, charity, donations, donation, donors, donate
+-- 592 {-21.39} [second_vec : sentence2]: yugoslav, croatian, serbian, serb, croatia, yugoslavia, serbs, slovak, albanian, belgrade
+-- 923 {-21.61} [elem_wise_prod]: cargo, shipment, tons, loads, loaded, trucks, container, unloaded, freight, tanker
+-- 821 {-22.23} [second_vec : sentence2]: dough, baking, pan, oven, crust, butter, stir, evenly, pour, lightly
+-- 8 {-22.72} [elem_wise_prod]: wages, wage, workers, strike, labor, worker, mechanics, union, attendants, bargaining
+-- 561 {-25.48} [second_vec : sentence2]: maharashtra, gandhi, bengal, andhra, bangalore, telugu, kolkata, chennai, karnataka, raja
+- Concession [precision = 0.0] :
+  ++ positive predictors ++
+-- 352 {10.61} [second_vec : sentence2]: efficiently, swiftly, forcefully, favorably, react, properly, aggressively, respond, vigorously, professionally
+-- 897 {9.37} [first_vec : sentence1]: language, languages, dialects, dialect, urdu, basque, ethnic, gaelic, kurdish, telugu
+-- 622 {8.34} [second_vec : sentence2]: warming, gases, emissions, dioxide, atmospheric, methane, volcanoes, carbon, climate, earthquakes
+-- 681 {7.89} [elem_wise_prod]: fastest, longest, largest, wealthiest, busiest, richest, oldest, tallest, poorest, heaviest
+-- 434 {7.51} [abs_diff]: weapons, inspections, atomic, inspectors, nuclear, destruction, biological, hussein, iraq, resolutions
+-- 434 {7.46} [first_vec : sentence1]: weapons, inspections, atomic, inspectors, nuclear, destruction, biological, hussein, iraq, resolutions
+-- 352 {7.40} [abs_diff]: efficiently, swiftly, forcefully, favorably, react, properly, aggressively, respond, vigorously, professionally
+-- 785 {7.35} [elem_wise_prod]: monetary, inflation, lending, borrowing, rates, deficit, bank, stimulus, economists, finance
+-- 748 {7.33} [first_vec : sentence1]: islam, muslim, muslims, hindus, quran, shia, devout, catholicism, judaism, christians
+-- 666 {7.32} [elem_wise_prod]: temperate, atlantic, subtropical, continental, oceans, basin, longitude, antarctica, south-west, crust
+  -- negative predictors --
+-- 337 {-20.89} [second_vec : sentence2]: right-handed, pitching, innings, pitchers, batting, hitter, dodgers, pitches, baseman, outfield
+-- 543 {-21.18} [elem_wise_prod]: linux, windows, macintosh, playstation, xbox, os, desktop, unix, microsoft, android
+-- 615 {-21.28} [elem_wise_prod]: cents, 51, 64, 66, 53, 65, 54, 69, 41, 59
+-- 862 {-22.50} [elem_wise_prod]: borough, redevelopment, zoning, neighborhoods, urban, boroughs, residential, neighborhood, housing, tenants
+-- 539 {-22.78} [first_vec : sentence1]: mohammed, ismail, shah, abu, ibrahim, ahmed, syed, abdul, mohammad, malaysian
+-- 651 {-22.91} [elem_wise_prod]: motor, engine, mazda, chrysler, coupe, chevrolet, toyota, chassis, honda, cars
+-- 75 {-23.64} [elem_wise_prod]: sedan, nissan, chrysler, chevrolet, mazda, gm, toyota, buick, cadillac, pontiac
+-- 893 {-23.98} [abs_diff]: 106, 91, 89, lakers, 96, 107, 105, 102, 104, 94
+-- 215 {-24.17} [elem_wise_prod]: buses, wagons, vans, vehicles, trucks, armored, cars, armoured, tractors, wagon
+-- 989 {-25.75} [second_vec : sentence2]: thoroughbred, derby, stakes, handicap, horse, breeders, belmont, colt, jockey, horses
+- Pragmatic concession [precision = 0.0] :
+  ++ positive predictors ++
+-- 379 {3.82} [elem_wise_prod]: process, initiation, completion, undergoing, proceeding, phases, preparatory, gradual, rehabilitation, restoration
+-- 226 {3.69} [second_vec : sentence2]: 1850s, 2000s, 1880s, 60s, 1870s, 80s, 50s, 1860s, 1800s, 70s
+-- 926 {3.55} [first_vec : sentence1]: court, supreme, judge, circuit, courts, judicial, injunction, upheld, justice, overturned
+-- 993 {3.52} [second_vec : sentence2]: alterations, undergone, modifications, changes, adjustments, renovations, additions, revision, underwent, undergoing
+-- 834 {3.50} [first_vec : sentence1]: drugs, vaccine, drug, vaccines, prescription, insulin, antibiotics, doses, hormone, generic
+-- 631 {3.48} [elem_wise_prod]: outlined, implementing, unveiled, implement, proposals, ambitious, plan, reforms, measures, outlines
+-- 643 {3.45} [elem_wise_prod]: filed, lawsuits, lawsuit, suit, libel, litigation, filing, suits, patent, complaint
+-- 226 {3.45} [abs_diff]: 1850s, 2000s, 1880s, 60s, 1870s, 80s, 50s, 1860s, 1800s, 70s
+-- 538 {3.44} [elem_wise_prod]: poorly, loosely, specially, financed, carefully, staffed, federally, orchestrated, scripted, tightly
+-- 926 {3.43} [abs_diff]: court, supreme, judge, circuit, courts, judicial, injunction, upheld, justice, overturned
+  -- negative predictors --
+-- 404 {-2.20} [second_vec : sentence2]: sen., senate, rep., d, r, senator, democrat, ill., judiciary, republican
+-- 945 {-2.22} [second_vec : sentence2]: fines, sentence, fined, punishments, sentenced, sentences, punishment, suspended, jail, imprisonment
+-- 487 {-2.23} [second_vec : sentence2]: legislation, amendment, bill, abortion, repeal, sen., senate, proposition, proponents, republicans
+-- 468 {-2.26} [first_vec : sentence1]: voter, election, votes, electoral, elections, ballots, ballot, polling, turnout, vote
+-- 15 {-2.27} [second_vec : sentence2]: jury, trial, prosecutors, prosecution, prosecutor, courtroom, judge, testify, tribunal, defendant
+-- 404 {-2.27} [first_vec : sentence1]: sen., senate, rep., d, r, senator, democrat, ill., judiciary, republican
+-- 183 {-2.28} [second_vec : sentence2]: cm, kilograms, tall, kg, centimeters, weighing, weight, inches, pounds, weighed
+-- 364 {-2.32} [second_vec : sentence2]: upheld, overturned, jury, judge, arguments, court, supreme, validity, argument, judges
+-- 131 {-2.40} [first_vec : sentence1]: mali, togo, cameroon, somali, ethiopia, african, africa, congo, zambia, kenya
+-- 926 {-2.76} [second_vec : sentence2]: court, supreme, judge, circuit, courts, judicial, injunction, upheld, justice, overturned
+- Pragmatic cause [precision = 0.0] :
+  ++ positive predictors ++
+-- 423 {7.51} [first_vec : sentence1]: ip, prophet, node, umar, wan, omar, nodes, abu, packets, sa
+-- 746 {7.45} [abs_diff]: missiles, missile, ballistic, defense, patriot, weaponry, radar, submarines, aerospace, defenses
+-- 897 {7.45} [second_vec : sentence2]: language, languages, dialects, dialect, urdu, basque, ethnic, gaelic, kurdish, telugu
+-- 536 {7.36} [first_vec : sentence1]: al, libby, bin, defender, vhs, abdullah, noodles, yeast, wii, laden
+-- 437 {7.06} [first_vec : sentence1]: yokohama, hearst, dragons, tube, nippon, hiroshima, osaka, josh, pulse, dorsal
+-- 558 {6.90} [abs_diff]: paint, coating, ink, gel, plaster, cleaning, wash, washing, skin, spray
+-- 139 {6.84} [abs_diff]: cognitive, behaviors, disorders, emotions, traits, neurological, verbs, tendencies, behavior, behavioral
+-- 251 {6.83} [abs_diff]: hms, eruption, spark, 1793, 1798, munster, flare, vitality, dormant, creativity
+-- 699 {6.52} [abs_diff]: infantry, sergeant, battalion, cadet, expeditionary, regiments, regiment, army, cavalry, bravery
+-- 961 {6.44} [abs_diff]: sv, ip, vfl, titanic, 1860, suffrage, barbie, battleship, 3g, hamburg
+  -- negative predictors --
+-- 800 {-21.61} [abs_diff]: leinster, dublin, ulster, ireland, belfast, all-ireland, sinn, munster, ira, galway
+-- 555 {-21.64} [abs_diff]: bout, punches, tyson, wbc, knockout, heavyweight, boxing, lennox, foreman, fights
+-- 3 {-21.80} [second_vec : sentence2]: celtics, nba, lakers, assists, blazers, rebounds, ewing, points, kidd, bryant
+-- 665 {-21.83} [abs_diff]: piano, guitars, flute, guitar, trumpet, bass, drums, percussion, cello, keyboards
+-- 110 {-22.35} [second_vec : sentence2]: pius, pope, diocese, bishops, basilica, archdiocese, benedict, vatican, catholic, bishop
+-- 936 {-22.75} [second_vec : sentence2]: ltte, tamil, sri, lankan, lanka, krishna, rao, das, tigers, kumar
+-- 932 {-23.12} [second_vec : sentence2]: knife, knives, blade, needle, sword, needles, blades, inch, mm, swords
+-- 102 {-24.05} [second_vec : sentence2]: resort, hotels, hotel, resorts, accommodations, luxury, tourist, vegas, suites, lodging
+-- 675 {-24.59} [first_vec : sentence1]: reviewers, reviews, allmusic, rating, favorably, reviewer, praised, tomatoes, praising, critics
+-- 982 {-25.26} [first_vec : sentence1]: expresses, enters, lays, defends, organizes, recognizes, resides, considers, accepts, takes
+- Exception [precision = 0.0] :
+  ++ positive predictors ++
+-- 726 {5.45} [first_vec : sentence1]: virtually, completely, utterly, largely, untouched, inactive, unnoticed, practically, paralyzed, remained
+-- 726 {4.94} [abs_diff]: virtually, completely, utterly, largely, untouched, inactive, unnoticed, practically, paralyzed, remained
+-- 285 {4.73} [first_vec : sentence1]: utter, utterly, ignorance, sheer, greed, disregard, reckless, exhaustion, insanity, absolutely
+-- 801 {4.71} [second_vec : sentence2]: relegation, narrowly, escaping, escaped, escape, starvation, escapes, bankruptcy, re-election, hiding
+-- 610 {4.67} [second_vec : sentence2]: 1794, 1797, 1809, 1799, 1793, 1815, 1813, 1802, 1804, 1819
+-- 610 {4.61} [abs_diff]: 1794, 1797, 1809, 1799, 1793, 1815, 1813, 1802, 1804, 1819
+-- 978 {4.50} [second_vec : sentence2]: linebacker, quarterback, touchdown, rb, receiver, receivers, touchdowns, defensive, fumble, yards
+-- 171 {4.27} [first_vec : sentence1]: reactions, applause, drew, reaction, laughter, reviews, responses, drawing, 1-1, rave
+-- 631 {4.06} [elem_wise_prod]: outlined, implementing, unveiled, implement, proposals, ambitious, plan, reforms, measures, outlines
+-- 196 {4.02} [elem_wise_prod]: 3-0, 4-1, 3-1, 2-1, 3-2, 2-0, 1-0, 4-3, victory, defeated
+  -- negative predictors --
+-- 435 {-4.19} [second_vec : sentence2]: extensively, lectured, frequently, vigorously, periodically, continuously, throughout, openly, routinely, unsuccessfully
+-- 936 {-4.19} [abs_diff]: ltte, tamil, sri, lankan, lanka, krishna, rao, das, tigers, kumar
+-- 189 {-4.25} [second_vec : sentence2]: picasso, beethoven, poems, gogh, poet, modernist, poem, composers, poetry, poets
+-- 947 {-4.35} [second_vec : sentence2]: morally, culturally, socially, economically, financially, politically, mentally, unfit, emotionally, environmentally
+-- 963 {-4.36} [second_vec : sentence2]: mm, bc, x, inches, graphic, illustration, ni, 146, fin, ap
+-- 304 {-4.45} [second_vec : sentence2]: par, woods, pga, holes, strokes, hole, golf, stroke, vijay, westwood
+-- 542 {-4.53} [second_vec : sentence2]: goalkeeper, header, defender, striker, midfielder, minute, winger, midfield, kick, claudio
+-- 561 {-4.66} [second_vec : sentence2]: maharashtra, gandhi, bengal, andhra, bangalore, telugu, kolkata, chennai, karnataka, raja
+-- 26 {-4.78} [second_vec : sentence2]: embryo, sperm, births, offspring, reproductive, babies, cloning, panda, breeding, egg
+-- 936 {-4.84} [second_vec : sentence2]: ltte, tamil, sri, lankan, lanka, krishna, rao, das, tigers, kumar
+- Pragmatic condition [precision = 0.0] :
+  ++ positive predictors ++
+-- 830 {4.54} [second_vec : sentence2]: orchestra, philharmonic, opera, concerto, orchestras, repertory, operas, verdi, mozart, ballet
+-- 598 {4.51} [elem_wise_prod]: troupe, cabaret, concerts, theater, performing, theatres, gigs, concert, dancers, ballet
+-- 830 {4.47} [elem_wise_prod]: orchestra, philharmonic, opera, concerto, orchestras, repertory, operas, verdi, mozart, ballet
+-- 704 {4.44} [elem_wise_prod]: actor, starring, actors, actress, broadway, starred, actresses, screenplay, shakespeare, cast
+-- 830 {4.28} [first_vec : sentence1]: orchestra, philharmonic, opera, concerto, orchestras, repertory, operas, verdi, mozart, ballet
+-- 704 {4.21} [second_vec : sentence2]: actor, starring, actors, actress, broadway, starred, actresses, screenplay, shakespeare, cast
+-- 598 {4.18} [second_vec : sentence2]: troupe, cabaret, concerts, theater, performing, theatres, gigs, concert, dancers, ballet
+-- 791 {4.13} [first_vec : sentence1]: ahl, dee, --, ah, oh, bee, sur, gee, ty, rees
+-- 369 {3.98} [second_vec : sentence2]: benedict, pope, vatican, pius, swiss, holy, monastery, apostolic, himalayan, priory
+-- 410 {3.97} [elem_wise_prod]: ballroom, boulevard, terrace, hotel, avenue, ave., greenwich, inn, beach, plaza
+  -- negative predictors --
+-- 232 {-3.28} [first_vec : sentence1]: hymn, poem, hymns, melodies, ballads, ballad, melody, poems, sang, sung
+-- 636 {-3.32} [first_vec : sentence1]: paintings, drawings, depicting, painting, portraits, portrait, painted, depictions, landscapes, illustrations
+-- 665 {-3.39} [abs_diff]: piano, guitars, flute, guitar, trumpet, bass, drums, percussion, cello, keyboards
+-- 707 {-3.42} [abs_diff]: same-sex, couples, marriages, marriage, divorce, marital, divorced, marry, unmarried, wedding
+-- 232 {-3.53} [abs_diff]: hymn, poem, hymns, melodies, ballads, ballad, melody, poems, sang, sung
+-- 707 {-3.67} [second_vec : sentence2]: same-sex, couples, marriages, marriage, divorce, marital, divorced, marry, unmarried, wedding
+-- 106 {-3.71} [first_vec : sentence1]: superman, spider-man, superhero, marvel, comics, avengers, villains, villain, characters, batman
+-- 665 {-3.87} [second_vec : sentence2]: piano, guitars, flute, guitar, trumpet, bass, drums, percussion, cello, keyboards
+-- 232 {-3.92} [second_vec : sentence2]: hymn, poem, hymns, melodies, ballads, ballad, melody, poems, sang, sung
+-- 725 {-3.93} [second_vec : sentence2]: comedian, humor, comedians, satirical, satire, comedy, columnist, funny, joke, sketch
+- Pragmatic contrast [precision = 0.0] :
+  ++ positive predictors ++
+-- 168 {4.49} [second_vec : sentence2]: poland, germany, german, warsaw, prussia, saxony, czechoslovakia, prague, czech, nazi
+-- 168 {4.29} [abs_diff]: poland, germany, german, warsaw, prussia, saxony, czechoslovakia, prague, czech, nazi
+-- 425 {4.19} [first_vec : sentence1]: assess, evaluate, evaluating, examine, analyze, examining, assessing, reviewing, carefully, negatively
+-- 223 {4.08} [first_vec : sentence1]: architect, design, designer, architects, architectural, illustrator, drawings, designs, designers, sculptor
+-- 352 {4.03} [second_vec : sentence2]: efficiently, swiftly, forcefully, favorably, react, properly, aggressively, respond, vigorously, professionally
+-- 223 {3.74} [abs_diff]: architect, design, designer, architects, architectural, illustrator, drawings, designs, designers, sculptor
+-- 794 {3.70} [second_vec : sentence2]: hitler, nazi, nazis, 1940, jews, auschwitz, 1943, 1944, holocaust, adolf
+-- 181 {3.62} [second_vec : sentence2]: 1-3, 2-3, 1-1, 1-2, pine, logs, lumber, forests, 1-0, logging
+-- 592 {3.61} [second_vec : sentence2]: yugoslav, croatian, serbian, serb, croatia, yugoslavia, serbs, slovak, albanian, belgrade
+-- 797 {3.58} [second_vec : sentence2]: von, austria, ludwig, georg, germany, ernst, german, wilhelm, munich, johann
+  -- negative predictors --
+-- 58 {-4.35} [first_vec : sentence1]: picnic, hiking, accommodations, meals, camping, dining, enjoy, lodging, recreational, trips
+-- 237 {-4.45} [second_vec : sentence2]: solely, relies, relying, largely, exclusively, relied, heavily, rely, depended, chiefly
+-- 449 {-4.53} [second_vec : sentence2]: unsuccessfully, drifted, had, climbed, walked, cried, jumped, retreated, laughed, slipped
+-- 205 {-4.60} [first_vec : sentence1]: refuses, refusal, refusing, unwilling, refuse, apologize, acknowledge, accept, comply, recognise
+-- 396 {-4.61} [abs_diff]: matrix, variables, n, finite, vector, equation, algebra, equations, subset, infinite
+-- 81 {-4.64} [second_vec : sentence2]: françois, le, jean, pierre, du, french, des, france, philippe, blanc
+-- 586 {-4.64} [second_vec : sentence2]: admired, disliked, lobbied, had, consistently, strongly, personally, repeatedly, extensively, cared
+-- 915 {-4.79} [first_vec : sentence1]: viii, prince, vi, iv, throne, king, vii, queen, iii, duke
+-- 217 {-5.07} [first_vec : sentence1]: adequate, reliable, credible, reasonable, viable, feasible, decent, acceptable, sufficient, justification
+-- 265 {-5.89} [second_vec : sentence2]: disappointed, alarmed, visibly, shocked, annoyed, frustrated, dissatisfied, am, disillusioned, horrified
+- Condition [precision = 0.0] :
+  ++ positive predictors ++
+-- 154 {5.07} [first_vec : sentence1]: herbal, hormone, therapy, supplements, pills, massage, healing, medicinal, treatments, cognitive
+-- 209 {4.81} [first_vec : sentence1]: fashion, clothing, dresses, apparel, trousers, wear, jeans, clothes, pants, shoes
+-- 29 {4.77} [first_vec : sentence1]: newcomers, prospective, attracting, recruits, attract, applicants, influx, arrivals, attracts, visitors
+-- 425 {4.75} [second_vec : sentence2]: assess, evaluate, evaluating, examine, analyze, examining, assessing, reviewing, carefully, negatively
+-- 972 {4.52} [first_vec : sentence1]: attractions, fairs, expo, festivals, tourist, festival, camping, tourism, recreational, crafts
+-- 396 {4.38} [first_vec : sentence1]: matrix, variables, n, finite, vector, equation, algebra, equations, subset, infinite
+-- 935 {4.30} [first_vec : sentence1]: sophomore, mater, collegiate, varsity, ucla, college, university, clemson, yale, ncaa
+-- 209 {4.24} [abs_diff]: fashion, clothing, dresses, apparel, trousers, wear, jeans, clothes, pants, shoes
+-- 29 {4.11} [abs_diff]: newcomers, prospective, attracting, recruits, attract, applicants, influx, arrivals, attracts, visitors
+-- 254 {4.08} [abs_diff]: technicians, skilled, trained, nurses, hire, staffed, assistants, part-time, hired, professionals
+  -- negative predictors --
+-- 713 {-5.74} [first_vec : sentence1]: selecting, nominees, finalists, candidate, selection, nomination, contenders, nominate, contender, finalist
+-- 744 {-5.81} [first_vec : sentence1]: sympathy, dismay, sorrow, expressing, dissatisfaction, remorse, displeasure, disgust, sadness, resentment
+-- 6 {-5.87} [first_vec : sentence1]: three-year, two-year, five-year, indefinite, longest, one-year, four-year, 10-year, expired, streak
+-- 143 {-5.89} [first_vec : sentence1]: abruptly, voluntarily, quit, temporarily, gradually, forcibly, rejoin, resigned, resigning, permanently
+-- 552 {-5.93} [first_vec : sentence1]: honored, commemorate, achievements, achievement, honoring, award, honoured, awards, honor, commemorated
+-- 688 {-6.00} [first_vec : sentence1]: emmy, film, award, nominations, oscar, cannes, awards, screenplay, nominated, sundance
+-- 758 {-6.08} [first_vec : sentence1]: logistical, ample, insight, insights, clues, encouragement, impetus, invaluable, plenty, opportunities
+-- 265 {-6.39} [first_vec : sentence1]: disappointed, alarmed, visibly, shocked, annoyed, frustrated, dissatisfied, am, disillusioned, horrified
+-- 449 {-6.51} [first_vec : sentence1]: unsuccessfully, drifted, had, climbed, walked, cried, jumped, retreated, laughed, slipped
+-- 661 {-7.41} [first_vec : sentence1]: 3,500, 3,000, 12,000, 4,000, 8,000, 5,000, 11,000, 13,000, 2,500, 17,000

@@ -1,0 +1,73 @@
+=== CONFIG ===
+{'embeddings': 'SPOWV', 'corpus': 'IMDB', 'batch_size': 64, 'beta1': 0.99, 'beta2': 0.999, 'gamma': 0.6, 'lr': 0.0899844690266592, 'patience': 5, 'scheduler': 'plateau', 'weight_decay': 0.0, 'xavier': True, 'epochs': 200}
+=== ====== ===
+Evaluation:
+- test set evaluation:
+{'test_acc': 0.8193777799606323, 'test_loss': 0.40330249071121216}
+- report (test):
+              precision    recall  f1-score   support
+
+         neg     0.8176    0.8218    0.8197     11239
+         pos     0.8212    0.8170    0.8191     11261
+
+    accuracy                         0.8194     22500
+   macro avg     0.8194    0.8194    0.8194     22500
+weighted avg     0.8194    0.8194    0.8194     22500
+
+- random classifier (baseline):
+              precision    recall  f1-score   support
+
+         neg     0.4993    0.5052    0.5022     11239
+         pos     0.5003    0.4944    0.4973     11261
+
+    accuracy                         0.4998     22500
+   macro avg     0.4998    0.4998    0.4998     22500
+weighted avg     0.4998    0.4998    0.4998     22500
+
+Diagnostics for labels:
+- neg [precision = 0.8175621846507922] :
+  ++ positive predictors ++
+-- 568 {216.54} : inflicted, flawed, systematic, disappointing, searches, royals, miserable, weather, cruel, landmarks
+-- 608 {159.50} : limb, explodes, earnings, copa, similarity, cap, falls, jaw, commemorated, 100th
+-- 299 {128.71} : monsoon, mutually, estuary, subtropical, longitude, pearl, bhutan, brunei, commune, lava
+-- 656 {110.22} : fatty, acid, zombie, hello, freddie, acids, spam, mortgage, toxic, all-american
+-- 332 {109.54} : graphics, upgrades, 3d, 2d, hardware, 3-d, loading, cosmetic, refining, combustion
+-- 596 {108.78} : tomas, ignacio, embarrassed, manila, rafael, loyola, ryder, leinster, tamil, philharmonic
+-- 162 {105.95} : bone, adult, hans, science, cm, honolulu, station, dana, tips, piles
+-- 635 {102.12} : swansea, insurance, syndicate, landlords, blues, scrapping, lock, arkansas, broker, fairs
+-- 265 {92.23} : residential, unacceptable, peer, exploded, laurent, downstream, retail, sunni, amin, georgian
+-- 630 {91.66} : balloon, balloons, genus, volcanoes, asteroid, planetary, poses, dangers, crater, comet
+  -- negative predictors --
+-- 585 {-92.33} : sperm, mock, prelude, ira, orchestral, normandy, string, bomber, gerry, egg
+-- 35 {-92.50} : magna, upbringing, ct, shipments, rupert, paralyzed, owns, crust, leafs, jays
+-- 687 {-94.31} : tanker, sichuan, boeing, refueling, yen, helicopters, colombian, nicolas, hugo, orion
+-- 500 {-97.43} : all-ireland, induction, passage, slide, accommodations, climb, rolls, solitary, munster, roll
+-- 296 {-98.84} : smile, gaze, discography, eyes, wrestling, ali, ko, piercing, heavyweight, undefeated
+-- 590 {-100.66} : chants, dotted, dolphins, kicker, mcbride, bernie, coral, gems, chant, mick
+-- 445 {-104.20} : minerals, charcoal, nitrogen, inputs, mining, soils, diamonds, ore, atoms, nutrients
+-- 697 {-107.83} : lancashire, ppp, yorkshire, warwickshire, wigan, gaza, lil, carnegie, st, locomotives
+-- 798 {-129.28} : rare, extant, boiler, twins, memorabilia, titanic, panda, marrow, paisley, rack
+-- 961 {-129.48} : innings, wrap, toward, durable, wicket, consolidate, jays, cultivate, brewers, constructive
+- pos [precision = 0.8212086048379899] :
+  ++ positive predictors ++
+-- 961 {129.56} : innings, wrap, toward, durable, wicket, consolidate, jays, cultivate, brewers, constructive
+-- 798 {129.22} : rare, extant, boiler, twins, memorabilia, titanic, panda, marrow, paisley, rack
+-- 697 {107.78} : lancashire, ppp, yorkshire, warwickshire, wigan, gaza, lil, carnegie, st, locomotives
+-- 445 {104.25} : minerals, charcoal, nitrogen, inputs, mining, soils, diamonds, ore, atoms, nutrients
+-- 590 {100.73} : chants, dotted, dolphins, kicker, mcbride, bernie, coral, gems, chant, mick
+-- 296 {98.97} : smile, gaze, discography, eyes, wrestling, ali, ko, piercing, heavyweight, undefeated
+-- 500 {97.41} : all-ireland, induction, passage, slide, accommodations, climb, rolls, solitary, munster, roll
+-- 687 {94.37} : tanker, sichuan, boeing, refueling, yen, helicopters, colombian, nicolas, hugo, orion
+-- 35 {92.43} : magna, upbringing, ct, shipments, rupert, paralyzed, owns, crust, leafs, jays
+-- 585 {92.20} : sperm, mock, prelude, ira, orchestral, normandy, string, bomber, gerry, egg
+  -- negative predictors --
+-- 630 {-91.61} : balloon, balloons, genus, volcanoes, asteroid, planetary, poses, dangers, crater, comet
+-- 265 {-92.23} : residential, unacceptable, peer, exploded, laurent, downstream, retail, sunni, amin, georgian
+-- 635 {-102.05} : swansea, insurance, syndicate, landlords, blues, scrapping, lock, arkansas, broker, fairs
+-- 162 {-105.87} : bone, adult, hans, science, cm, honolulu, station, dana, tips, piles
+-- 596 {-108.73} : tomas, ignacio, embarrassed, manila, rafael, loyola, ryder, leinster, tamil, philharmonic
+-- 332 {-109.54} : graphics, upgrades, 3d, 2d, hardware, 3-d, loading, cosmetic, refining, combustion
+-- 656 {-110.19} : fatty, acid, zombie, hello, freddie, acids, spam, mortgage, toxic, all-american
+-- 299 {-128.64} : monsoon, mutually, estuary, subtropical, longitude, pearl, bhutan, brunei, commune, lava
+-- 608 {-159.57} : limb, explodes, earnings, copa, similarity, cap, falls, jaw, commemorated, 100th
+-- 568 {-216.45} : inflicted, flawed, systematic, disappointing, searches, royals, miserable, weather, cruel, landmarks

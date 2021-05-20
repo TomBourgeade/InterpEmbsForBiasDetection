@@ -1,0 +1,73 @@
+=== CONFIG ===
+{'embeddings': 'NMF300', 'corpus': 'URFUNNY', 'batch_size': 64, 'beta1': 0.99, 'beta2': 0.999, 'gamma': 0.6, 'lr': 0.026632818299764435, 'patience': 5, 'scheduler': 'plateau', 'weight_decay': 0.0, 'xavier': True, 'epochs': 200}
+=== ====== ===
+Evaluation:
+- test set evaluation:
+{'test_acc': 0.5775047540664673, 'test_loss': 0.6814609169960022}
+- report (test):
+              precision    recall  f1-score   support
+
+       funny     0.5673    0.6054    0.5857       522
+   not_funny     0.5888    0.5504    0.5689       536
+
+    accuracy                         0.5775      1058
+   macro avg     0.5781    0.5779    0.5773      1058
+weighted avg     0.5782    0.5775    0.5772      1058
+
+- random classifier (baseline):
+              precision    recall  f1-score   support
+
+       funny     0.5189    0.5268    0.5228       522
+   not_funny     0.5322    0.5243    0.5282       536
+
+    accuracy                         0.5255      1058
+   macro avg     0.5255    0.5255    0.5255      1058
+weighted avg     0.5256    0.5255    0.5255      1058
+
+Diagnostics for labels:
+- funny [precision = 0.5673249551166966] :
+  ++ positive predictors ++
+-- 18 {166.94} [second_vec : punchline]: messrs, espncricinfo, curiam, llp, cpl, adrienne, rafvr, winifred, lynda, jennie
+-- 103 {166.67} [second_vec : punchline]: lil, ludacris, rapper, dogg, snoop, feat, minaj, eminem, pharrell, featuring
+-- 148 {162.48} [second_vec : punchline]: goofy, cartoon, bunny, daffy, porky, freleng, popeye, cartoons, duck, flintstones
+-- 252 {160.03} [second_vec : punchline]: foxtrot, quickstep, rumba, jive, waltz, samba, doble, salsa, mambo, cha
+-- 85 {159.15} [second_vec : punchline]: starring, starred, fonda, rafvr, portrays, espncricinfo, née, actor, screenplay, deborah
+-- 8 {148.56} [second_vec : punchline]: katt, cates, sizemore, gena, conlon, thorburn, understudy, newscaster, halverson, phill
+-- 151 {141.03} [second_vec : punchline]: dil, pyar, tere, meri, mera, pyaar, zindagi, hai, tum, aaj
+-- 12 {139.31} [second_vec : punchline]: burnin, dreamin, rmx, blowin, movin, tonite, groovin, heartbreaker, feelin, dancin
+-- 16 {137.97} [second_vec : punchline]: ahmad, mohammad, muhammad, ali, syed, shaikh, ahmed, hasan, abdul, haji
+-- 115 {136.79} [second_vec : punchline]: seán, seamus, colm, rwf, lwf, hurler, dermot, lwb, declan, rwb
+  -- negative predictors --
+-- 123 {-132.79} [second_vec : punchline]: originality, skill, vitality, versatility, strength, intellect, agility, prowess, stamina, honesty
+-- 188 {-140.04} [second_vec : punchline]: neurology, ophthalmology, oncology, radiology, microbiology, cardiology, pharmacology, obstetrics, immunology, dermatology
+-- 195 {-140.54} [second_vec : punchline]: documents, archival, detailed, catalogues, ethnographic, bibliographic, documentation, photographs, maps, papers
+-- 91 {-141.40} [second_vec : punchline]: increasing, reducing, reduce, minimizing, minimize, decreasing, increased, mitigate, diminishing, declining
+-- 38 {-149.00} [second_vec : punchline]: electron, photon, photons, electromagnetic, particle, scattering, spectroscopy, magnetic, electrons, neutron
+-- 41 {-171.81} [second_vec : punchline]: formulations, usages, locales, architectures, vocabularies, typefaces, cuisines, spellings, tunings, subgenres
+-- 20 {-172.86} [second_vec : punchline]: algorithms, automated, optimization, modeling, techniques, tools, simulation, methods, visualization, software
+-- 35 {-177.81} [second_vec : punchline]: initiatives, policy, policies, strategy, initiative, strategies, efforts, responsible, aimed, activities
+-- 22 {-185.90} [second_vec : punchline]: microfinance, facilitation, cybersecurity, infrastructures, usaid, decentralized, sectoral, undertakes, preparedness, interagency
+-- 28 {-206.81} [second_vec : punchline]: cognition, linguistic, interpersonal, normative, affective, conceptual, cognitive, sociological, perspectives, metaphysical
+- not_funny [precision = 0.5888223552894212] :
+  ++ positive predictors ++
+-- 28 {206.81} [second_vec : punchline]: cognition, linguistic, interpersonal, normative, affective, conceptual, cognitive, sociological, perspectives, metaphysical
+-- 22 {185.96} [second_vec : punchline]: microfinance, facilitation, cybersecurity, infrastructures, usaid, decentralized, sectoral, undertakes, preparedness, interagency
+-- 35 {177.77} [second_vec : punchline]: initiatives, policy, policies, strategy, initiative, strategies, efforts, responsible, aimed, activities
+-- 20 {172.86} [second_vec : punchline]: algorithms, automated, optimization, modeling, techniques, tools, simulation, methods, visualization, software
+-- 41 {171.78} [second_vec : punchline]: formulations, usages, locales, architectures, vocabularies, typefaces, cuisines, spellings, tunings, subgenres
+-- 38 {149.02} [second_vec : punchline]: electron, photon, photons, electromagnetic, particle, scattering, spectroscopy, magnetic, electrons, neutron
+-- 91 {141.47} [second_vec : punchline]: increasing, reducing, reduce, minimizing, minimize, decreasing, increased, mitigate, diminishing, declining
+-- 195 {140.55} [second_vec : punchline]: documents, archival, detailed, catalogues, ethnographic, bibliographic, documentation, photographs, maps, papers
+-- 188 {140.07} [second_vec : punchline]: neurology, ophthalmology, oncology, radiology, microbiology, cardiology, pharmacology, obstetrics, immunology, dermatology
+-- 123 {132.79} [second_vec : punchline]: originality, skill, vitality, versatility, strength, intellect, agility, prowess, stamina, honesty
+  -- negative predictors --
+-- 115 {-136.67} [second_vec : punchline]: seán, seamus, colm, rwf, lwf, hurler, dermot, lwb, declan, rwb
+-- 16 {-138.00} [second_vec : punchline]: ahmad, mohammad, muhammad, ali, syed, shaikh, ahmed, hasan, abdul, haji
+-- 12 {-139.26} [second_vec : punchline]: burnin, dreamin, rmx, blowin, movin, tonite, groovin, heartbreaker, feelin, dancin
+-- 151 {-141.02} [second_vec : punchline]: dil, pyar, tere, meri, mera, pyaar, zindagi, hai, tum, aaj
+-- 8 {-148.55} [second_vec : punchline]: katt, cates, sizemore, gena, conlon, thorburn, understudy, newscaster, halverson, phill
+-- 85 {-159.10} [second_vec : punchline]: starring, starred, fonda, rafvr, portrays, espncricinfo, née, actor, screenplay, deborah
+-- 252 {-159.91} [second_vec : punchline]: foxtrot, quickstep, rumba, jive, waltz, samba, doble, salsa, mambo, cha
+-- 148 {-162.42} [second_vec : punchline]: goofy, cartoon, bunny, daffy, porky, freleng, popeye, cartoons, duck, flintstones
+-- 103 {-166.61} [second_vec : punchline]: lil, ludacris, rapper, dogg, snoop, feat, minaj, eminem, pharrell, featuring
+-- 18 {-166.85} [second_vec : punchline]: messrs, espncricinfo, curiam, llp, cpl, adrienne, rafvr, winifred, lynda, jennie
